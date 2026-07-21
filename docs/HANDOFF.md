@@ -19,8 +19,10 @@ unchanged.
 ## Repository state
 
 - Workspace: `D:\Documents\game agent`
-- Git at planning start: unborn `master`, no revision, no configured remote;
-  every file was untracked/potentially user-owned.
+- Git: `master`; complete 480-file root commit `442fa88` created after license,
+  size, ignore, staged-diff, and sensitive-name review. The empty public target
+  is `https://github.com/hanyk23/game-agent`; local `master` will publish to its
+  default `main` branch.
 - The Cocos migration is planned only. No dependency, runtime code, asset,
   generated project, or existing evidence has been changed.
 
@@ -67,9 +69,8 @@ unchanged.
   proves a reviewed contract gap.
 - Phaser evidence cannot be reported as Cocos evidence; browser and package
   promotion remain fail-closed.
-- The repository has no remote. An initial commit/push is blocked on the target
-  remote and whether its scope is the complete untracked repository or only the
-  planning files.
+- The complete repository is committed locally. The new empty target repository
+  is confirmed; push remains the final action.
 
 ## Exact next step
 

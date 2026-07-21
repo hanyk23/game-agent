@@ -133,11 +133,11 @@ migration has not begun implementation.
   it moves behind the migration recovery gates rather than being discarded.
 - No download, dependency change, paid model call, credential read, corpus
   expansion, or engine installation is authorized.
-- Git began this planning change as unborn `master` with all files untracked and
-  no configured remote. Commit/push results must be recorded after the attempt.
-- An initial push cannot proceed safely until the user supplies the remote and
-  chooses whether the first commit contains the complete repository or only the
-  10 planning-related files.
+- Git now has complete 480-file root commit `442fa88` on `master`. Ignored local
+  credentials, dependencies, caches, runtime artifacts, and build output were
+  excluded; no staged credential-like assignment or ≥50 MiB file was found.
+- The user created empty public repository `hanyk23/game-agent`. It is the
+  confirmed push target; local `master` will publish to remote default `main`.
 
 ## Next milestone
 
