@@ -1,0 +1,228 @@
+{
+  "checkedAt": "2026-07-15T04:29:36.080Z",
+  "caseId": "ink-crane",
+  "model": "deepseek-v4-flash",
+  "status": "passed",
+  "outputMode": "deepseek_json_object",
+  "usage": {
+    "inputTokens": 2960,
+    "outputTokens": 2114,
+    "providerReportedCost": null
+  },
+  "spec": {
+    "schemaVersion": "1.0.0",
+    "title": "鹤影墨龙",
+    "theme": "水墨风纵版弹幕射击",
+    "story": "上古时期，黑龙肆虐，水墨世界生灵涂炭。白鹤化身为勇者，飞入云端与黑龙决战，以羽毛为刃，破开层层墨色弹幕，恢复天地清明。",
+    "visualStyle": ["水墨", "黑白", "写意", "工笔"],
+    "difficulty": "medium",
+    "viewport": {
+      "logicalWidth": 480,
+      "logicalHeight": 800,
+      "maxEnemyBullets": 200,
+      "maxEnemies": 30
+    },
+    "player": {
+      "assetQueryId": "white-crane",
+      "maxHealth": 5,
+      "moveSpeed": 300,
+      "hitboxRadius": 16
+    },
+    "weapons": [
+      {
+        "id": "feather",
+        "projectileAssetQueryId": "feather-projectile",
+        "fireIntervalMs": 200,
+        "projectileSpeed": 500,
+        "damage": 5,
+        "projectileCount": 1
+      }
+    ],
+    "enemyWaves": [
+      {
+        "id": "wave-ink-spirits",
+        "enemyAssetQueryId": "ink-spirit",
+        "startMs": 0,
+        "durationMs": 30000,
+        "spawnIntervalMs": 2000,
+        "maxAlive": 5,
+        "health": 20,
+        "moveSpeed": 120,
+        "patternIds": ["circle-basic"],
+        "scoreValue": 100
+      }
+    ],
+    "boss": {
+      "assetQueryId": "black-dragon",
+      "maxHealth": 5000,
+      "phases": [
+        {
+          "id": "phase-1",
+          "healthThreshold": 1,
+          "patternIds": ["circle-basic"],
+          "moveSpeed": 100
+        },
+        {
+          "id": "phase-2",
+          "healthThreshold": 0.7,
+          "patternIds": ["spiral-ink"],
+          "moveSpeed": 150
+        },
+        {
+          "id": "phase-3",
+          "healthThreshold": 0.4,
+          "patternIds": ["fan-ink"],
+          "moveSpeed": 200
+        }
+      ],
+      "scoreValue": 50000
+    },
+    "bulletPatterns": [
+      {
+        "id": "circle-basic",
+        "pattern": "radial",
+        "bulletCount": 12,
+        "speed": 200,
+        "intervalMs": 1500,
+        "durationMs": 3000,
+        "color": "#000000"
+      },
+      {
+        "id": "spiral-ink",
+        "pattern": "spiral",
+        "bulletCount": 8,
+        "speed": 180,
+        "intervalMs": 500,
+        "durationMs": 5000,
+        "color": "#1a1a1a",
+        "rotationSpeed": 2
+      },
+      {
+        "id": "fan-ink",
+        "pattern": "fan",
+        "bulletCount": 5,
+        "speed": 250,
+        "intervalMs": 800,
+        "durationMs": 4000,
+        "color": "#333333",
+        "arcDegrees": 60
+      }
+    ],
+    "pickups": [
+      {
+        "id": "heal-ink",
+        "assetQueryId": "pickup-heal",
+        "effect": "heal",
+        "value": 1
+      },
+      {
+        "id": "score-ink",
+        "assetQueryId": "pickup-score",
+        "effect": "scoreBonus",
+        "value": 500
+      }
+    ],
+    "scoring": {
+      "comboWindowMs": 1000,
+      "comboMultiplierCap": 5,
+      "grazePoints": 100
+    },
+    "winCondition": {
+      "type": "bossDefeated"
+    },
+    "loseCondition": {
+      "type": "healthDepleted"
+    },
+    "controls": {
+      "keyboard": {
+        "up": ["ArrowUp", "KeyW"],
+        "down": ["ArrowDown", "KeyS"],
+        "left": ["ArrowLeft", "KeyA"],
+        "right": ["ArrowRight", "KeyD"],
+        "focus": ["ShiftLeft"]
+      },
+      "touch": {
+        "mode": "drag",
+        "relativeMovement": true
+      }
+    },
+    "audioStyle": {
+      "music": "古风古筝",
+      "effects": "水墨音效"
+    },
+    "assetQueries": [
+      {
+        "id": "white-crane",
+        "category": "player",
+        "theme": "水墨",
+        "visualStyle": ["水墨", "写意"],
+        "tags": ["鹤", "白色", "飞行"],
+        "preferredColors": ["#ffffff", "#d4d4d4"],
+        "requiresTransparency": true
+      },
+      {
+        "id": "feather-projectile",
+        "category": "player-projectile",
+        "theme": "水墨",
+        "visualStyle": ["水墨", "工笔"],
+        "tags": ["羽毛", "白色"],
+        "preferredColors": ["#ffffff"],
+        "requiresTransparency": true
+      },
+      {
+        "id": "ink-spirit",
+        "category": "enemy",
+        "theme": "水墨",
+        "visualStyle": ["水墨", "写意"],
+        "tags": ["墨影", "小怪"],
+        "preferredColors": ["#333333", "#1a1a1a"],
+        "requiresTransparency": true
+      },
+      {
+        "id": "black-dragon",
+        "category": "boss",
+        "theme": "水墨",
+        "visualStyle": ["水墨", "工笔"],
+        "tags": ["龙", "黑龙", "墨色"],
+        "preferredColors": ["#000000", "#222222"],
+        "requiresTransparency": true
+      },
+      {
+        "id": "enemy-projectile-ink",
+        "category": "enemy-projectile",
+        "theme": "水墨",
+        "visualStyle": ["水墨", "写意"],
+        "tags": ["墨点", "弹幕"],
+        "preferredColors": ["#000000"],
+        "requiresTransparency": true
+      },
+      {
+        "id": "pickup-heal",
+        "category": "pickup",
+        "theme": "水墨",
+        "visualStyle": ["水墨", "写意"],
+        "tags": ["回复", "莲花"],
+        "preferredColors": ["#ffffff", "#a0a0a0"],
+        "requiresTransparency": true
+      },
+      {
+        "id": "pickup-score",
+        "category": "pickup",
+        "theme": "水墨",
+        "visualStyle": ["水墨", "写意"],
+        "tags": ["加分", "卷轴"],
+        "preferredColors": ["#e0e0e0"],
+        "requiresTransparency": true
+      },
+      {
+        "id": "bg-mist",
+        "category": "background",
+        "theme": "水墨",
+        "visualStyle": ["水墨", "写意"],
+        "tags": ["云雾", "墨色背景"],
+        "preferredColors": ["#eeeeee", "#cccccc"],
+        "requiresTransparency": false
+      }
+    ]
+  }
+}

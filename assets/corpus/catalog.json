@@ -1,0 +1,4192 @@
+{
+  "schemaVersion": "1.0.0",
+  "catalogId": "vertical-shooter-corpus",
+  "records": [
+    {
+      "assetId": "kenney-player-ship-1-blue",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Blue and white player spacecraft viewed from above.",
+      "tags": ["ship", "player", "blue", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#52abc5", "#dae0d2", "#bad2da", "#f2f3f3"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/player/playerShip1_blue.png",
+        "sha256": "648ec1635979fb867d08bfd0c56f011d6559dd953a13c73109c6186a3069f7ee",
+        "format": "png",
+        "width": 99,
+        "height": 75,
+        "byteSize": 2698,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-player-ship-2-green",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Green and white player spacecraft viewed from above.",
+      "tags": ["ship", "player", "green", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#79b14f", "#dadfcd", "#bbd7c9", "#f2f2f2"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/player/playerShip2_green.png",
+        "sha256": "1fc41ebcaaba8dccb7c619d55cbacc107786f576a0e26fafc7c2ed14b72fa5b7",
+        "format": "png",
+        "width": 112,
+        "height": 75,
+        "byteSize": 3800,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-player-ship-3-orange",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Orange and white player spacecraft viewed from above.",
+      "tags": ["ship", "player", "orange", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#dadada", "#b95b39", "#f2f2f2", "#dacd9f"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/player/playerShip3_orange.png",
+        "sha256": "7ba8f7749f56da0f70384f8613439609abca210e4c7a4c8410fc0560748482c4",
+        "format": "png",
+        "width": 98,
+        "height": 75,
+        "byteSize": 2725,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "oga-pixel-player-ship",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Retro orange pixel-art player ship.",
+      "tags": ["ship", "player", "orange", "retro"],
+      "themes": ["space", "arcade"],
+      "visualStyles": ["pixel-art", "retro"],
+      "palette": ["#000000", "#fc4800"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "jlunesc",
+        "sourcePageUrl": "https://opengameart.org/content/pixel-space-invaders",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/sprite_ship_3.png",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC-BY-4.0",
+          "licenseName": "Creative Commons Attribution 4.0 International",
+          "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "attributionText": "\"Pixel space invaders\" by jlunesc, licensed CC BY 4.0; source: https://opengameart.org/content/pixel-space-invaders. Indicate changes when modified.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/pixel-space-invaders/sprite_ship_3.png",
+        "sha256": "d5b9e40bd87338fe79dec34b72c80a6778fb521c4f470cf38c8e900daabc3633",
+        "format": "png",
+        "width": 48,
+        "height": 48,
+        "byteSize": 240,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-black-1",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Angular dark enemy spacecraft viewed from above.",
+      "tags": ["enemy", "ship", "dark", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#63596d", "#e7e7e7", "#574d61", "#afadb1"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy/enemyBlack1.png",
+        "sha256": "2aaa39e6aa389bc334df6b57f147e5db2ba5c1648d138fdc55568ccf80d91d5b",
+        "format": "png",
+        "width": 93,
+        "height": 84,
+        "byteSize": 3019,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-black-3",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Compact dark enemy spacecraft viewed from above.",
+      "tags": ["enemy", "ship", "dark", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#554b61", "#dddddd", "#eeeeee", "#89838f"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy/enemyBlack3.png",
+        "sha256": "8af0acf3748e4285335f955960964e398894ab6e1358a28d44dcb36540d1762d",
+        "format": "png",
+        "width": 103,
+        "height": 84,
+        "byteSize": 3548,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-blue-2",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Blue and white enemy spacecraft viewed from above.",
+      "tags": ["enemy", "ship", "blue", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#3a6479", "#eeeeee", "#5c91a3", "#d4d6d6"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy/enemyBlue2.png",
+        "sha256": "8057774e24259e6a1f524572cd32836185ff1ba921e9878383655a15582c5d26",
+        "format": "png",
+        "width": 104,
+        "height": 84,
+        "byteSize": 3059,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-green-4",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Broad green enemy spacecraft viewed from above.",
+      "tags": ["enemy", "ship", "green", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#dcdcdc", "#7c9865", "#b1b6ae", "#627453"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy/enemyGreen4.png",
+        "sha256": "60a8d3b0b3063b519f9c5d1e99a70cef060cbd96e990977f4593755939a0af1b",
+        "format": "png",
+        "width": 82,
+        "height": 84,
+        "byteSize": 2283,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-red-5",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Orange-red enemy spacecraft viewed from above.",
+      "tags": ["enemy", "ship", "orange", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#ab6939", "#dbdbdb", "#eeeeee", "#bebbba"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy/enemyRed5.png",
+        "sha256": "5a8ef5833cf7356d9fb177c1ac2a84c14305b14ee12ffa159dccdae3c2fa271c",
+        "format": "png",
+        "width": 97,
+        "height": 84,
+        "byteSize": 2733,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-meteor-grey-big-1",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "asteroid",
+      "description": "Large grey space meteor obstacle.",
+      "tags": ["enemy", "meteor", "asteroid", "grey"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#8b979c", "#9cabb2", "#7a858a", "#93a0a6"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy/meteorGrey_big1.png",
+        "sha256": "a5d3d87a976d2cc309fb40b95a53b6279ec4e21d785948619e738b7b826cf861",
+        "format": "png",
+        "width": 101,
+        "height": 84,
+        "byteSize": 1786,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "oga-pixel-asteroid",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "asteroid",
+      "description": "Cyan pixel-art asteroid with small debris pixels.",
+      "tags": ["enemy", "meteor", "asteroid", "cyan"],
+      "themes": ["space", "arcade"],
+      "visualStyles": ["pixel-art", "retro"],
+      "palette": ["#1ad8dc", "#568e8f", "#3c9ab1", "#5ab1b2"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "jlunesc",
+        "sourcePageUrl": "https://opengameart.org/content/pixel-space-invaders",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/sprite_asteroid_2.png",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC-BY-4.0",
+          "licenseName": "Creative Commons Attribution 4.0 International",
+          "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "attributionText": "\"Pixel space invaders\" by jlunesc, licensed CC BY 4.0; source: https://opengameart.org/content/pixel-space-invaders. Indicate changes when modified.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/pixel-space-invaders/sprite_asteroid_2.png",
+        "sha256": "b0116c922ccb5bcb9fb9ed35565f7c7db069bb8e5e6511afa58423349d95e2cf",
+        "format": "png",
+        "width": 48,
+        "height": 48,
+        "byteSize": 300,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-boss-ufo-blue",
+      "mediaType": "image",
+      "category": "boss",
+      "subcategory": "ufo",
+      "description": "Large circular blue UFO suitable for a boss encounter.",
+      "tags": ["boss", "ufo", "blue", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#d3e1e7", "#82c3e0", "#466a8c", "#e9eff2"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/boss/ufoBlue.png",
+        "sha256": "460c90365b97ecb1c7fcd6cbbf56546f8397544761cc348f3baf97f5097dc89c",
+        "format": "png",
+        "width": 91,
+        "height": 91,
+        "byteSize": 3043,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-boss-ufo-green",
+      "mediaType": "image",
+      "category": "boss",
+      "subcategory": "ufo",
+      "description": "Large circular green UFO suitable for a boss encounter.",
+      "tags": ["boss", "ufo", "green", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#d3e1e7", "#75c83f", "#566b4a", "#afc8cd"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/boss/ufoGreen.png",
+        "sha256": "5c49407e98d33f58b95a62e6c4980451212f7f53b18594b1e1532270fc16ee8c",
+        "format": "png",
+        "width": 91,
+        "height": 91,
+        "byteSize": 3049,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-boss-ufo-red",
+      "mediaType": "image",
+      "category": "boss",
+      "subcategory": "ufo",
+      "description": "Large circular red UFO suitable for a boss encounter.",
+      "tags": ["boss", "ufo", "red", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#d3e1e7", "#ba6350", "#6c4047", "#b0c7d0"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/boss/ufoRed.png",
+        "sha256": "8578d77bbea0aa2b21cf9ad4ed40380a7ceacc0751509d338fa72908924d8c58",
+        "format": "png",
+        "width": 91,
+        "height": 91,
+        "byteSize": 3050,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "oga-pixel-boss",
+      "mediaType": "image",
+      "category": "boss",
+      "subcategory": "invader",
+      "description": "Purple retro pixel-art invader boss.",
+      "tags": ["boss", "invader", "purple", "retro"],
+      "themes": ["space", "arcade"],
+      "visualStyles": ["pixel-art", "retro"],
+      "palette": ["#000000", "#5d006a"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "jlunesc",
+        "sourcePageUrl": "https://opengameart.org/content/pixel-space-invaders",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/big_boss1.png",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC-BY-4.0",
+          "licenseName": "Creative Commons Attribution 4.0 International",
+          "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "attributionText": "\"Pixel space invaders\" by jlunesc, licensed CC BY 4.0; source: https://opengameart.org/content/pixel-space-invaders. Indicate changes when modified.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/pixel-space-invaders/big_boss1.png",
+        "sha256": "956080efaa9b90ee287a969709336a2994ba104c2c538d57d3a06ebe75d151b7",
+        "format": "png",
+        "width": 48,
+        "height": 48,
+        "byteSize": 231,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "oga-pixel-starfield",
+      "mediaType": "image",
+      "category": "background",
+      "subcategory": "starfield",
+      "description": "Vertically oriented purple pixel-art starfield background tile.",
+      "tags": ["background", "stars", "purple", "space"],
+      "themes": ["space", "arcade"],
+      "visualStyles": ["pixel-art", "retro"],
+      "palette": ["#3d3053", "#3b2e51", "#c8c4ce", "#534867"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "jlunesc",
+        "sourcePageUrl": "https://opengameart.org/content/pixel-space-invaders",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/sprites_background_2.png",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC-BY-4.0",
+          "licenseName": "Creative Commons Attribution 4.0 International",
+          "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "attributionText": "\"Pixel space invaders\" by jlunesc, licensed CC BY 4.0; source: https://opengameart.org/content/pixel-space-invaders. Indicate changes when modified.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/pixel-space-invaders/sprites_background_2.png",
+        "sha256": "8e0e8b2c00c6048e40be88803a038bf2a0e22964054721d8fe5167c6811c6cf5",
+        "format": "png",
+        "width": 192,
+        "height": 288,
+        "byteSize": 1287,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-player-laser-blue-01",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "laser",
+      "description": "Narrow blue player laser projectile.",
+      "tags": ["projectile", "laser", "blue", "player"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "glow"],
+      "palette": ["#f4fbfe", "#c0e9fb", "#52c4f5", "#95dbf9"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/player-projectile/laserBlue01.png",
+        "sha256": "eced881c4ebd76a13e48c388c3d8a82c7c177085b053b40124de517d9c563a3a",
+        "format": "png",
+        "width": 9,
+        "height": 54,
+        "byteSize": 744,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-player-laser-blue-03",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "laser",
+      "description": "Rounded blue player energy bolt.",
+      "tags": ["projectile", "laser", "blue", "player"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "glow"],
+      "palette": ["#1884b4", "#36bbf5", "#278ebb", "#e2eff5"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/player-projectile/laserBlue03.png",
+        "sha256": "db3f3eb5b60cc0b2f09a7a578230f96e5e979f295d2b87d134e84988419a8bfb",
+        "format": "png",
+        "width": 9,
+        "height": 37,
+        "byteSize": 274,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-player-laser-blue-05",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "laser",
+      "description": "Bright blue-white player laser projectile.",
+      "tags": ["projectile", "laser", "blue", "player"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "glow"],
+      "palette": ["#36bbf5", "#ecf8fe", "#9adcf9", "#59c6f5"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/player-projectile/laserBlue05.png",
+        "sha256": "c68524c36aedd1a4ffcb94ef0efc05fe7b45110cfaf3a3bd719b7b2a25785544",
+        "format": "png",
+        "width": 9,
+        "height": 37,
+        "byteSize": 276,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-player-laser-blue-07",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "laser",
+      "description": "Pale blue player energy bolt with glow.",
+      "tags": ["projectile", "laser", "blue", "player"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "glow"],
+      "palette": ["#88d6f8", "#52c3f4", "#afe3fa", "#ccedfc"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/player-projectile/laserBlue07.png",
+        "sha256": "17385b78342bcf84320e57aa724f026ee436c40bc355a8d90a2d31bac2d7ad0a",
+        "format": "png",
+        "width": 9,
+        "height": 37,
+        "byteSize": 617,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-laser-red-02",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "laser",
+      "description": "Dark red enemy energy bolt.",
+      "tags": ["projectile", "laser", "red", "enemy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "glow"],
+      "palette": ["#802b2b", "#ac3939", "#ad7777", "#9a3434"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy-projectile/laserRed02.png",
+        "sha256": "9300564441e0bc4fa3a4a259e04836c98fb69b165019eb0b9e6511e7cfb7c4a7",
+        "format": "png",
+        "width": 13,
+        "height": 37,
+        "byteSize": 310,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-laser-red-04",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "laser",
+      "description": "Bright red-white enemy energy bolt.",
+      "tags": ["projectile", "laser", "red", "enemy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "glow"],
+      "palette": ["#ac3939", "#c06c6c", "#d69f9f", "#eacece"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy-projectile/laserRed04.png",
+        "sha256": "d8f0dc4e35a7e447350d4c78523e825c0af1426228ca31d5727d13ae2824b22e",
+        "format": "png",
+        "width": 13,
+        "height": 37,
+        "byteSize": 317,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-laser-red-06",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "laser",
+      "description": "Soft red enemy energy bolt with glow.",
+      "tags": ["projectile", "laser", "red", "enemy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "glow"],
+      "palette": ["#d59c9c", "#bc6161", "#e4bfbf", "#eed8d8"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy-projectile/laserRed06.png",
+        "sha256": "6b395fb96231008ffde01571c25f385eae6ce14f7dec3073f018af95f8dbe164",
+        "format": "png",
+        "width": 13,
+        "height": 37,
+        "byteSize": 689,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-enemy-laser-red-08",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "energy-star",
+      "description": "Four-point red enemy energy projectile.",
+      "tags": ["projectile", "energy", "red", "enemy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "glow"],
+      "palette": ["#ac3939", "#bb5e5e", "#ddaeae", "#f2e2e2"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/enemy-projectile/laserRed08.png",
+        "sha256": "ef1b57d4c7231c5790b12febe9041e9302d652e5b3f0d375683c6dc5104ae1eb",
+        "format": "png",
+        "width": 48,
+        "height": 46,
+        "byteSize": 878,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-pickup-blue-shield",
+      "mediaType": "image",
+      "category": "pickup",
+      "subcategory": "shield",
+      "description": "Blue shield pickup icon.",
+      "tags": ["pickup", "shield", "blue", "defense"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#36bbf5", "#1884b4", "#38a2d0", "#b4e2f5"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/pickup/powerupBlue_shield.png",
+        "sha256": "1e5ba2c4df6d56ca0fb46bde94324d4902c9dbbd03f53dc04a018f52306f7f10",
+        "format": "png",
+        "width": 34,
+        "height": 33,
+        "byteSize": 584,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-pickup-green-bolt",
+      "mediaType": "image",
+      "category": "pickup",
+      "subcategory": "weapon-power",
+      "description": "Green lightning-bolt weapon power pickup.",
+      "tags": ["pickup", "weapon", "green", "power"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "cartoon", "clean"],
+      "palette": ["#71c937", "#578e33", "#c6e6b1", "#70ac49"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels",
+        "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Space Shooter Remastered by Kenney Vleugels (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/space-shooter-remastered/pickup/powerupGreen_bolt.png",
+        "sha256": "e3712e9da8b86d5a7958554f1d68363306dc3a9b4f638e0b1c06792ac545eb59",
+        "format": "png",
+        "width": 34,
+        "height": 33,
+        "byteSize": 600,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "oga-pixel-medal",
+      "mediaType": "image",
+      "category": "pickup",
+      "subcategory": "score-bonus",
+      "description": "Retro pixel-art gold medal score pickup.",
+      "tags": ["pickup", "medal", "score", "gold"],
+      "themes": ["space", "arcade"],
+      "visualStyles": ["pixel-art", "retro"],
+      "palette": ["#620f60", "#ffff0a", "#cba660", "#fbf823"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "jlunesc",
+        "sourcePageUrl": "https://opengameart.org/content/pixel-space-invaders",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/medal_1.png",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC-BY-4.0",
+          "licenseName": "Creative Commons Attribution 4.0 International",
+          "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "attributionText": "\"Pixel space invaders\" by jlunesc, licensed CC BY 4.0; source: https://opengameart.org/content/pixel-space-invaders. Indicate changes when modified.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/pixel-space-invaders/medal_1.png",
+        "sha256": "80d77ea6b548ab780f28d38e7918bdf6e165981266a77cd057a7d3133fa87060",
+        "format": "png",
+        "width": 120,
+        "height": 190,
+        "byteSize": 702,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-ui-blue-health-bar",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "health-bar",
+      "description": "Rounded blue sci-fi status bar for health or shield display.",
+      "tags": ["ui", "health", "bar", "blue"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "sci-fi", "clean"],
+      "palette": ["#1c9fd7", "#197faa", "#36bdf7", "#e1eef4"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/ui-pack-sci-fi",
+        "sourceFileUrl": "https://www.kenney.nl/media/pages/assets/ui-pack-sci-fi/b67c2acd31-1724181109/kenney_ui-pack-space-expansion.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "UI Pack: Sci-fi by Kenney (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/ui-pack-sci-fi/ui/bar_round_large.png",
+        "sha256": "6348b1d45df0a0f3d73954d099eff27bc63792ee3fdcb677b2eabe7b781aced9",
+        "format": "png",
+        "width": 96,
+        "height": 24,
+        "byteSize": 508,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-ui-blue-header-button",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "button",
+      "description": "Large blue and silver sci-fi interface button.",
+      "tags": ["ui", "button", "panel", "blue"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "sci-fi", "clean"],
+      "palette": ["#1c9fd7", "#dee0e9", "#609dbd", "#1690c3"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/ui-pack-sci-fi",
+        "sourceFileUrl": "https://www.kenney.nl/media/pages/assets/ui-pack-sci-fi/b67c2acd31-1724181109/kenney_ui-pack-space-expansion.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "UI Pack: Sci-fi by Kenney (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/ui-pack-sci-fi/ui/button_square_header_large_rectangle.png",
+        "sha256": "27471949c3df86df371815350c86cd94867f31dcf77de8fd0f9824c77067bada",
+        "format": "png",
+        "width": 192,
+        "height": 64,
+        "byteSize": 428,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-ui-blue-crosshair",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "crosshair",
+      "description": "Blue diamond-shaped sci-fi targeting crosshair.",
+      "tags": ["ui", "crosshair", "target", "blue"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "sci-fi", "glow"],
+      "palette": ["#1c9fd7", "#44b0de", "#91d1eb", "#daf0f8"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/ui-pack-sci-fi",
+        "sourceFileUrl": "https://www.kenney.nl/media/pages/assets/ui-pack-sci-fi/b67c2acd31-1724181109/kenney_ui-pack-space-expansion.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "UI Pack: Sci-fi by Kenney (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/ui-pack-sci-fi/ui/crosshair_color_a.png",
+        "sha256": "adc7a2e4092e71fa9130771cfb28accd75d1124b18adbb2fce0fb0985cc6e40e",
+        "format": "png",
+        "width": 30,
+        "height": 30,
+        "byteSize": 553,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-ui-glass-panel",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "panel",
+      "description": "Translucent glass interface panel.",
+      "tags": ["ui", "panel", "glass", "overlay"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["vector", "sci-fi", "clean"],
+      "palette": ["#dadce7", "#9696a3", "#bebec6", "#eaeaee"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/ui-pack-sci-fi",
+        "sourceFileUrl": "https://www.kenney.nl/media/pages/assets/ui-pack-sci-fi/b67c2acd31-1724181109/kenney_ui-pack-space-expansion.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "UI Pack: Sci-fi by Kenney (Kenney.nl), CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/ui-pack-sci-fi/ui/panel_glass.png",
+        "sha256": "a2b6750263c4e7255e50dd085016923cad792306383ce817fe48099cbdb4839d",
+        "format": "png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 286,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-effect-energy-ring",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "energy-ring",
+      "description": "Soft circular energy-ring particle effect.",
+      "tags": ["effect", "ring", "energy", "shield"],
+      "themes": ["space", "energy"],
+      "visualStyles": ["raster", "particle", "soft"],
+      "palette": ["#e0e0e0", "#cfcfcf", "#f4f4f4", "#d7d7d7"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and credited filter-template contributors",
+        "sourcePageUrl": "https://kenney.nl/assets/particle-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Particle Pack by Kenney Vleugels, with filter-template contributors named in the preserved License.txt, CC0 1.0.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/particle-pack/effect/circle_01.png",
+        "sha256": "4b2d03683bf0fe4a946567adc3bd86b8ba045da84cee58dc2cf8aef63bbfaa06",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 69755,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-effect-flare",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "lens-flare",
+      "description": "Bright compact lens-flare particle effect.",
+      "tags": ["effect", "flare", "light", "impact"],
+      "themes": ["space", "energy"],
+      "visualStyles": ["raster", "particle", "glow"],
+      "palette": ["#f2f2f2", "#e0e0e0"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and credited filter-template contributors",
+        "sourcePageUrl": "https://kenney.nl/assets/particle-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Particle Pack by Kenney Vleugels, with filter-template contributors named in the preserved License.txt, CC0 1.0.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/particle-pack/effect/flare_01.png",
+        "sha256": "254f5bd4f0548612bf29305d27899efdee8cb8d8306292761ebbddebd3e57935",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 42886,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-effect-electric-spark",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "electric-spark",
+      "description": "Branching electric spark particle effect.",
+      "tags": ["effect", "spark", "electric", "impact"],
+      "themes": ["space", "energy"],
+      "visualStyles": ["raster", "particle", "electric"],
+      "palette": ["#f1f1f1", "#e0e0e0"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and credited filter-template contributors",
+        "sourcePageUrl": "https://kenney.nl/assets/particle-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Particle Pack by Kenney Vleugels, with filter-template contributors named in the preserved License.txt, CC0 1.0.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/particle-pack/effect/spark_01.png",
+        "sha256": "5902da3a324cad0a4b5a88ce1e3c9cc18fee50922c358ce93d8c9f1ad7708f0a",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 95070,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-effect-smoke",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "smoke",
+      "description": "Diffuse grey smoke particle effect.",
+      "tags": ["effect", "smoke", "explosion", "damage"],
+      "themes": ["space", "battle"],
+      "visualStyles": ["raster", "particle", "soft"],
+      "palette": ["#d5d5d5", "#f6f6f6", "#ebebeb"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and credited filter-template contributors",
+        "sourcePageUrl": "https://kenney.nl/assets/particle-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Particle Pack by Kenney Vleugels, with filter-template contributors named in the preserved License.txt, CC0 1.0.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/particle-pack/effect/smoke_01.png",
+        "sha256": "e8724c219e8d35859167fc0a7e207e13c72ccf0c29704909b9bb3d3dc71c6cf7",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 97452,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "reviewed",
+        "reviewedBy": "Project owner via conversation approval",
+        "reviewedAt": "2026-07-15",
+        "notes": "Rights evidence, immutable hash, technical metadata, and Codex visual screening completed 2026-07-15; project owner approved all 35 contact-sheet candidates by replying '继续'."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-ship-0000",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art blue interceptor for a vertical space shooter.",
+      "tags": ["player", "ship", "blue", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#b2b6c6", "#2cc5f6", "#11a5d4"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player/ship_0000.png",
+        "sha256": "15bc356dca89cc1009e88e6ac2ee80db47c9f2c973f7c113f1c6cb07b2d1ddb3",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 296,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-ship-0001",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art red interceptor for a vertical space shooter.",
+      "tags": ["player", "ship", "red", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#fc683b", "#b2b7c7", "#de4b1e"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player/ship_0001.png",
+        "sha256": "cb902990b33e493c937740f9363d90809793176105fe8a474906029df090c60b",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 279,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-ship-0002",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art green interceptor for a vertical space shooter.",
+      "tags": ["player", "ship", "green", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#b6d53c", "#94a569", "#edeff2"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player/ship_0002.png",
+        "sha256": "61b486658f3ee5e1d804aea3a3cdcfc325fd5384473ecb5c53b9a665c8711166",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 300,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-ship-0003",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art yellow interceptor for a vertical space shooter.",
+      "tags": ["player", "ship", "yellow", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#ffbd20", "#b59d6b", "#eaedf1"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player/ship_0003.png",
+        "sha256": "ca572d261c6c9aaf4a2835c6dec176897bcb6e331f2283a0f8eb5781922a80aa",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 286,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-ship-0004",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art blue scout craft for a vertical space shooter.",
+      "tags": ["player", "ship", "blue", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#2cc5f6", "#11a5d4", "#c1c5d2"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player/ship_0004.png",
+        "sha256": "8b3b3763ab670748bae022eab9f99f1795911d0a366ce2273494268367d8d6c6",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 251,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-ship-0005",
+      "mediaType": "image",
+      "category": "player",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art red scout craft for a vertical space shooter.",
+      "tags": ["player", "ship", "red", "spacecraft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#fc683b", "#de4b1e", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player/ship_0005.png",
+        "sha256": "7d303e0635f9230f5ebc106f83de783e7eaa7f6ef4c186109a672a76e74e8dfe",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 226,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0006",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art green micro fighter for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "green"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#b6d53c", "#93aa43", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0006.png",
+        "sha256": "f3bfd6862e07207946b9fbbfc07da92e1efa89407eac9f211ac56f02553fe286",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 238,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0007",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art yellow micro fighter for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "yellow"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#ffbd20", "#ba9d5e", "#f1f3f5"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0007.png",
+        "sha256": "5050e7c2358313dfe21cf4629abf6356742a709fb6fc4a3f5c4ed8ea814dd305",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 270,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0010",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art green micro drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "green"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#b6d53c", "#92af25", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0010.png",
+        "sha256": "fba79895a033debf974740268405fcd58020757da81a0eb08f20f050115af532",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 222,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0011",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art yellow micro drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "yellow"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#ffbd20", "#ba9d5f", "#f1f3f5"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0011.png",
+        "sha256": "1fae5ca8138c9bf14960ee81415b8d49e95bc979252d2c32ca3ebc5cdcfea390",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 237,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0016",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art silver fork drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "silver"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#8085a2", "#eef0f3"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0016.png",
+        "sha256": "d071446e9cf19f5d3094db25ae549ce961702af531274df87577392e90f1e4cf",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 251,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0017",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art silver side drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "silver"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#757b9a", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0017.png",
+        "sha256": "f80a4caa8ba735af3cdd50128c99ae3a0dcf8b737543227e7dc8c1b2d0f0e911",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 226,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0018",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art silver dart drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "silver"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#7e84a1", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0018.png",
+        "sha256": "47d537798120eee94aa3d707530704faf3f00822e5ef02239fef9db40d298990",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 238,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0019",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art silver cross drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "silver"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#868ba6", "#f1f3f5"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0019.png",
+        "sha256": "7ce8e9ea39127d1d073f1f1681bb728efb931fb0cd96231ba29f20d7223ecebf",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 270,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0020",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art silver twin-pod drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "silver"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#7b819f", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0020.png",
+        "sha256": "39246a762d65c1c9c68037171cfee0b03ccbf3d1c3de2935a7c4dcd85d7e8908",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 221,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0021",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art silver wing drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "silver"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#7f85a1", "#f1f3f5"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0021.png",
+        "sha256": "5f7211a7b0d165a015424e7cfdb0b7eb05e4fcdc65f273db9169d1c2a4d5ea77",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 236,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0022",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art silver sentry drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "silver"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#787e9c", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0022.png",
+        "sha256": "b01917dcf94309b6d4213c76f068045a35bac39a9cad28b0015d7f8709fc617d",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 222,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-ship-0023",
+      "mediaType": "image",
+      "category": "enemy",
+      "subcategory": "spacecraft",
+      "description": "Pixel-art silver disc drone for a vertical space shooter.",
+      "tags": ["enemy", "ship", "drone", "silver"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#868ba6", "#f1f3f5"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy/ship_0023.png",
+        "sha256": "8946e8c53db0d720dc9d0e0be40eecb98c63ce99d22b9138ce87476677fa68ff",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 237,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-boss-ship-0012",
+      "mediaType": "image",
+      "category": "boss",
+      "subcategory": "heavy-spacecraft",
+      "description": "Pixel-art silver heavy command craft variant 1 for a vertical space shooter.",
+      "tags": ["boss", "ship", "heavy", "silver", "command craft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#c3c7d4", "#959ab1", "#757b9a"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/boss/ship_0012.png",
+        "sha256": "f9cd302cad20ce52b54eb9f0ea734499004b0f1daa75931b3f730b174de8d26e",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 296,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-boss-ship-0013",
+      "mediaType": "image",
+      "category": "boss",
+      "subcategory": "heavy-spacecraft",
+      "description": "Pixel-art silver heavy command craft variant 2 for a vertical space shooter.",
+      "tags": ["boss", "ship", "heavy", "silver", "command craft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#8c91aa", "#e4e8ed"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/boss/ship_0013.png",
+        "sha256": "d079db2500bd2c0aeb5fbf794c079f8a6715e913a58d40ab8e602e450f3126f3",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 279,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-boss-ship-0014",
+      "mediaType": "image",
+      "category": "boss",
+      "subcategory": "heavy-spacecraft",
+      "description": "Pixel-art silver heavy command craft variant 3 for a vertical space shooter.",
+      "tags": ["boss", "ship", "heavy", "silver", "command craft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#afb3c5", "#868ca6", "#edeff2"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/boss/ship_0014.png",
+        "sha256": "963c49555f3de344a699a01bcbb64bb5ab4d8aed82f940184180aaf50da4ac07",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 300,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-boss-ship-0015",
+      "mediaType": "image",
+      "category": "boss",
+      "subcategory": "heavy-spacecraft",
+      "description": "Pixel-art silver heavy command craft variant 4 for a vertical space shooter.",
+      "tags": ["boss", "ship", "heavy", "silver", "command craft"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#888da8", "#afb3c5", "#eaedf1"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/boss/ship_0015.png",
+        "sha256": "3ea8fa830130fcd7e9018bd1c6d4a5527419a8f187c061ae3cdf40c0ea196e78",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "byteSize": 286,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-projectile-tile-0000",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "energy-projectile",
+      "description": "Pixel-art single laser bolt for a vertical space shooter.",
+      "tags": ["player", "projectile", "laser", "energy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#ffbd20", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player-projectile/tile_0000.png",
+        "sha256": "dee574862d5143034047c6521930596f768387b3472caaeeca4b138b34057ea5",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 135,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-projectile-tile-0001",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "energy-projectile",
+      "description": "Pixel-art twin laser bolt for a vertical space shooter.",
+      "tags": ["player", "projectile", "laser", "energy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#ffbd20", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player-projectile/tile_0001.png",
+        "sha256": "b62f1fcd3d8030198de80d0c50f47f7580656dfa00f452fe042764abc18fc9be",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 141,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-projectile-tile-0003",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "energy-projectile",
+      "description": "Pixel-art teardrop energy bolt for a vertical space shooter.",
+      "tags": ["player", "projectile", "laser", "energy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#ffffff", "#ffbd20"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player-projectile/tile_0003.png",
+        "sha256": "6577aa2b5d75a9190cfc5ec7b66b1087d30c06ba302c5e29a28e45a81115be8d",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 164,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-projectile-tile-0004",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "energy-projectile",
+      "description": "Pixel-art diagonal star bolt for a vertical space shooter.",
+      "tags": ["player", "projectile", "laser", "energy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#ffbd20", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player-projectile/tile_0004.png",
+        "sha256": "54d2a47c28937772a5fdbe71436b2b20628b4d3f766fe78fe13c8e76e73395fa",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 170,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-projectile-tile-0005",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "energy-projectile",
+      "description": "Pixel-art square star bolt for a vertical space shooter.",
+      "tags": ["player", "projectile", "laser", "energy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#ffbd20", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player-projectile/tile_0005.png",
+        "sha256": "22c0064220d49a2a7754571fd1f2d21df99a6679a40303e47c3222014311799a",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 159,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-player-projectile-tile-0006",
+      "mediaType": "image",
+      "category": "player-projectile",
+      "subcategory": "energy-projectile",
+      "description": "Pixel-art diamond energy bolt for a vertical space shooter.",
+      "tags": ["player", "projectile", "laser", "energy"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#ffbd20", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/player-projectile/tile_0006.png",
+        "sha256": "d43d9e4b3f0247ee095931528f391d38649200d1b3693a580e7d92f02472f548",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 159,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-projectile-tile-0009",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "bullet",
+      "description": "Pixel-art blue orb bullet for a vertical space shooter.",
+      "tags": ["enemy", "projectile", "bullet", "pixel"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy-projectile/tile_0009.png",
+        "sha256": "5427e3d5c58821a4665293992712d2ca531f73b218d9ec009e2cc4f8fc4521f9",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 135,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-projectile-tile-0010",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "bullet",
+      "description": "Pixel-art silver cross bullet for a vertical space shooter.",
+      "tags": ["enemy", "projectile", "bullet", "pixel"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#ffffff", "#cfc6b8"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy-projectile/tile_0010.png",
+        "sha256": "641185da92eaf847efb6f35c0966d954730831a727ee15c7a60be3695a6a7f05",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 162,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-projectile-tile-0011",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "bullet",
+      "description": "Pixel-art silver split bullet for a vertical space shooter.",
+      "tags": ["enemy", "projectile", "bullet", "pixel"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy-projectile/tile_0011.png",
+        "sha256": "7ceabf21bedde964ad84c06355c6a788bfe864ad820b4f8e4264498aa8859b96",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 163,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-projectile-tile-0016",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "bullet",
+      "description": "Pixel-art steel shuriken bullet for a vertical space shooter.",
+      "tags": ["enemy", "projectile", "bullet", "pixel"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#959ab1", "#dce1e7"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy-projectile/tile_0016.png",
+        "sha256": "12cc64cc851d6b9ef78f20a52d1f3cde65aec45a0ff396e904514b77f53a5501",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 169,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-projectile-tile-0017",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "bullet",
+      "description": "Pixel-art red capsule bullet for a vertical space shooter.",
+      "tags": ["enemy", "projectile", "bullet", "pixel"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#fc683b", "#adb2c3", "#de4b1e"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy-projectile/tile_0017.png",
+        "sha256": "891c2834e6412ee4fa6baa0127c7f9ce305e4d8e1bf0b7ce4e3f1d7c16c97e67",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 182,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-enemy-projectile-tile-0018",
+      "mediaType": "image",
+      "category": "enemy-projectile",
+      "subcategory": "bullet",
+      "description": "Pixel-art red dart bullet for a vertical space shooter.",
+      "tags": ["enemy", "projectile", "bullet", "pixel"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#fc683b", "#aaafc1", "#de4b1e"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/enemy-projectile/tile_0018.png",
+        "sha256": "8cb1cff104f80659f8b7c81b5f2b5154678fa6c707d3299559758df9b7a219d3",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 181,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-pickup-tile-0024",
+      "mediaType": "image",
+      "category": "pickup",
+      "subcategory": "power-up",
+      "description": "Pixel-art health-kit pickup for a vertical space shooter.",
+      "tags": ["pickup", "power-up", "health", "item"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#e95629", "#ffffff", "#cfc6b8"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/pickup/tile_0024.png",
+        "sha256": "95f6554b79600322734b173091b55617dffbc6b91125286c5100e4471557067f",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 173,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-pickup-tile-0025",
+      "mediaType": "image",
+      "category": "pickup",
+      "subcategory": "power-up",
+      "description": "Pixel-art blue battery pickup for a vertical space shooter.",
+      "tags": ["pickup", "power-up", "energy", "item"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#19afdf", "#ffffff", "#cfc6b8"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/pickup/tile_0025.png",
+        "sha256": "64efea8c6794c7575a002bd8f7240a071d77bb98aabe356774d9d437e0111763",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 168,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-pickup-tile-0026",
+      "mediaType": "image",
+      "category": "pickup",
+      "subcategory": "power-up",
+      "description": "Pixel-art shield pickup for a vertical space shooter.",
+      "tags": ["pickup", "power-up", "shield", "item"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#11a5d4", "#2cc5f6", "#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/pickup/tile_0026.png",
+        "sha256": "92684cba7a7806285fc1cd387d983472f4e34ad4901073d89acf8dd9b1c5d53c",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 176,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-pickup-tile-0028",
+      "mediaType": "image",
+      "category": "pickup",
+      "subcategory": "power-up",
+      "description": "Pixel-art green supply crate pickup for a vertical space shooter.",
+      "tags": ["pickup", "power-up", "supply", "item"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#434a5f", "#93a949", "#b6d53c", "#dce1e7"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/pickup/tile_0028.png",
+        "sha256": "fd7ef6918522e7bf84697dba0cf8acabcc83df9713dfca6f54c2aba3282e1a8e",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 200,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-effect-tile-0007",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "impact-or-exhaust",
+      "description": "Pixel-art orange impact burst for a vertical space shooter.",
+      "tags": ["effect", "impact", "exhaust", "particle"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#ffbd20"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/effect/tile_0007.png",
+        "sha256": "dd5a9ac816d65d55b3ce22bacc08104c4158221571fa153dcf2eda07a9c4fb43",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 142,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-effect-tile-0008",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "impact-or-exhaust",
+      "description": "Pixel-art white particle spark for a vertical space shooter.",
+      "tags": ["effect", "impact", "exhaust", "particle"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#dce1e7"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/effect/tile_0008.png",
+        "sha256": "f5caed8ba0ea9d2caba23dc17576986571bff363eecb6f41a5a7290cd8b635c3",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 147,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-effect-tile-0027",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "impact-or-exhaust",
+      "description": "Pixel-art white flash burst for a vertical space shooter.",
+      "tags": ["effect", "impact", "exhaust", "particle"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#ffffff"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/effect/tile_0027.png",
+        "sha256": "3cf5371999edad4e64b8e5f0f3493f1ccdd9363b24f3d535bf9cee0b73d7d200",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 135,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-effect-tile-0036",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "impact-or-exhaust",
+      "description": "Pixel-art green exhaust core for a vertical space shooter.",
+      "tags": ["effect", "impact", "exhaust", "particle"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#b6d53c", "#345551", "#92b115"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/effect/tile_0036.png",
+        "sha256": "0fdaf8cf53f8c9f3033ad1cbe92a0949314be02359f8b2f269f1903aecaab4cc",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 163,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-effect-tile-0048",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "impact-or-exhaust",
+      "description": "Pixel-art green energy ring for a vertical space shooter.",
+      "tags": ["effect", "impact", "exhaust", "particle"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#b6d53c", "#345551", "#92b115", "#cb815e"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/effect/tile_0048.png",
+        "sha256": "baf3ca646f5fa653bb6ca725c0546968d2bb2dda5ff3b5928581856a347627aa",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 156,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-shmup-effect-tile-0054",
+      "mediaType": "image",
+      "category": "effect",
+      "subcategory": "impact-or-exhaust",
+      "description": "Pixel-art green-orange flame burst for a vertical space shooter.",
+      "tags": ["effect", "impact", "exhaust", "particle"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#cb815e", "#345551", "#92b115", "#b6d53c"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-shmup",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-shmup/640246b9cc-1677495782/kenney_pixel-shmup.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel Shmup by Kenney, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-shmup/effect/tile_0054.png",
+        "sha256": "7f182ed5e9963bcc28d0d5da52904a064b2c7ffa136dfe4228bd4e35f15f7716",
+        "format": "png",
+        "width": 16,
+        "height": 16,
+        "byteSize": 164,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-ui-space-hud-panel",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "hud-panel",
+      "description": "Blue pixel-art space panel for a compact HUD status region.",
+      "tags": ["ui", "hud", "panel", "space"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#6486af", "#7cadc5", "#a5cae0"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and Lynn Evers",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-ui-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-ui-pack/821e760f21-1677661508/kenney_pixel-ui-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel UI Pack by Kenney Vleugels with help by Lynn Evers, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-ui-pack/ui/space-hud-panel.png",
+        "sha256": "4eb96da68441bb9892bee9bb2a31510ccec02a19d6a85209ca16e35f64ec0d1f",
+        "format": "png",
+        "width": 48,
+        "height": 48,
+        "byteSize": 1048,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-ui-list-row",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "list-row",
+      "description": "White pixel-art list row with three horizontal divisions.",
+      "tags": ["ui", "list", "row", "menu"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#ffffff", "#d5d5d5", "#eeeeee"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and Lynn Evers",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-ui-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-ui-pack/821e760f21-1677661508/kenney_pixel-ui-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel UI Pack by Kenney Vleugels with help by Lynn Evers, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-ui-pack/ui/list-row.png",
+        "sha256": "9d2f511da3a08c287cb2c944891dcac4cedb55f242a75a676fd032f770b0b99e",
+        "format": "png",
+        "width": 48,
+        "height": 48,
+        "byteSize": 213,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-ui-blue-action-button",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "button",
+      "description": "Blue filled pixel-art action button in its normal state.",
+      "tags": ["ui", "button", "action", "blue"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#1ea7e1", "#35baf3", "#1989b8", "#166e93"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and Lynn Evers",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-ui-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-ui-pack/821e760f21-1677661508/kenney_pixel-ui-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel UI Pack by Kenney Vleugels with help by Lynn Evers, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-ui-pack/ui/blue-action-button.png",
+        "sha256": "fff9516aadf0ad3f9a7981a30fcf4fb739155fb82d04968ea7332b51f8ea51e3",
+        "format": "png",
+        "width": 48,
+        "height": 48,
+        "byteSize": 230,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-ui-yellow-focus-frame",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "focus-frame",
+      "description": "Yellow outline pixel-art focus or selection frame.",
+      "tags": ["ui", "focus", "frame", "yellow"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#eeeeee", "#ffcc00", "#d5d5d5", "#aaaaaa"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and Lynn Evers",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-ui-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-ui-pack/821e760f21-1677661508/kenney_pixel-ui-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel UI Pack by Kenney Vleugels with help by Lynn Evers, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-ui-pack/ui/yellow-focus-frame.png",
+        "sha256": "e0208395ce86f1bbb99a9a3cc4ff8d7113db1a6ed1e9601162b4d5abbfbf1d67",
+        "format": "png",
+        "width": 48,
+        "height": 48,
+        "byteSize": 219,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-ui-brown-inventory-slot",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "inventory-slot",
+      "description": "Brown recessed pixel-art slot for an item or inventory cell.",
+      "tags": ["ui", "inventory", "slot", "brown"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#97714a"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and Lynn Evers",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-ui-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-ui-pack/821e760f21-1677661508/kenney_pixel-ui-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel UI Pack by Kenney Vleugels with help by Lynn Evers, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-ui-pack/ui/brown-inventory-slot.png",
+        "sha256": "f2cf40b1c99e0b63416b5ffb5adf8e37d2be0d1ddb698fe122ba0bb4f459f6c8",
+        "format": "png",
+        "width": 44,
+        "height": 44,
+        "byteSize": 222,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "kenney-pixel-ui-grey-dialog-panel",
+      "mediaType": "image",
+      "category": "ui",
+      "subcategory": "dialog-panel",
+      "description": "Grey stone-like pixel-art panel for a modal or dialog surface.",
+      "tags": ["ui", "dialog", "panel", "grey"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#838796", "#727685", "#9b9dad", "#616374"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "Kenney",
+        "author": "Kenney Vleugels and Lynn Evers",
+        "sourcePageUrl": "https://kenney.nl/assets/pixel-ui-pack",
+        "sourceFileUrl": "https://kenney.nl/media/pages/assets/pixel-ui-pack/821e760f21-1677661508/kenney_pixel-ui-pack.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Pixel UI Pack by Kenney Vleugels with help by Lynn Evers, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/kenney/pixel-ui-pack/ui/grey-dialog-panel.png",
+        "sha256": "4b6eadb1565f2b7890001b19e978eaf64830efa618dae554b43d0af4122fccde",
+        "format": "png",
+        "width": 48,
+        "height": 48,
+        "byteSize": 272,
+        "hasTransparency": true
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "sbs-space-background-blue-nebula-1",
+      "mediaType": "image",
+      "category": "background",
+      "subcategory": "seamless-space",
+      "description": "Dense blue and violet seamless nebula background with scattered stars.",
+      "tags": ["background", "space", "nebula", "blue", "seamless"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#0f0d1c", "#0a0711", "#0f0816", "#142133"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "Screaming Brain Studios",
+        "sourcePageUrl": "https://opengameart.org/content/seamless-space-backgrounds",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/sbs_-_seamless_space_backgrounds_-_small_512x512_0.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Seamless Space Backgrounds by Screaming Brain Studios, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/seamless-space-backgrounds/background/blue-nebula-1.png",
+        "sha256": "fc3693ef977bb50ede1183330457c4aba84a869f81c0af4d874828580bc8528e",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 378587,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "sbs-space-background-blue-nebula-8",
+      "mediaType": "image",
+      "category": "background",
+      "subcategory": "seamless-space",
+      "description": "Bright blue cloudy seamless nebula background with a dense star field.",
+      "tags": ["background", "space", "nebula", "blue", "stars", "seamless"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#052252", "#04173b", "#030b20", "#093875"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "Screaming Brain Studios",
+        "sourcePageUrl": "https://opengameart.org/content/seamless-space-backgrounds",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/sbs_-_seamless_space_backgrounds_-_small_512x512_0.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Seamless Space Backgrounds by Screaming Brain Studios, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/seamless-space-backgrounds/background/blue-nebula-8.png",
+        "sha256": "5c75431660e948e7888d0413e9acc053f21cb774c6364a476e00ba6d3441b4ae",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 259688,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "sbs-space-background-green-nebula-3",
+      "mediaType": "image",
+      "category": "background",
+      "subcategory": "seamless-space",
+      "description": "Dark green seamless nebula background with restrained stars.",
+      "tags": ["background", "space", "nebula", "green", "seamless"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#082d24", "#082420", "#08191a", "#0b3e2d"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "Screaming Brain Studios",
+        "sourcePageUrl": "https://opengameart.org/content/seamless-space-backgrounds",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/sbs_-_seamless_space_backgrounds_-_small_512x512_0.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Seamless Space Backgrounds by Screaming Brain Studios, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/seamless-space-backgrounds/background/green-nebula-3.png",
+        "sha256": "b1b1efe529fd199fc202dc90fd9bb419b46ea72b4e0097f85e87e2e5bb07aea2",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 309899,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "sbs-space-background-purple-nebula-3",
+      "mediaType": "image",
+      "category": "background",
+      "subcategory": "seamless-space",
+      "description": "Dark purple seamless cloud background with a central luminous nebula.",
+      "tags": ["background", "space", "nebula", "purple", "seamless"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#130018", "#1c0026", "#2c003f", "#20082c"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "Screaming Brain Studios",
+        "sourcePageUrl": "https://opengameart.org/content/seamless-space-backgrounds",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/sbs_-_seamless_space_backgrounds_-_small_512x512_0.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Seamless Space Backgrounds by Screaming Brain Studios, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/seamless-space-backgrounds/background/purple-nebula-3.png",
+        "sha256": "accad68a6c08b2c018981556e9ababa147e9922a805a2b7584a278ea72a69262",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 242600,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "sbs-space-background-starfield-3",
+      "mediaType": "image",
+      "category": "background",
+      "subcategory": "seamless-space",
+      "description": "Black seamless starfield with sparse bright white stars.",
+      "tags": ["background", "space", "starfield", "black", "seamless"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#000000", "#010101", "#010000", "#090809"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "Screaming Brain Studios",
+        "sourcePageUrl": "https://opengameart.org/content/seamless-space-backgrounds",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/sbs_-_seamless_space_backgrounds_-_small_512x512_0.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Seamless Space Backgrounds by Screaming Brain Studios, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/seamless-space-backgrounds/background/starfield-3.png",
+        "sha256": "a36f3fc5c53c1741de5a2ae49393755985052e831cc9c79c69365605fafba64a",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 132226,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    },
+    {
+      "assetId": "sbs-space-background-starfield-8",
+      "mediaType": "image",
+      "category": "background",
+      "subcategory": "seamless-space",
+      "description": "Black seamless starfield with dense colored pinpoints.",
+      "tags": ["background", "space", "starfield", "colorful", "seamless"],
+      "themes": ["space", "science fiction"],
+      "visualStyles": ["pixel-art", "retro", "arcade"],
+      "palette": ["#000000", "#010001", "#0e0c10", "#000001"],
+      "source": {
+        "origin": "third-party",
+        "siteName": "OpenGameArt.org",
+        "author": "Screaming Brain Studios",
+        "sourcePageUrl": "https://opengameart.org/content/seamless-space-backgrounds",
+        "sourceFileUrl": "https://opengameart.org/sites/default/files/sbs_-_seamless_space_backgrounds_-_small_512x512_0.zip",
+        "collectedAt": "2026-07-15",
+        "license": {
+          "licenseId": "CC0-1.0",
+          "licenseName": "Creative Commons CC0 1.0 Universal",
+          "termsUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attributionText": "Seamless Space Backgrounds by Screaming Brain Studios, CC0 1.0; credit retained for provenance although not required.",
+          "permissions": {
+            "commercialUse": true,
+            "modification": true,
+            "redistribution": true
+          }
+        }
+      },
+      "sourceFile": {
+        "path": "sources/opengameart/seamless-space-backgrounds/background/starfield-8.png",
+        "sha256": "6db627e3ba3112a14f01a2dae4b4d080d66df23fbd974bf099d0d00ab84609f6",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "byteSize": 153813,
+        "hasTransparency": false
+      },
+      "derivedFiles": [],
+      "review": {
+        "status": "rejected",
+        "reviewedBy": "Project owner via conversation feedback",
+        "reviewedAt": "2026-07-15",
+        "notes": "Project owner rejected Batch 002 as a whole after contact-sheet review: the set was visually overconcentrated on small, similar spacecraft and did not provide sufficiently planned cross-category diversity. Preserved as failed acquisition evidence; not retrieval-eligible."
+      }
+    }
+  ]
+}

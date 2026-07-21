@@ -1,0 +1,256 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "vertical-shooter-batch-001",
+  "decisionStatus": "approved",
+  "reviewedBy": "Project owner via conversation approval",
+  "reviewedAt": "2026-07-15",
+  "reviewEvidence": "Project owner reviewed the Batch 001 contact sheet and replied '继续', with no rejected asset numbers.",
+  "collectedAt": "2026-07-15",
+  "policyId": "phase-2-baseline",
+  "expectedUniqueSourceImages": 35,
+  "diskCapBytes": 157286400,
+  "archives": [
+    {
+      "pack": "space",
+      "sourcePageUrl": "https://kenney.nl/assets/space-shooter-remastered",
+      "downloadUrl": "https://kenney.nl/media/pages/assets/space-shooter-remastered/2cbf3c45c8-1774771931/kenney_space-shooter-remastered.zip",
+      "downloadedBytes": 1108777,
+      "sha256": "0edbe0ab5cda6c44901d8c42f150268fdfa0c8d48492098669f37e9c296929b5",
+      "licenseId": "CC0-1.0"
+    },
+    {
+      "pack": "particle",
+      "sourcePageUrl": "https://kenney.nl/assets/particle-pack",
+      "downloadUrl": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip",
+      "downloadedBytes": 15001764,
+      "sha256": "b631d4b07f7002549fdcf155f01141ad482f79f3440e4e301eed49ce5f1d8958",
+      "licenseId": "CC0-1.0"
+    },
+    {
+      "pack": "ui",
+      "sourcePageUrl": "https://kenney.nl/assets/ui-pack-sci-fi",
+      "downloadUrl": "https://www.kenney.nl/media/pages/assets/ui-pack-sci-fi/b67c2acd31-1724181109/kenney_ui-pack-space-expansion.zip",
+      "downloadedBytes": 768505,
+      "sha256": "4ae5a4949b71ba6c08bfb4d4708b3880915782f7deae7bc5872e1d56f0a668af",
+      "licenseId": "CC0-1.0"
+    }
+  ],
+  "openGameArt": {
+    "sourcePageUrl": "https://opengameart.org/content/pixel-space-invaders",
+    "author": "jlunesc",
+    "licenseId": "CC-BY-4.0",
+    "robotsPolicy": "Crawl-delay: 10; five direct file requests were serialized with at least ten seconds between starts."
+  },
+  "selectedFiles": [
+    {
+      "assetId": "kenney-player-ship-1-blue",
+      "archiveEntryOrFile": "PNG/playerShip1_blue.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/player/playerShip1_blue.png",
+      "sha256": "648ec1635979fb867d08bfd0c56f011d6559dd953a13c73109c6186a3069f7ee"
+    },
+    {
+      "assetId": "kenney-player-ship-2-green",
+      "archiveEntryOrFile": "PNG/playerShip2_green.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/player/playerShip2_green.png",
+      "sha256": "1fc41ebcaaba8dccb7c619d55cbacc107786f576a0e26fafc7c2ed14b72fa5b7"
+    },
+    {
+      "assetId": "kenney-player-ship-3-orange",
+      "archiveEntryOrFile": "PNG/playerShip3_orange.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/player/playerShip3_orange.png",
+      "sha256": "7ba8f7749f56da0f70384f8613439609abca210e4c7a4c8410fc0560748482c4"
+    },
+    {
+      "assetId": "oga-pixel-player-ship",
+      "archiveEntryOrFile": "oga_sprite_ship_3.png",
+      "storedPath": "sources/opengameart/pixel-space-invaders/sprite_ship_3.png",
+      "sha256": "d5b9e40bd87338fe79dec34b72c80a6778fb521c4f470cf38c8e900daabc3633"
+    },
+    {
+      "assetId": "kenney-enemy-black-1",
+      "archiveEntryOrFile": "PNG/Enemies/enemyBlack1.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy/enemyBlack1.png",
+      "sha256": "2aaa39e6aa389bc334df6b57f147e5db2ba5c1648d138fdc55568ccf80d91d5b"
+    },
+    {
+      "assetId": "kenney-enemy-black-3",
+      "archiveEntryOrFile": "PNG/Enemies/enemyBlack3.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy/enemyBlack3.png",
+      "sha256": "8af0acf3748e4285335f955960964e398894ab6e1358a28d44dcb36540d1762d"
+    },
+    {
+      "assetId": "kenney-enemy-blue-2",
+      "archiveEntryOrFile": "PNG/Enemies/enemyBlue2.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy/enemyBlue2.png",
+      "sha256": "8057774e24259e6a1f524572cd32836185ff1ba921e9878383655a15582c5d26"
+    },
+    {
+      "assetId": "kenney-enemy-green-4",
+      "archiveEntryOrFile": "PNG/Enemies/enemyGreen4.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy/enemyGreen4.png",
+      "sha256": "60a8d3b0b3063b519f9c5d1e99a70cef060cbd96e990977f4593755939a0af1b"
+    },
+    {
+      "assetId": "kenney-enemy-red-5",
+      "archiveEntryOrFile": "PNG/Enemies/enemyRed5.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy/enemyRed5.png",
+      "sha256": "5a8ef5833cf7356d9fb177c1ac2a84c14305b14ee12ffa159dccdae3c2fa271c"
+    },
+    {
+      "assetId": "kenney-enemy-meteor-grey-big-1",
+      "archiveEntryOrFile": "PNG/Meteors/meteorGrey_big1.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy/meteorGrey_big1.png",
+      "sha256": "a5d3d87a976d2cc309fb40b95a53b6279ec4e21d785948619e738b7b826cf861"
+    },
+    {
+      "assetId": "oga-pixel-asteroid",
+      "archiveEntryOrFile": "oga_sprite_asteroid_2.png",
+      "storedPath": "sources/opengameart/pixel-space-invaders/sprite_asteroid_2.png",
+      "sha256": "b0116c922ccb5bcb9fb9ed35565f7c7db069bb8e5e6511afa58423349d95e2cf"
+    },
+    {
+      "assetId": "kenney-boss-ufo-blue",
+      "archiveEntryOrFile": "PNG/ufoBlue.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/boss/ufoBlue.png",
+      "sha256": "460c90365b97ecb1c7fcd6cbbf56546f8397544761cc348f3baf97f5097dc89c"
+    },
+    {
+      "assetId": "kenney-boss-ufo-green",
+      "archiveEntryOrFile": "PNG/ufoGreen.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/boss/ufoGreen.png",
+      "sha256": "5c49407e98d33f58b95a62e6c4980451212f7f53b18594b1e1532270fc16ee8c"
+    },
+    {
+      "assetId": "kenney-boss-ufo-red",
+      "archiveEntryOrFile": "PNG/ufoRed.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/boss/ufoRed.png",
+      "sha256": "8578d77bbea0aa2b21cf9ad4ed40380a7ceacc0751509d338fa72908924d8c58"
+    },
+    {
+      "assetId": "oga-pixel-boss",
+      "archiveEntryOrFile": "oga_big_boss1.png",
+      "storedPath": "sources/opengameart/pixel-space-invaders/big_boss1.png",
+      "sha256": "956080efaa9b90ee287a969709336a2994ba104c2c538d57d3a06ebe75d151b7"
+    },
+    {
+      "assetId": "oga-pixel-starfield",
+      "archiveEntryOrFile": "oga_sprites_background_2.png",
+      "storedPath": "sources/opengameart/pixel-space-invaders/sprites_background_2.png",
+      "sha256": "8e0e8b2c00c6048e40be88803a038bf2a0e22964054721d8fe5167c6811c6cf5"
+    },
+    {
+      "assetId": "kenney-player-laser-blue-01",
+      "archiveEntryOrFile": "PNG/Lasers/laserBlue01.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/player-projectile/laserBlue01.png",
+      "sha256": "eced881c4ebd76a13e48c388c3d8a82c7c177085b053b40124de517d9c563a3a"
+    },
+    {
+      "assetId": "kenney-player-laser-blue-03",
+      "archiveEntryOrFile": "PNG/Lasers/laserBlue03.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/player-projectile/laserBlue03.png",
+      "sha256": "db3f3eb5b60cc0b2f09a7a578230f96e5e979f295d2b87d134e84988419a8bfb"
+    },
+    {
+      "assetId": "kenney-player-laser-blue-05",
+      "archiveEntryOrFile": "PNG/Lasers/laserBlue05.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/player-projectile/laserBlue05.png",
+      "sha256": "c68524c36aedd1a4ffcb94ef0efc05fe7b45110cfaf3a3bd719b7b2a25785544"
+    },
+    {
+      "assetId": "kenney-player-laser-blue-07",
+      "archiveEntryOrFile": "PNG/Lasers/laserBlue07.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/player-projectile/laserBlue07.png",
+      "sha256": "17385b78342bcf84320e57aa724f026ee436c40bc355a8d90a2d31bac2d7ad0a"
+    },
+    {
+      "assetId": "kenney-enemy-laser-red-02",
+      "archiveEntryOrFile": "PNG/Lasers/laserRed02.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy-projectile/laserRed02.png",
+      "sha256": "9300564441e0bc4fa3a4a259e04836c98fb69b165019eb0b9e6511e7cfb7c4a7"
+    },
+    {
+      "assetId": "kenney-enemy-laser-red-04",
+      "archiveEntryOrFile": "PNG/Lasers/laserRed04.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy-projectile/laserRed04.png",
+      "sha256": "d8f0dc4e35a7e447350d4c78523e825c0af1426228ca31d5727d13ae2824b22e"
+    },
+    {
+      "assetId": "kenney-enemy-laser-red-06",
+      "archiveEntryOrFile": "PNG/Lasers/laserRed06.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy-projectile/laserRed06.png",
+      "sha256": "6b395fb96231008ffde01571c25f385eae6ce14f7dec3073f018af95f8dbe164"
+    },
+    {
+      "assetId": "kenney-enemy-laser-red-08",
+      "archiveEntryOrFile": "PNG/Lasers/laserRed08.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/enemy-projectile/laserRed08.png",
+      "sha256": "ef1b57d4c7231c5790b12febe9041e9302d652e5b3f0d375683c6dc5104ae1eb"
+    },
+    {
+      "assetId": "kenney-pickup-blue-shield",
+      "archiveEntryOrFile": "PNG/Power-ups/powerupBlue_shield.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/pickup/powerupBlue_shield.png",
+      "sha256": "1e5ba2c4df6d56ca0fb46bde94324d4902c9dbbd03f53dc04a018f52306f7f10"
+    },
+    {
+      "assetId": "kenney-pickup-green-bolt",
+      "archiveEntryOrFile": "PNG/Power-ups/powerupGreen_bolt.png",
+      "storedPath": "sources/kenney/space-shooter-remastered/pickup/powerupGreen_bolt.png",
+      "sha256": "e3712e9da8b86d5a7958554f1d68363306dc3a9b4f638e0b1c06792ac545eb59"
+    },
+    {
+      "assetId": "oga-pixel-medal",
+      "archiveEntryOrFile": "oga_medal_1.png",
+      "storedPath": "sources/opengameart/pixel-space-invaders/medal_1.png",
+      "sha256": "80d77ea6b548ab780f28d38e7918bdf6e165981266a77cd057a7d3133fa87060"
+    },
+    {
+      "assetId": "kenney-ui-blue-health-bar",
+      "archiveEntryOrFile": "PNG/Blue/Default/bar_round_large.png",
+      "storedPath": "sources/kenney/ui-pack-sci-fi/ui/bar_round_large.png",
+      "sha256": "6348b1d45df0a0f3d73954d099eff27bc63792ee3fdcb677b2eabe7b781aced9"
+    },
+    {
+      "assetId": "kenney-ui-blue-header-button",
+      "archiveEntryOrFile": "PNG/Blue/Default/button_square_header_large_rectangle.png",
+      "storedPath": "sources/kenney/ui-pack-sci-fi/ui/button_square_header_large_rectangle.png",
+      "sha256": "27471949c3df86df371815350c86cd94867f31dcf77de8fd0f9824c77067bada"
+    },
+    {
+      "assetId": "kenney-ui-blue-crosshair",
+      "archiveEntryOrFile": "PNG/Blue/Default/crosshair_color_a.png",
+      "storedPath": "sources/kenney/ui-pack-sci-fi/ui/crosshair_color_a.png",
+      "sha256": "adc7a2e4092e71fa9130771cfb28accd75d1124b18adbb2fce0fb0985cc6e40e"
+    },
+    {
+      "assetId": "kenney-ui-glass-panel",
+      "archiveEntryOrFile": "PNG/Extra/Default/panel_glass.png",
+      "storedPath": "sources/kenney/ui-pack-sci-fi/ui/panel_glass.png",
+      "sha256": "a2b6750263c4e7255e50dd085016923cad792306383ce817fe48099cbdb4839d"
+    },
+    {
+      "assetId": "kenney-effect-energy-ring",
+      "archiveEntryOrFile": "PNG (Transparent)/circle_01.png",
+      "storedPath": "sources/kenney/particle-pack/effect/circle_01.png",
+      "sha256": "4b2d03683bf0fe4a946567adc3bd86b8ba045da84cee58dc2cf8aef63bbfaa06"
+    },
+    {
+      "assetId": "kenney-effect-flare",
+      "archiveEntryOrFile": "PNG (Transparent)/flare_01.png",
+      "storedPath": "sources/kenney/particle-pack/effect/flare_01.png",
+      "sha256": "254f5bd4f0548612bf29305d27899efdee8cb8d8306292761ebbddebd3e57935"
+    },
+    {
+      "assetId": "kenney-effect-electric-spark",
+      "archiveEntryOrFile": "PNG (Transparent)/spark_01.png",
+      "storedPath": "sources/kenney/particle-pack/effect/spark_01.png",
+      "sha256": "5902da3a324cad0a4b5a88ce1e3c9cc18fee50922c358ce93d8c9f1ad7708f0a"
+    },
+    {
+      "assetId": "kenney-effect-smoke",
+      "archiveEntryOrFile": "PNG (Transparent)/smoke_01.png",
+      "storedPath": "sources/kenney/particle-pack/effect/smoke_01.png",
+      "sha256": "e8724c219e8d35859167fc0a7e207e13c72ccf0c29704909b9bb3d3dc71c6cf7"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-07-15T04:09:01.494Z",
+  "sdkVersion": "1.18.1",
+  "server": {
+    "started": true,
+    "healthy": true,
+    "version": "1.18.1",
+    "url": "http://127.0.0.1:4096"
+  },
+  "session": {
+    "created": true,
+    "sessionId": "ses_09c093bc2ffelN2418y9dUDxKU",
+    "aborted": true
+  },
+  "events": {
+    "subscribed": true,
+    "capturedTypes": ["server.connected", "session.created"]
+  },
+  "structuredOutput": {
+    "status": "passed",
+    "model": "deepseek/deepseek-v4-flash",
+    "reason": null
+  },
+  "errors": []
+}

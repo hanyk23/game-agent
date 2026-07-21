@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>模块化 Agent 架构 · HTML PPT 片段</title>
+  <style>
+    :root {
+      --paper: #fafaf8;
+      --ink: #0a0a0a;
+      --grey-1: #f0f0ee;
+      --grey-2: #d4d4d2;
+      --grey-3: #737373;
+      --accent: #002fa7;
+      --accent-on: #fff;
+      --sans: Inter, "Helvetica Neue", Arial, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      --mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+    body { background: #111; color: var(--ink); font-family: var(--sans); }
+    button { font: inherit; }
+    #deck {
+      display: flex;
+      width: 400vw;
+      height: 100%;
+      transition: transform .65s cubic-bezier(.22,.78,.2,1);
+      will-change: transform;
+    }
+    .slide {
+      position: relative;
+      flex: 0 0 100vw;
+      width: 100vw;
+      height: 100vh;
+      min-height: 80vh;
+      overflow: hidden;
+      background: var(--paper);
+    }
+    .slide.dark { background: var(--ink); color: var(--paper); }
+    .canvas {
+      width: 100%;
+      height: 100%;
+      padding: 5.4vh 5vw 4.4vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .chrome {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2vh;
+      border-bottom: 1px solid var(--grey-2);
+      color: var(--grey-3);
+      font: 600 max(14px,.78vw)/1 var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .dark .chrome { border-color: #303030; color: #aaa; }
+    .kicker {
+      margin-top: 3.2vh;
+      color: var(--accent);
+      font: 600 max(14px,.82vw)/1 var(--mono);
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h2 {
+      margin-top: 1.2vh;
+      font-size: min(4.6vw, 8.2vh);
+      line-height: 1.02;
+      font-weight: 200;
+      letter-spacing: -.04em;
+    }
+    .lead {
+      font-size: max(18px,1.2vw);
+      line-height: 1.55;
+      font-weight: 400;
+      color: var(--grey-3);
+    }
+    .dark .lead { color: #b8b8b8; }
+    .mono { font-family: var(--mono); }
+    .accent { color: var(--accent); }
+    .rule { height: 1px; background: var(--grey-2); }
+    .dark .rule { background: #333; }
+    .foot {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      color: var(--grey-3);
+      font: 500 max(14px,.76vw)/1 var(--mono);
+      letter-spacing: .08em;
+    }
+
+    /* 01 · S08 Duo Compare */
+    .compare {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 3.4vw;
+      align-items: stretch;
+      margin: 4.8vh 0 3.2vh;
+    }
+    .compare-divider { background: var(--grey-2); position: relative; }
+    .compare-divider::after {
+      content: "→";
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%,-50%);
+      width: 3.2vw; height: 3.2vw;
+      min-width: 44px; min-height: 44px;
+      display: grid; place-items: center;
+      background: var(--accent); color: #fff;
+      font-size: max(22px,1.8vw);
+    }
+    .compare-col { display: flex; flex-direction: column; }
+    .compare-tag { font: 600 max(14px,.82vw)/1 var(--mono); color: var(--grey-3); letter-spacing: .1em; }
+    .compare-title { margin-top: 2vh; font-size: min(3.2vw,5.6vh); line-height: 1.08; font-weight: 250; }
+    .compare-list { margin-top: 3.2vh; display: grid; gap: 1.6vh; }
+    .compare-item {
+      display: grid;
+      grid-template-columns: 3.2vw 1fr;
+      gap: 1vw;
+      padding-top: 1.6vh;
+      border-top: 1px solid var(--grey-2);
+    }
+    .compare-item b { font: 300 min(2.4vw,4.2vh)/1 var(--mono); color: var(--grey-3); }
+    .compare-item span { font-size: max(17px,1.05vw); line-height: 1.45; }
+    .compare-col.after { background: var(--accent); color: #fff; padding: 2.5vh 2.2vw; }
+    .compare-col.after .compare-tag { color: rgba(255,255,255,.7); }
+    .compare-col.after .compare-item { border-color: rgba(255,255,255,.25); }
+    .compare-col.after .compare-item b { color: rgba(255,255,255,.55); }
+
+    /* 02 · S05 Three Layers */
+    .layers {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.3vw;
+      align-items: end;
+      margin: 5vh 0 3vh;
+    }
+    .layer {
+      min-height: 42vh;
+      padding: 3vh 2vw;
+      display: flex;
+      flex-direction: column;
+      border-top: 5px solid var(--accent);
+      background: #171717;
+    }
+    .layer:nth-child(2) { min-height: 48vh; background: #202020; }
+    .layer:nth-child(3) { min-height: 54vh; background: var(--accent); }
+    .layer-no { color: #888; font: 500 max(14px,.8vw)/1 var(--mono); letter-spacing: .12em; }
+    .layer:nth-child(3) .layer-no { color: rgba(255,255,255,.65); }
+    .layer h3 { margin-top: 2.2vh; font-size: min(2.65vw,4.7vh); font-weight: 250; line-height: 1.05; }
+    .layer .en { margin-top: .8vh; color: #999; font: 500 max(14px,.76vw)/1.2 var(--mono); }
+    .layer:nth-child(3) .en { color: rgba(255,255,255,.65); }
+    .layer p { margin-top: auto; max-width: 30ch; font-size: max(17px,1vw); line-height: 1.55; color: #c3c3c3; }
+    .layer:nth-child(3) p { color: #fff; }
+    .layer-flow { display: flex; gap: .8vw; margin-top: 2.2vh; flex-wrap: wrap; }
+    .chip { border: 1px solid #4a4a4a; padding: .65vh .6vw; font: 500 max(14px,.72vw)/1 var(--mono); color: #bbb; }
+    .layer:nth-child(3) .chip { border-color: rgba(255,255,255,.35); color: #fff; }
+
+    /* 03 · S11 Horizontal Timeline */
+    .capability-chain {
+      flex: 1;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      align-items: center;
+      margin: 3vh 0 2vh;
+    }
+    .capability-chain::before {
+      content: "";
+      position: absolute;
+      left: 4%; right: 4%; top: 50%;
+      height: 2px;
+      background: var(--ink);
+    }
+    .cap-node { position: relative; align-self: center; text-align: center; z-index: 1; }
+    .cap-node:nth-child(even) { transform: translateY(9vh); }
+    .cap-node:nth-child(odd) { transform: translateY(-9vh); }
+    .cap-dot {
+      width: 2.5vw; height: 2.5vw;
+      min-width: 36px; min-height: 36px;
+      display: grid; place-items: center;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      font: 600 max(14px,.78vw)/1 var(--mono);
+    }
+    .cap-node.key .cap-dot { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .cap-label { margin-top: 1.5vh; font-size: max(18px,1.22vw); font-weight: 500; }
+    .cap-note { margin: .8vh auto 0; max-width: 14ch; color: var(--grey-3); font-size: max(14px,.82vw); line-height: 1.35; }
+    .cap-node:nth-child(even) .cap-label { margin-top: 1.5vh; }
+    .chain-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1vw;
+      margin-bottom: 2.2vh;
+    }
+    .chain-side div { padding: 1.5vh 1.2vw; background: var(--grey-1); font-size: max(16px,.94vw); }
+    .chain-side strong { color: var(--accent); }
+
+    /* 04 · S17 System Diagram */
+    .authority-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1fr;
+      gap: 3.2vw;
+      align-items: center;
+      margin: 3.2vh 0 2.6vh;
+    }
+    .request-list, .authority-list { display: grid; gap: 1.2vh; }
+    .request, .authority {
+      position: relative;
+      padding: 1.45vh 1.15vw;
+      border: 1px solid #3a3a3a;
+      font-size: max(16px,.96vw);
+      color: #ddd;
+    }
+    .request::after {
+      content: "";
+      position: absolute; right: -3.2vw; top: 50%;
+      width: 3.2vw; height: 1px; background: #555;
+    }
+    .authority::before {
+      content: "";
+      position: absolute; left: -3.2vw; top: 50%;
+      width: 3.2vw; height: 1px; background: #555;
+    }
+    .host {
+      min-height: 43vh;
+      padding: 3.2vh 2.4vw;
+      background: var(--accent);
+      display: flex; flex-direction: column; justify-content: space-between;
+      color: #fff;
+    }
+    .host-label { color: rgba(255,255,255,.7); font: 600 max(14px,.78vw)/1 var(--mono); letter-spacing: .15em; }
+    .host h3 { font-size: min(3.4vw,6vh); font-weight: 200; line-height: 1; letter-spacing: -.035em; }
+    .host p { max-width: 30ch; font-size: max(17px,1vw); line-height: 1.55; color: rgba(255,255,255,.88); }
+    .boundary {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1vw;
+      padding-top: 2vh;
+      border-top: 1px solid #333;
+    }
+    .boundary div { color: #aaa; font-size: max(14px,.82vw); line-height: 1.4; }
+    .boundary strong { display: block; margin-bottom: .5vh; color: #fff; font: 500 max(14px,.76vw)/1 var(--mono); }
+
+    #nav {
+      position: fixed;
+      left: 50%; bottom: 2vh;
+      transform: translateX(-50%);
+      display: flex; gap: 10px; z-index: 20;
+    }
+    .nav-dot {
+      width: 34px; height: 4px; padding: 0; border: 0;
+      background: rgba(128,128,128,.38); cursor: pointer;
+      transition: width .25s, background .25s;
+    }
+    .nav-dot.active { width: 62px; background: var(--accent); }
+    #help {
+      position: fixed; right: 1.5vw; bottom: 1.7vh; z-index: 20;
+      color: #888; font: 500 12px/1 var(--mono); letter-spacing: .08em;
+    }
+    .slide [data-anim] { opacity: 0; transform: translateY(18px); }
+    .slide.active [data-anim] { animation: enter .55s cubic-bezier(.2,.75,.2,1) forwards; }
+    .slide.active [data-anim="2"] { animation-delay: .1s; }
+    .slide.active [data-anim="3"] { animation-delay: .2s; }
+    .slide.active [data-anim="4"] { animation-delay: .3s; }
+    @keyframes enter { to { opacity: 1; transform: none; } }
+    @media (max-width: 800px) {
+      .canvas { padding: 4vh 4vw 5.5vh; }
+      h2 { font-size: min(7.6vw,7vh); }
+      .compare { gap: 2vw; }
+      .compare-item { grid-template-columns: 26px 1fr; }
+      .layers { gap: 1vw; }
+      .layer { padding: 2vh 1.5vw; }
+      .cap-note { display: none; }
+      .authority-grid { gap: 2vw; }
+      .host { padding: 2.4vh 2vw; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #deck { transition: none; }
+      .slide [data-anim] { opacity: 1; transform: none; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main id="deck">
+    <section class="slide light" data-layout="S08" data-animate="directional" aria-label="为什么需要模块化">
+      <div class="canvas">
+        <div class="chrome"><span>MODULE DESIGN · CONTEXT</span><span>01 / 04</span></div>
+        <div class="kicker" data-anim="1">WHY MODULAR</div>
+        <h2 data-anim="2">固定模板能生成游戏，<br>但难以支持游戏差异</h2>
+        <div class="compare" data-anim="3">
+          <div class="compare-col">
+            <div class="compare-tag">BEFORE · 固定模板</div>
+            <div class="compare-title">一次性修改<br>整套场景代码</div>
+            <div class="compare-list">
+              <div class="compare-item"><b>01</b><span>玩法规则集中在大场景中，功能相互耦合</span></div>
+              <div class="compare-item"><b>02</b><span>AI 可修改范围过大，结果难以审查</span></div>
+              <div class="compare-item"><b>03</b><span>错误只能定位到整款游戏，复用成本高</span></div>
+            </div>
+          </div>
+          <div class="compare-divider"></div>
+          <div class="compare-col after">
+            <div class="compare-tag">AFTER · 模块化 Agent</div>
+            <div class="compare-title">选择、配置、连接<br>经过审查的能力</div>
+            <div class="compare-list">
+              <div class="compare-item"><b>01</b><span>输入、移动、攻击、战斗彼此独立</span></div>
+              <div class="compare-item"><b>02</b><span>模型描述需求，确定性程序负责执行</span></div>
+              <div class="compare-item"><b>03</b><span>问题可定位到模块、端口或权限关系</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="foot"><span>核心转变：从“生成整份代码”到“组合受约束能力”</span><span>→</span></div>
+      </div>
+    </section>
+
+    <section class="slide dark" data-layout="S05" data-animate="stack-build" aria-label="三层数据模型">
+      <div class="canvas">
+        <div class="chrome"><span>MODULE DESIGN · CONTRACT</span><span>02 / 04</span></div>
+        <div class="kicker" data-anim="1">THREE-LAYER CONTRACT</div>
+        <h2 data-anim="2">三层数据模型控制模块组合</h2>
+        <div class="layers" data-anim="3">
+          <article class="layer">
+            <div class="layer-no">01 · DEFINITION</div>
+            <h3>Manifest</h3>
+            <div class="en">模块身份证</div>
+            <div class="layer-flow"><span class="chip">能力</span><span class="chip">端口</span><span class="chip">预算</span></div>
+            <p>声明模块能做什么、需要什么，以及最多能够消耗多少运行资源。</p>
+          </article>
+          <article class="layer">
+            <div class="layer-no">02 · COMPOSITION</div>
+            <h3>Assembly</h3>
+            <div class="en">游戏装配图纸</div>
+            <div class="layer-flow"><span class="chip">选择</span><span class="chip">配置</span><span class="chip">连线</span></div>
+            <p>表达某一次游戏使用哪些模块、怎样配置，并绑定哪些输入输出端口。</p>
+          </article>
+          <article class="layer">
+            <div class="layer-no">03 · EXECUTION</div>
+            <h3>Resolved Graph</h3>
+            <div class="en">通过审核的执行图</div>
+            <div class="layer-flow"><span class="chip">版本</span><span class="chip">权限</span><span class="chip">证据</span></div>
+            <p>只有版本、依赖、端口、权限和总预算全部闭合后，图才进入 ready 状态。</p>
+          </article>
+        </div>
+        <div class="foot"><span>纯数据进入 · 确定性图退出</span><span>FAIL CLOSED</span></div>
+      </div>
+    </section>
+
+    <section class="slide light" data-layout="S11" data-animate="timeline-walk" aria-label="玩法能力链">
+      <div class="canvas">
+        <div class="chrome"><span>MODULE DESIGN · CAPABILITIES</span><span>03 / 04</span></div>
+        <div class="kicker" data-anim="1">ORTHOGONAL CAPABILITIES</div>
+        <h2 data-anim="2">玩法不是一个大模块，<br>而是一条可替换的行为链</h2>
+        <div class="capability-chain" data-anim="3">
+          <div class="cap-node"><div class="cap-dot">01</div><div class="cap-label">玩家输入</div><div class="cap-note">键盘 / 触摸</div></div>
+          <div class="cap-node"><div class="cap-dot">02</div><div class="cap-label">移动</div><div class="cap-note">边界 / 低速</div></div>
+          <div class="cap-node"><div class="cap-dot">03</div><div class="cap-label">瞄准</div><div class="cap-note">前射 / 最近目标</div></div>
+          <div class="cap-node key"><div class="cap-dot">04</div><div class="cap-label">攻击触发</div><div class="cap-note">自动 / 主动</div></div>
+          <div class="cap-node key"><div class="cap-dot">05</div><div class="cap-label">攻击投送</div><div class="cap-note">弹丸 / 弹幕</div></div>
+          <div class="cap-node"><div class="cap-dot">06</div><div class="cap-label">碰撞伤害</div><div class="cap-note">事务化提交</div></div>
+          <div class="cap-node"><div class="cap-dot">07</div><div class="cap-label">计分胜负</div><div class="cap-note">证据 / 裁决</div></div>
+        </div>
+        <div class="chain-side" data-anim="4">
+          <div><strong>遭遇流程</strong>从侧面驱动敌人、Boss 与弹幕来源</div>
+          <div><strong>防御成长</strong>通过护盾、拾取、强化和擦弹接入主链</div>
+        </div>
+        <div class="foot"><span>替换单个节点，即可形成不同玩法组合</span><span>COMPOSE, NOT REWRITE</span></div>
+      </div>
+    </section>
+
+    <section class="slide dark" data-layout="S17" data-animate="system-diagram" aria-label="运行时权限边界">
+      <div class="canvas">
+        <div class="chrome"><span>MODULE DESIGN · AUTHORITY</span><span>04 / 04</span></div>
+        <div class="kicker" data-anim="1">RUNTIME AUTHORITY</div>
+        <h2 data-anim="2">模块提出请求，<br>运行时宿主掌握最终权限</h2>
+        <div class="authority-grid" data-anim="3">
+          <div class="request-list">
+            <div class="request">遭遇模块 · 请求生成敌人</div>
+            <div class="request">弹幕模块 · 请求生成弹丸</div>
+            <div class="request">伤害模块 · 提交伤害证据</div>
+            <div class="request">结局模块 · 发布胜负条件</div>
+          </div>
+          <div class="host">
+            <div class="host-label">DETERMINISTIC HOST</div>
+            <h3>唯一执行<br>Authority</h3>
+            <p>统一签发身份与代次，管理对象池和资源预算，并提交计分、伤害与终局结果。</p>
+          </div>
+          <div class="authority-list">
+            <div class="authority">身份、代次与实体归属</div>
+            <div class="authority">对象池与弹量竞争预算</div>
+            <div class="authority">接触、伤害与计分提交</div>
+            <div class="authority">每帧尾部唯一胜负裁决</div>
+          </div>
+        </div>
+        <div class="boundary" data-anim="4">
+          <div><strong>NO RAW SCENE</strong>模块拿不到 Phaser Scene</div>
+          <div><strong>NO FILESYSTEM</strong>浏览器模块没有文件系统权限</div>
+          <div><strong>NO UNBOUNDED RESOURCE</strong>所有实体与事件都有上限</div>
+        </div>
+        <div class="foot"><span>名字相同不代表兼容，权限闭合才允许执行</span><span>TRUST BY EVIDENCE</span></div>
+      </div>
+    </section>
+  </main>
+
+  <nav id="nav" aria-label="幻灯片导航"></nav>
+  <div id="help">← → 翻页 · Home / End</div>
+  <script>
+    (() => {
+      const deck = document.getElementById('deck');
+      const slides = [...document.querySelectorAll('.slide')];
+      const nav = document.getElementById('nav');
+      let index = 0;
+      let touchX = null;
+      const dots = slides.map((_, i) => {
+        const b = document.createElement('button');
+        b.className = 'nav-dot';
+        b.type = 'button';
+        b.setAttribute('aria-label', `前往第 ${i + 1} 页`);
+        b.addEventListener('click', () => go(i));
+        nav.appendChild(b);
+        return b;
+      });
+      function go(next) {
+        index = Math.max(0, Math.min(slides.length - 1, next));
+        deck.style.transform = `translateX(${-index * 100}vw)`;
+        slides.forEach((s, i) => s.classList.toggle('active', i === index));
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        document.title = `模块化 Agent 架构 · ${index + 1}/4`;
+      }
+      addEventListener('keydown', (event) => {
+        if (['ArrowRight','PageDown',' '].includes(event.key)) go(index + 1);
+        if (['ArrowLeft','PageUp'].includes(event.key)) go(index - 1);
+        if (event.key === 'Home') go(0);
+        if (event.key === 'End') go(slides.length - 1);
+      });
+      addEventListener('wheel', event => {
+        if (Math.abs(event.deltaY) > 24) go(index + Math.sign(event.deltaY));
+      }, { passive: true });
+      addEventListener('touchstart', event => { touchX = event.touches[0].clientX; }, { passive: true });
+      addEventListener('touchend', event => {
+        if (touchX === null) return;
+        const dx = event.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 48) go(index + (dx < 0 ? 1 : -1));
+        touchX = null;
+      }, { passive: true });
+      const requested = Number(new URLSearchParams(location.search).get('slide'));
+      go(Number.isFinite(requested) && requested > 0 ? requested - 1 : 0);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "name": "bullet-hell-game-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An OpenCode-based agent for generating verified vertical bullet-hell H5 games.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit && tsc -p game-template/vertical-shooter/tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "template:compose": "tsx scripts/compose-template.ts",
+    "template:build": "pnpm template:compose && vite build game-template/vertical-shooter",
+    "run:offline-deepseek": "tsx scripts/replay-deepseek-run.ts",
+    "browser:verify": "tsx scripts/verify-browser-gates.ts",
+    "package:verified": "tsx scripts/package-verified-run.ts",
+    "repair:evaluate": "tsx scripts/evaluate-bounded-repair.ts",
+    "eval:phase-6-rehearsal": "tsx scripts/run-phase-6-rehearsal.ts",
+    "eval:natural-language-probe": "tsx scripts/run-natural-language-probe.ts",
+    "eval:natural-language-probe:intent-replay": "tsx scripts/replay-natural-language-probe-intent.ts",
+    "eval:natural-language-probe:grounding-replay": "tsx scripts/replay-natural-language-probe-grounding.ts",
+    "eval:natural-language-probe:pipeline": "tsx scripts/run-natural-language-probe-pipeline.ts",
+    "assets:acquire:batch-003": "tsx scripts/acquire-asset-batch-003.ts",
+    "assets:acquire:batch-003-gaps": "tsx scripts/acquire-asset-batch-003-gaps.ts",
+    "assets:acquire:batch-003-background-gap": "tsx scripts/acquire-asset-batch-003-background-gap.ts",
+    "check": "pnpm template:compose && pnpm format:check && pnpm typecheck && pnpm test && vite build game-template/vertical-shooter",
+    "opencode:probe": "tsx scripts/opencode-compat.ts",
+    "eval:live-spec": "tsx scripts/live-spec-eval.ts",
+    "eval:live-direct-spec": "tsx scripts/live-deepseek-spec-eval.ts"
+  },
+  "dependencies": {
+    "@opencode-ai/sdk": "1.18.1",
+    "phaser": "3.90.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "@types/node": "22.20.1",
+    "opencode-ai": "1.18.1",
+    "opencode-windows-x64": "1.18.1",
+    "prettier": "3.9.5",
+    "tsx": "4.23.1",
+    "typescript": "5.9.3",
+    "vite": "8.1.4",
+    "vitest": "4.1.10"
+  },
+  "packageManager": "pnpm@11.7.0"
+}

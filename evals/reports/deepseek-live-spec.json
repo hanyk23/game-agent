@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-07-15T04:27:09.631Z",
+  "model": "deepseek/deepseek-chat",
+  "status": "failed",
+  "outputMode": "json_text_fallback",
+  "usage": {
+    "cost": 0.00132468,
+    "inputTokens": 6014,
+    "outputTokens": 1724,
+    "reasoningTokens": 0,
+    "cacheReadTokens": 0
+  },
+  "error": {
+    "name": "ShooterGameSpecValidationError",
+    "message": "DeepSeek returned valid JSON, but it did not match the local ShooterGameSpec schema.",
+    "observedTopLevelKeys": [
+      "schemaVersion",
+      "title",
+      "theme",
+      "story",
+      "visualStyle",
+      "difficulty",
+      "viewport",
+      "player",
+      "weapons",
+      "enemyWaves",
+      "boss",
+      "bulletPatterns",
+      "pickups",
+      "scoring",
+      "winCondition",
+      "loseCondition",
+      "controls",
+      "audioStyle",
+      "assetQueries"
+    ],
+    "validationIssues": [
+      {
+        "path": ["bulletPatterns", 2, "arcDegrees"],
+        "code": "too_small",
+        "message": "Too small: expected number to be >=5"
+      },
+      {
+        "path": ["bulletPatterns", 4, "arcDegrees"],
+        "code": "too_small",
+        "message": "Too small: expected number to be >=5"
+      }
+    ]
+  }
+}
