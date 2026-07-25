@@ -1,0 +1,15 @@
+{
+  "caseVersion": "1.0.0",
+  "caseId": "orange-meteor-rescue-probe",
+  "inputKind": "natural-language-request",
+  "language": "zh-CN",
+  "prompt": "请生成一款适配桌面和手机浏览器的纵版弹幕射击 H5 游戏。主题是红色陨石带救援：玩家驾驶橙色救援舰自动发射蓝色激光，先经历三波敌人，包括小型战机、陨石和会瞄准玩家射击的编队，随后挑战一艘三阶段的红色 UFO 母舰。Boss 依次使用扇形、螺旋和旋转环弹幕。整体难度中等，玩家可以拾取护盾和火力强化；击败 Boss 获胜，战斗超过 30 秒仍未击败 Boss 则失败。支持方向键或 WASD 移动和触屏拖动，保持竖版画面，并确保手机上的文字和按钮清晰可用。",
+  "intendedChecks": [
+    "request-preflight",
+    "model-structured-output",
+    "unchanged-local-spec-validation",
+    "deterministic-plan-compose-build",
+    "desktop-mobile-case-aware-browser",
+    "static-package"
+  ]
+}

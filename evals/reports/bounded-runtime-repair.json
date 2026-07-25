@@ -1,0 +1,29 @@
+{
+  "evaluationVersion": "1.0.0",
+  "status": "passed",
+  "runId": "c04c55ff-d618-43b9-90b2-5ba1149ca7d8",
+  "controlledFault": {
+    "target": "game-template/vertical-shooter/src/scenes/play-scene.ts",
+    "code": "player-control-failed",
+    "fingerprint": "e6b7c532a34e5d65d6a19f37938dee7ed2713b2ad7111a5f0673e540b78ee6d3"
+  },
+  "failedVerification": {
+    "path": "verification",
+    "sha256": "3c99d47f6ac6fb3d60a65efb0dd5178306a70bd4314156c351005af2b533f0c2"
+  },
+  "repair": {
+    "roundsUsed": 1,
+    "maximumRounds": 3,
+    "directory": "repairs/round-1",
+    "modelCall": null
+  },
+  "finalState": "play_checked",
+  "finalPackage": {
+    "path": "repairs/round-1/package",
+    "sha256": "20be502d9ff1bd73e54c5ef22b41c946d1786be963abfad0e4d24becb23f0e05"
+  },
+  "finalVerification": {
+    "path": "repairs/round-1/verification",
+    "sha256": "4aee10974bbb6f334d14adcbe842d3b88cb585d775e4f3cad4014902050af377"
+  }
+}

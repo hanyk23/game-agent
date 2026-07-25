@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ink-crane",
+    "expected": "valid",
+    "prompt": "生成一个水墨风纵版弹幕射击游戏。玩家控制白鹤发射羽毛，Boss 是三阶段黑龙，使用圆形、螺旋和扇形弹幕，难度中等。"
+  },
+  {
+    "id": "neon-city",
+    "expected": "valid",
+    "prompt": "制作霓虹赛博城市主题的纵版射击游戏，玩家驾驶蓝色战机，敌人是无人机，Boss 有两个阶段，整体难度较高。"
+  },
+  {
+    "id": "ocean-guardian",
+    "expected": "valid",
+    "prompt": "做一个海底守护者弹幕游戏，玩家是一只海豚，使用声波攻击污染怪物，画面明亮，适合新手。"
+  },
+  {
+    "id": "paper-cut-myth",
+    "expected": "valid",
+    "prompt": "生成中国剪纸风纵版弹幕游戏，主角是红色哪吒，敌人是海妖，Boss 龙王有三阶段。"
+  },
+  {
+    "id": "forest-spirit",
+    "expected": "valid",
+    "prompt": "生成温暖绘本风格的森林精灵射击游戏，玩家使用种子子弹，敌人和弹幕速度较慢。"
+  },
+  {
+    "id": "clockwork-sky",
+    "expected": "valid",
+    "prompt": "制作蒸汽朋克天空主题纵版射击，黄铜飞艇对抗机械鸟，Boss 是旋转齿轮堡垒。"
+  },
+  {
+    "id": "pixel-space",
+    "expected": "valid",
+    "prompt": "创建复古像素太空弹幕游戏，玩家飞船自动射击，包含三波敌人和一个双阶段外星母舰。"
+  },
+  {
+    "id": "candy-dream",
+    "expected": "valid",
+    "prompt": "做一个糖果梦境风格的轻度弹幕游戏，颜色柔和，触屏拖动操作，适合手机浏览器。"
+  },
+  {
+    "id": "volcanic-dragon",
+    "expected": "valid",
+    "prompt": "生成火山龙穴主题的高难度纵版弹幕游戏，强调扇形和瞄准弹，Boss 有四阶段。"
+  },
+  {
+    "id": "insufficient-request",
+    "expected": "bounded_failure",
+    "prompt": "做个游戏。"
+  }
+]

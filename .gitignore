@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+.pnpm-store/
+.runtime/
+.env
+.env.*
+!.env.example
+apikey.txt
+api key.txt
+tmp/
+artifacts/runs/
+artifacts/evaluations/
+*.log
+.DS_Store
+Thumbs.db
