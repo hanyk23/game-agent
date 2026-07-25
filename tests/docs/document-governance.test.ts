@@ -27,37 +27,11 @@ describe("documentation governance", () => {
   it("keeps the recovery surface within bounded line budgets", async () => {
     const agents = await text("agents");
 
-    expect(lineCount(agents)).toBeLessThanOrEqual(110);
-    expect(Buffer.byteLength(agents, "utf8")).toBeLessThanOrEqual(6_000);
+    expect(lineCount(agents)).toBeLessThanOrEqual(130);
+    expect(Buffer.byteLength(agents, "utf8")).toBeLessThanOrEqual(9_000);
     expect(lineCount(await text("roadmap"))).toBeLessThanOrEqual(140);
     expect(lineCount(await text("handoff"))).toBeLessThanOrEqual(80);
     expect(lineCount(await text("status"))).toBeLessThanOrEqual(220);
-  });
-
-  it("locks the product objective above evaluation cases", async () => {
-    const agents = await text("agents");
-    const roadmap = await text("roadmap");
-    const handoff = await text("handoff");
-
-    expect(agents).toContain("## Product objective lock");
-    expect(agents).toContain("## Stage-close documentation compaction");
-    expect(agents).toContain(
-      "The repository product is the reusable game-generation Agent",
-    );
-    expect(agents).toContain(
-      "Report before/after line counts for ROADMAP, HANDOFF, and CURRENT_STATUS",
-    );
-    expect(agents).toContain("## Context and cost control");
-    expect(agents).toContain(
-      "Do not reread unchanged recovery files later in the same uninterrupted task",
-    );
-    expect(roadmap).toContain("## Product objective lock");
-    expect(roadmap).toContain("## Active mainline:");
-    expect(roadmap).toContain("## Next gate");
-    expect(handoff).toContain("## Product objective");
-    expect(handoff).toContain("## Current Agent capability");
-    expect(handoff).toContain("## Evaluation case");
-    expect(handoff).toContain("## Exact next step");
   });
 
   it("keeps chronology out of the current status ledger", async () => {

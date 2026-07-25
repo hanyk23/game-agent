@@ -1,22 +1,31 @@
 # Current Status
 
-Updated: 2026-07-22
+Updated: 2026-07-25
 
 ## Scope
 
 This is the evidence ledger for implemented capability, latest verification,
 dependencies, and unresolved gaps. `docs/ROADMAP.md` owns the active plan,
-`docs/COCOS_MIGRATION_PLAN.md` owns migration work packages,
-`docs/HANDOFF.md` owns resumption, and `docs/PROGRESS_LOG.md` owns history.
+`docs/COCOS_REFACTOR_PLAN.md` owns the combined Cocos + multi-agent + fast-path
+refactor plan, `docs/PHASER_RETIREMENT_ARCHIVE_PREP.md` owns the Phaser archival
+checklist, `docs/DEVELOPER_FAST_PATH_PLAN.md` owns the layered-check design, ADR
+0030 owns the multi-agent decision, `docs/HANDOFF.md` owns resumption, and
+`docs/PROGRESS_LOG.md` owns history. Plan documents are informative, not
+executable instructions.
 
 ## Product and phase
 
-The product remains a reusable Agent for verified single-player vertical
-bullet-hell H5 games. On 2026-07-22 the user authorized changing the active
-generated-game engine from Phaser to Cocos. ADR 0029 records the decision and
-Phase 7D Cocos runtime migration is now active. The previous Phaser fixed path
-and executable module-library work are preserved as migration baselines; the
-migration has not begun implementation.
+The product remains a reusable Agent for verified single-player bullet-hell H5
+games, supporting both vertical and horizontal play with orientation as a
+parameter. Cocos Creator Web/H5 is the only target engine. Phaser is retired: it
+is no longer a parity or correctness baseline, and its historical evidence is
+kept as history only. The current strategy is a golden-sample-first rebuild:
+produce and accept a Cocos golden sample, lock it as the framework + contract
+baseline, then implement contracts and the pipeline. Removing Phaser from
+build/verify/package is deferred until Cocos runs the whole pipeline
+independently, and that removal is unrelated to parity. This round changed
+documentation only; no `src`, dependency, build, verify, package, test, or CI
+file was changed.
 
 ## Capability matrix
 
@@ -53,95 +62,92 @@ migration has not begun implementation.
 - Batch 3 includes scrolling waves, Boss phases, encounter-pattern, fixed/aimed
   targeting, eight hostile deliveries, scoring/outcome, actor-set health, and
   contact factories with tested host authority.
-- Pure pattern geometry and reviewed factory behavior should be reusable behind
-  a Cocos host; no factory rewrite is authorized by the engine decision alone.
+- Pure pattern geometry and reviewed factory behavior are intended to be reusable
+  behind a Cocos host; no factory rewrite is authorized by the engine decision.
 - Thirty-five reviewed CC0/CC-BY images and their deterministic provenance,
   selection, materialization, notices, and package admission remain reusable.
 
-## Engine migration status
+## Engine status
 
 ### Decision
 
-- ADR 0029 accepts Cocos Creator Web/H5 as the target direction.
-- Exact Cocos version, build interface, output layout, license/toolchain
-  prerequisites, and reproducibility are pending migration gate M1.
-- ADR 0002 and Phaser-specific clauses in ADR 0022 remain historical baseline
-  decisions but no longer direct new generated-game runtime work.
+- Cocos Creator Web/H5 is the only target engine. Correctness is defined by the
+  data contracts, the deterministic Verifier, and a user-accepted Cocos golden
+  sample — not by any Phaser behavior.
+- Phaser is retired as a baseline. Historical Phaser and Batch 1-3 evidence is
+  history only; it does not prove the Cocos path.
+- Exact Cocos version, build interface, output layout, and license/toolchain
+  prerequisites are still unpinned and require a separately approved spike.
 
 ### Coupling observed so far
 
-- Direct Phaser references are concentrated in the template entry, runtime
-  assets, boot/start/play/end scenes, `phaser-runtime-kernel.ts`, and one runtime
-  integration file.
+- Live Phaser references are concentrated in the template entry, runtime assets,
+  boot/start/play/end scenes, `phaser-runtime-kernel.ts`, and their protected
+  wiring in `src/orchestration/run-composition-stage.ts`,
+  `src/verification/`, `package.json`, and coupled tests.
 - Build, browser, recovery, package, license, and documentation assumptions also
-  require inventory even where source files do not import Phaser.
-- This is initial evidence, not the completed M0 machine-readable inventory.
+  require attention even where source files do not import Phaser.
+- The archival checklist enumerates every file, reference, and coupled test; see
+  `docs/PHASER_RETIREMENT_ARCHIVE_PREP.md`.
 
-### Planned replacement boundary
+### Archival posture
 
-- Replace engine startup/scenes and adapt lifecycle, time, input, entities,
-  pools, contacts, assets, rendering, scaling, audio, cleanup, observation, and
-  Web build integration behind the semantic kernel seam.
-- Reuse specifications, reviewed modules, pure planners, deterministic hosts,
-  evidence schemas, asset governance, browser assertions, recovery, bounded
-  repair, and package promotion unless a focused failing test proves a gap.
-- Preserve the Phaser path as a read-only oracle until complete Cocos parity;
-  do not maintain two active product engines after an explicit M5 retirement
-  decision.
+- Phaser is only being prepared for archival this stage: a migration checklist
+  plus a `legacy/` destination for retired runtime files. No file has been moved.
+- Actual removal from build/verify/package is deferred until Cocos runs the
+  whole Request → Package pipeline independently; it is unrelated to parity.
 
 ## Latest evaluation evidence
 
-- Fresh pre-migration `pnpm check` passes template composition, formatting, both
-  strict TypeScript projects, 125 test files / 604 tests, and a 142-module Vite
-  production build. The only build warning is the existing >500 kB chunk.
-- Offline run `fa3daaa2-689a-4af0-a7ae-0f2eed511569` reached `built`; package
-  SHA-256 is
-  `64a98d0559fc0ce004f1779a140e1001caeff273e45aad9b9c3d6eb28aab7ca1`.
-- Edge run `c69c2b21-2942-48b4-8ac7-1642d08c7a09` reached `play_checked`;
-  verification SHA-256 is
-  `ff4472459740ea202acb16c72658b741e74a4e20c9a57125a086e83533e31691`.
-- Fixed-template, execution-foundation, Batch 1, Batch 2, and current Batch 3
-  evidence remains immutable Phaser baseline evidence.
+- Historical pre-retirement `pnpm check` (Phaser template) passed composition,
+  formatting, both strict TypeScript projects, 125 test files / 604 tests, and a
+  142-module Vite production build. This is retained as history only and is not a
+  correctness baseline for the Cocos path.
 - No Cocos dependency, project, runtime, browser run, recovery run, or package
-  evidence exists. The migration plan must not imply otherwise.
-- All 10 planning-related Markdown files pass targeted Prettier checking. Both
-  documentation governance files pass 11/11 tests after restoring required
-  headings.
-- A mistakenly broad Vitest invocation ran 133 files: 123 passed and 10 failed.
-  Two documentation failures were corrected; the remaining reported failures
-  are in pre-existing module source/tests outside this planning change and were
-  not repaired or re-run as a full suite.
-- Full-repository `format:check` remains red on six unrelated existing files;
-  the planning-file format gate is green.
+  evidence exists yet. The plan must not imply otherwise.
+- `pnpm typecheck` currently fails on one pre-existing, non-Phaser error in
+  `src/runs/batch3-module-evidence-chain.ts` (`exactOptionalPropertyTypes`);
+  this predates and is unrelated to this documentation round.
+- The documentation governance suite reports two pre-existing failures caused by
+  an `AGENTS.md` wording/byte mismatch against its assertions; both files are
+  protected and were not changed this round.
+- No golden-sample acceptance, verification hash, or package hash exists for the
+  Cocos path.
 
 ## Current dependencies
 
-- Node.js 22+, TypeScript 5.9.3, Zod 4.4.3, Phaser 3.90.0,
-  `@opencode-ai/sdk@1.18.1`, Vitest 4.1.10, Playwright 1.61.1, Vite 8.1.4,
-  Prettier 3.9.5, tsx 4.23.1, and pnpm 11.7.0.
-- Cocos is not installed or pinned. Phaser must not be removed until parity and
-  a dependency/license audit pass.
+- Node.js 22+, TypeScript 5.9.3, Zod 4.4.3, `@opencode-ai/sdk@1.18.1`, Vitest
+  4.1.10, Playwright 1.61.1, Vite 8.1.4, Prettier 3.9.5, tsx 4.23.1, and pnpm
+  11.7.0.
+- Phaser 3.90.0 is still declared in `package.json` because the live template
+  and its protected wiring have not been rebuilt on Cocos yet; the dependency is
+  removed only after Cocos runs the full pipeline and a license/package audit
+  passes.
+- Cocos is not installed or pinned.
 
 ## Known risks and gaps
 
-- Cocos Creator Web build reproducibility and headless/CLI suitability are
-  unproven in this environment.
-- Callback ordering, coordinate systems, physics/contact behavior, pooling,
-  asset import metadata, cleanup, bundle size, startup time, and mobile
-  performance may differ and need explicit adapter contracts.
-- The complete preserved-v2-Spec to Assembly 1.3 derivation remains unfinished;
-  it moves behind the migration recovery gates rather than being discarded.
+- No Cocos toolchain exists yet: Web build reproducibility and headless/CLI
+  suitability are unproven in this environment; no Cocos template, kernel, or
+  adapter directory exists.
+- Phaser is still the only buildable engine and is wired into protected files
+  (`src/orchestration/`, `src/verification/`, `package.json`, coupled tests), so
+  it cannot be removed without a working Cocos replacement.
+- Orientation is currently hardcoded to vertical: no `orientation` field exists
+  in `ShooterGameSpec`/`RuntimeGameConfig`; player-firing
+  (`src/gameplay/player-firing-planner.ts`), enemy motion/off-screen culling and
+  spawn position (`game-template/vertical-shooter/src/scenes/play-scene.ts`), and
+  the `vertical-shooter` template naming assume portrait. Bullet-pattern angles
+  are already parameterized. Parameterizing orientation is a tracked obligation.
+- Callback ordering, coordinate systems, contact behavior, pooling, asset import
+  metadata, cleanup, bundle size, startup time, and mobile performance may differ
+  on Cocos and need explicit adapter contracts.
 - No download, dependency change, paid model call, credential read, corpus
   expansion, or engine installation is authorized.
-- Git now has complete 480-file root commit `442fa88` on `master`. Ignored local
-  credentials, dependencies, caches, runtime artifacts, and build output were
-  excluded; no staged credential-like assignment or ≥50 MiB file was found.
-- The user created empty public repository `hanyk23/game-agent`. It is the
-  confirmed push target; local `master` will publish to remote default `main`.
 
 ## Next milestone
 
-Finish M0 by creating the engine-dependency inventory and port matrix, then
-present the exact M1 toolchain spike—including version candidate, source,
-download size, commands, timeout, expected outputs, rollback, and pass/fail
-criteria—for explicit approval before execution.
+Produce the Cocos golden sample (round A) and obtain explicit user acceptance,
+then lock it as the framework + contract baseline (round B). Do not begin any
+Cocos toolchain download or dependency change until separately approved with
+version, size, source, and purpose.

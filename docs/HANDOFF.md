@@ -1,79 +1,44 @@
-# Project Handoff
+# 项目重构交接（HANDOFF）
 
-Updated: 2026-07-22
+> 本文件用于跨对话/跨接手人的上下文交接：记录已定稿决策、已完成动作、待办清单。
+> 长期行为规则以 `AGENTS.md` 为准；分阶段计划以 `docs/COCOS_REFACTOR_PLAN.md` 为准；本文件只做“当前状态快照 + 下一步”。
 
-## Product objective
+## 产品目标
 
-Develop the reusable Agent that generates, verifies, and packages single-player
-vertical bullet-hell H5 games. The user authorized changing the generated-game
-runtime from Phaser to Cocos; the product objective and trust boundaries remain
-unchanged.
+- 产品是一个**可复用的游戏生成 Agent**：一句自然语言 →「生成 → 验证 → 打包」→ 经验证的单人弹幕（bullet-hell）H5 游戏。
+- **同时支持竖版与横版**；产物是可复用 Agent 与契约，不是某个具体游戏。
 
-## Resume protocol
+## 已定稿决策
 
-1. Run the recovery protocol in `AGENTS.md`.
-2. Read `docs/COCOS_MIGRATION_PLAN.md` and ADR 0029 after the three recovery
-   documents.
-3. Trust files, Git, immutable reports, and newly run tests over this handoff.
+- **引擎**：Cocos Creator Web/H5 是唯一目标引擎。
+- **Phaser**：已退役，**不作为 parity 基线或正确性标准**；归档于 `legacy/`，当前仍在构建里但仅供查阅；**禁止擅自删除**，真正移除待 Cocos 独立跑通整条流水线后由用户单独授权，且与 parity 无关。
+- **正确性来源**：契约 + 验证规则 + `src/evaluation/` 中经用户验收的 Cocos 黄金样本。
+- **黄金样本定位**：只锚定**框架层 + 契约层**，不锚定内容层（玩法/数值/关卡/美术）；契约用开放注册表保持可扩展，防止游戏结构固化。
+- **方向**：orientation（vertical|horizontal）参数化，禁止把竖版写死。
+- **架构**：6 个 Agent + 1 个非 Agent 编排器。
+  - Orchestrator（`src/orchestration/`）：纯 TS、无 LLM、最终权威。
+  - Spec（`src/requirements/`）、Design（`src/gameplay/`）、Module（`src/modules/`）、Code（`src/opencode/`，唯一写码、经 OpenCode）、Verifier（`src/verification/`，默认确定性）、Repair（`src/repair/`，只诊断）。
+  - `src/evaluation/`：评估与回归基线，不属任一运行时 Agent。
 
-## Repository state
+## 执行轮次
 
-- Workspace: `D:\Documents\game agent`
-- Git: `master`; complete 480-file root commit `442fa88` created after license,
-  size, ignore, staged-diff, and sensitive-name review. The empty public target
-  is `https://github.com/hanyk23/game-agent`; local `master` will publish to its
-  default `main` branch.
-- The Cocos migration is planned only. No dependency, runtime code, asset,
-  generated project, or existing evidence has been changed.
+0.5 Phaser 归档准备 → A 手动 Cocos 黄金样本(交用户验收) → B 固化基线(仅框架/契约层) → 2 定义/重构契约 → 3–7 实现 → 7.5 灵活性/防固化验证 → 8–11 收尾。
 
-## Roadmap position
+## 本轮已完成（避免新对话重做）
 
-- Phase 7D Cocos runtime migration is active under ADR 0029.
-- Phaser fixed-template and Batch 1-3 evidence are immutable migration oracles.
-- Batch 4, model orchestration, corpus growth, and active Phaser retirement wait
-  until Cocos legacy-equivalent parity.
+- **AGENTS.md**：已瘦身至 113 行 / 8199 字节（预算 ≤130 行 / ≤9000 字节），并补回原句「禁止擅自删除 Phaser」。
+- **tests/document-governance.test.ts**：删除 `locks the product objective above evaluation cases` 这一措辞断言块（校验的是具体用词而非规则存在性，属错误断言设计）；保留行数/字节预算、CURRENT_STATUS 防退化、ABI 1.2 hash 联动三块。已全绿。
+- **batch3-module-evidence-chain.ts**：前轮遗留 typecheck 错误已修复。
+- **计划文档**：`docs/ROADMAP.md`、`docs/CURRENT_STATUS.md`、`docs/COCOS_REFACTOR_PLAN.md` 已改写为新策略。
 
-## Current Agent capability
+## 待办（下一步，按序）
 
-- Strict Spec/Manifest/Assembly/Graph contracts and deterministic composition.
-- Loader admission, registry, resolver, mixed-version scoped contexts, budgets,
-  custody/quarantine, ports, scoring, outcomes, and bounded cleanup.
-- Reviewed gameplay factories and pure bullet-pattern planners through the
-  current production Graph 1.4 closure.
-- Asset provenance/selection/materialization, immutable run evidence, browser
-  verification, recovery, bounded repair, and verified package promotion.
-- Engine coupling is concentrated in the template entry/scenes, asset/runtime
-  bindings, Phaser adapter, and build/package integration.
+1. **收敛其余旧文档**：`docs/COCOS_MIGRATION_PLAN.md`、`docs/HANDOFF.md`、ADR 0029/0022/0002 等仍含旧 Phaser/parity/M6 表述，收敛到新策略消除口径分歧（纯文档、无新授权）。
+2. **定义 `pnpm check:fast`**：需授权改 `package.json`，同时落地 admission/release 分层；这是后续所有轮次的验收命令，当前尚不存在。
+3. **Round A**：手动产出 Cocos 黄金样本交验收；涉及 Cocos 下载/依赖，须先单独批准 version/size/source/purpose。
 
-## Evaluation case
+## 已知风险 / 护栏
 
-- Fresh pre-migration `pnpm check` passed template composition, formatting, both
-  TypeScript projects, 125 test files / 604 tests, and a 142-module Vite build;
-  only the existing >500 kB warning remained.
-- Offline run `fa3daaa2-689a-4af0-a7ae-0f2eed511569` is `built`; package SHA-256 is
-  `64a98d0559fc0ce004f1779a140e1001caeff273e45aad9b9c3d6eb28aab7ca1`.
-- Edge run `c69c2b21-2942-48b4-8ac7-1642d08c7a09` is `play_checked`; verification
-  SHA-256 is `ff4472459740ea202acb16c72658b741e74a4e20c9a57125a086e83533e31691`.
-- No Cocos toolchain, runtime, browser, recovery, or package evidence exists.
-- Planning-file Prettier checks and 2 documentation governance files / 11 tests
-  pass. A mistakenly broad Vitest invocation exposed unrelated existing module
-  failures; no runtime source was changed or repaired in this planning task.
-
-## Constraints and risks
-
-- Assume Cocos Creator Web/H5; pin its exact version only after an approved
-  bounded compatibility spike.
-- No download, dependency change, credential read, paid model call, corpus
-  expansion, or generated-code authority expansion is authorized.
-- Preserve factory bytes and semantic contracts unless a failing adapter test
-  proves a reviewed contract gap.
-- Phaser evidence cannot be reported as Cocos evidence; browser and package
-  promotion remain fail-closed.
-- The complete repository is committed locally. The new empty target repository
-  is confirmed; push remains the final action.
-
-## Exact next step
-
-Complete migration gate M0: produce the engine-dependency inventory and Cocos
-port matrix, classify every Phaser coupling, and define the exact bounded M1
-toolchain spike for user approval before any download or dependency change.
+- 受保护文件（AGENTS.md、`tests/`、契约、注册表、`src/orchestration|verification|repair|opencode`、`runtime/kernel|cocos`、依赖与配置）由用户手动改，Code Agent/Trae 不得擅动。
+- 不删除或改弱测试、不降级 schema、不放宽门禁；验证与打包 fail-closed。
+- Git 写操作需显式授权；不隐式建首次提交。不在未获成本批准时调用付费模型。

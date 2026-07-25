@@ -39,6 +39,23 @@ function configureIsolatedHome(projectDirectory: string): void {
   process.env.XDG_CONFIG_HOME = path.join(runtimeHome, ".config");
 }
 
+// Resolve the platform-specific OpenCode binary installed by opencode-ai's
+// optionalDependencies. Package names follow opencode-<os>-<arch>, where
+// Node's win32 platform maps to "windows"; the executable carries a .exe
+// suffix only on Windows.
+function resolveOpencodeExecutable(projectDirectory: string): string {
+  const osName = process.platform === "win32" ? "windows" : process.platform;
+  const packageName = `opencode-${osName}-${process.arch}`;
+  const binaryName = process.platform === "win32" ? "opencode.exe" : "opencode";
+  return path.join(
+    projectDirectory,
+    "node_modules",
+    packageName,
+    "bin",
+    binaryName,
+  );
+}
+
 async function main(): Promise<void> {
   const sessionId = process.argv[2];
   if (!sessionId) throw new Error("A local OpenCode session ID is required");
@@ -56,13 +73,7 @@ async function main(): Promise<void> {
   configureIsolatedHome(projectDirectory);
   await mkdir(path.dirname(reportPath), { recursive: true });
 
-  const executable = path.join(
-    projectDirectory,
-    "node_modules",
-    "opencode-windows-x64",
-    "bin",
-    "opencode.exe",
-  );
+  const executable = resolveOpencodeExecutable(projectDirectory);
   const exported = await execFileAsync(executable, ["export", sessionId], {
     cwd: projectDirectory,
     env: process.env,

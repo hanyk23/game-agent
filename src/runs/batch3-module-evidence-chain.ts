@@ -125,7 +125,12 @@ export async function verifyBatch3ModuleEvidenceChain(
       ),
       approvedSharingEvidenceIds: z.array(z.string().min(1)),
     })
-    .parse(assetEvidenceInput);
+    // 类型安全说明：上方 strictObject 已在运行时保证结构与契约
+    // ModuleAssetAdmissionEvidenceV12 完全一致（未知字段直接拒绝，
+    // attributionRecordId 要么缺失、要么是非空 string，parse 不会产出
+    // 显式 undefined）。此断言仅消除 zod 在 exactOptionalPropertyTypes 下
+    // 为可选字段附加的多余 `| undefined` 类型标注，不掩盖任何真实类型风险。
+    .parse(assetEvidenceInput) as ModuleAssetAdmissionEvidenceV12;
   for (const binding of assembly.assetBindings) {
     const admitted = assetEvidence.assets.find(
       (asset) => asset.assetId === binding.artifact.assetId,

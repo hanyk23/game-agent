@@ -41,7 +41,6 @@
     "@playwright/test": "1.61.1",
     "@types/node": "22.20.1",
     "opencode-ai": "1.18.1",
-    "opencode-windows-x64": "1.18.1",
     "prettier": "3.9.5",
     "tsx": "4.23.1",
     "typescript": "5.9.3",

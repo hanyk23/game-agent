@@ -27,9 +27,6 @@ importers:
       opencode-ai:
         specifier: 1.18.1
         version: 1.18.1
-      opencode-windows-x64:
-        specifier: 1.18.1
-        version: 1.18.1
       prettier:
         specifier: 3.9.5
         version: 3.9.5
