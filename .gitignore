@@ -8,6 +8,8 @@ coverage/
 !.env.example
 apikey.txt
 api key.txt
+api+key.txt
+*api*key*.txt
 tmp/
 artifacts/runs/
 artifacts/evaluations/

@@ -844,9 +844,15 @@ function buildCapabilityEdges(
             )
             .map((binding) => binding.from.instanceId),
         );
-        matches = matches.filter((provider) =>
+        const narrowed = matches.filter((provider) =>
           boundProviderIds.has(provider.instanceId),
         );
+        // Narrow to the bound provider only when that provider is itself
+        // capability-matched. If the bound provider lacks the abstract
+        // capability, leave the capable set intact so the dedicated projectile
+        // channel lineage gate (invalid-projectile-channel-lineage) reports the
+        // exact mismatch instead of a generic missing-capability pre-emption.
+        if (narrowed.length > 0) matches = narrowed;
       }
       if (
         requirement.id === "combat.damage-sink" &&
@@ -1156,7 +1162,16 @@ function validateBindings(
   }
 
   const eventEdges = resolved
-    .filter((binding) => binding.delivery === "event")
+    .filter(
+      (binding) =>
+        binding.delivery === "event" &&
+        // The encounter Boss handoff is an explicitly acyclic, deferred
+        // request/acknowledge handshake per ADR 0028 (`[ABI28-*]`, "Boss phases
+        // requests an acyclic handoff ... Boss activation occurs only after a
+        // cleared acknowledgement"). Its round-trip event pair is not a
+        // synchronous cycle, so it is excluded from the synchronous cycle graph.
+        binding.payloadType !== "encounter-handoff-v1",
+    )
     .map((binding) => ({
       from: binding.from.instanceId,
       to: binding.to.instanceId,

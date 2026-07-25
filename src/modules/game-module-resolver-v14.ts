@@ -296,9 +296,10 @@ export const ResolvedModuleGraphV14Schema = z
           channel.deliveryInstanceId,
         ]).size !== 3 ||
         !group.memberInstanceIds.includes(channel.deliveryInstanceId) ||
-        delivery.resources.activeEntities > group.activeEntityCapacity ||
-        delivery.resources.activeProjectiles > group.activeProjectileCapacity ||
-        delivery.resources.spawnsPerSecond > group.spawnsPerSecondCapacity
+        delivery.resourceGrant.activeEntities > group.activeEntityCapacity ||
+        delivery.resourceGrant.activeProjectiles >
+          group.activeProjectileCapacity ||
+        delivery.resourceGrant.spawnsPerSecond > group.spawnsPerSecondCapacity
       )
         context.addIssue({
           code: "custom",

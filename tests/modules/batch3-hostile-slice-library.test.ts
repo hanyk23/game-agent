@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import {
   BATCH3_HOSTILE_SLICE_DEFINITIONS,
@@ -798,6 +798,9 @@ describe("Batch 3 legal hostile production slice", () => {
         return {
           instanceId: modules[index]!.instanceId,
           manifest: GameModuleManifestV14Schema.parse(admitted!.manifest),
+          resourceGrant: definition.reservationEvaluator(
+            modules[index]!.configuration,
+          ),
         };
       },
     );

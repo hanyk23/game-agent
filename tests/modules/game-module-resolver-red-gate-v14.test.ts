@@ -119,6 +119,7 @@ beforeAll(async () => {
     ],
     actorSetDamageRoutes: [],
     actorRootMutationGrants: [],
+    contactRoutes: [],
     scoringAuthority: null,
     outcomeAuthority: null,
   };

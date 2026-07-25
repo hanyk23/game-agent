@@ -36,7 +36,10 @@ describe("Batch 3 deterministic legacy adapter", () => {
   it("resolves the preserved v2 Spec as a production-ready Graph 1.4", async () => {
     const report = JSON.parse(
       await readFile(
-        new URL("../../evals/reports/deepseek-direct-live-spec.json", import.meta.url),
+        new URL(
+          "../../evals/reports/deepseek-direct-live-spec.json",
+          import.meta.url,
+        ),
         "utf8",
       ),
     ) as { status: string; spec: unknown };
@@ -52,7 +55,10 @@ describe("Batch 3 deterministic legacy adapter", () => {
       scoreCapacityBasis: adapted.scoreEvidence.scoreCapacityBasis,
       scoreAwardBounds: adapted.scoreEvidence.scoreAwardBounds,
     });
-    expect(result.readinessReport).toMatchObject({ status: "ready", blockers: [] });
+    expect(result.readinessReport).toMatchObject({
+      status: "ready",
+      blockers: [],
+    });
     expect(result.graph.hostileAttackChannels).toHaveLength(4);
   });
 });

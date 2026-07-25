@@ -246,6 +246,21 @@ describe("Graph 1.4 production authority facade", () => {
         orderedSinkInstanceIds: ["health-bank"],
       },
     ];
+    resolved.contactRoutes = [
+      {
+        routeId: "contact.enemy",
+        kind: "actor-root-player",
+        detectorInstanceId: "body-contact",
+        policyInstanceId: "contact-resolution",
+        resolutionInstanceId: "contact-resolution",
+        sourceChannelProviderInstanceId: null,
+        rootChannelId: "roots.enemy",
+        sourceMutationGrantId: null,
+        targetDamageRouteId: "damage.enemy",
+        targetSinkInstanceId: "health-bank",
+        sourceOperation: "deactivate-root",
+      },
+    ];
     const calls: string[] = [];
     const host = new GraphAuthorityFacadeHostV14(resolved, {
       actorRoots: { activate: () => undefined, deactivate: () => undefined },

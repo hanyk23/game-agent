@@ -417,7 +417,7 @@ describe("Batch 3 complete encounter and hostile pattern catalog", () => {
       outcomeCoordinatorSelection: null,
     });
     const manifests = moduleRequests.map(
-      ({ instanceId, definition, source: definitionSource }) => {
+      ({ instanceId, definition, source: definitionSource, configuration }) => {
         const artifact = artifactFor(definition, definitionSource);
         const admitted = registry.findExactProductionV14(
           definition.manifest.moduleId,
@@ -427,6 +427,7 @@ describe("Batch 3 complete encounter and hostile pattern catalog", () => {
         return {
           instanceId,
           manifest: GameModuleManifestV14Schema.parse(admitted.manifest),
+          resourceGrant: definition.reservationEvaluator(configuration),
         };
       },
     );

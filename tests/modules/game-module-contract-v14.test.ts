@@ -184,7 +184,7 @@ describe("ADR 0028 strict contracts", () => {
         ...manifest,
         actorRootConsumers: [],
       }),
-    ).toThrow(/exact actor-root consumer input/);
+    ).toThrow(/exact actor-root consumer or encounter handoff input/);
     expect(() =>
       GameModuleManifestV14Schema.parse({
         ...manifest,
@@ -194,7 +194,7 @@ describe("ADR 0028 strict contracts", () => {
         actorRootConsumers: [],
         actorRootContactConsumer: null,
       }),
-    ).toThrow(/exact actor-root consumer input/);
+    ).toThrow(/exact actor-root consumer or encounter handoff input/);
   });
 
   it("requires exact V3 hostile-source ports and rejects V2 mixing", () => {
