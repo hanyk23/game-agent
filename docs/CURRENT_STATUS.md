@@ -1,6 +1,6 @@
 # Current Status
 
-Updated: 2026-07-25
+Updated: 2026-07-26
 
 ## Scope
 
@@ -23,9 +23,11 @@ kept as history only. The current strategy is a golden-sample-first rebuild:
 produce and accept a Cocos golden sample, lock it as the framework + contract
 baseline, then implement contracts and the pipeline. Removing Phaser from
 build/verify/package is deferred until Cocos runs the whole pipeline
-independently, and that removal is unrelated to parity. This round changed
-documentation only; no `src`, dependency, build, verify, package, test, or CI
-file was changed.
+independently, and that removal is unrelated to parity. The latest source change
+was a Batch 3 authority-chain follow-through in `src/modules/` (resolver,
+resolver-v14, and the legacy adapter) with matching test/fixture updates; no
+kernel, orchestrator, contract, registry, dependency, build, or CI file was
+changed.
 
 ## Capability matrix
 
@@ -99,18 +101,16 @@ file was changed.
 
 ## Latest evaluation evidence
 
-- Historical pre-retirement `pnpm check` (Phaser template) passed composition,
-  formatting, both strict TypeScript projects, 125 test files / 604 tests, and a
-  142-module Vite production build. This is retained as history only and is not a
+- `pnpm typecheck` (both strict TypeScript projects) currently passes with no
+  errors. `vitest run` currently passes 133 test files / 643 tests, including
+  the documentation governance suite. This is the pre-Cocos green state, not a
   correctness baseline for the Cocos path.
+- The historical pre-retirement full `pnpm check` (Phaser template) additionally
+  passed composition, formatting, and a 142-module Vite production build. That
+  Vite build is retained as history only and is not a correctness baseline for
+  the Cocos path.
 - No Cocos dependency, project, runtime, browser run, recovery run, or package
   evidence exists yet. The plan must not imply otherwise.
-- `pnpm typecheck` currently fails on one pre-existing, non-Phaser error in
-  `src/runs/batch3-module-evidence-chain.ts` (`exactOptionalPropertyTypes`);
-  this predates and is unrelated to this documentation round.
-- The documentation governance suite reports two pre-existing failures caused by
-  an `AGENTS.md` wording/byte mismatch against its assertions; both files are
-  protected and were not changed this round.
 - No golden-sample acceptance, verification hash, or package hash exists for the
   Cocos path.
 

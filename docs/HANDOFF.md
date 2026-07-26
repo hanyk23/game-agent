@@ -26,16 +26,17 @@
 
 ## 本轮已完成（避免新对话重做）
 
-- **AGENTS.md**：已瘦身至 113 行 / 8199 字节（预算 ≤130 行 / ≤9000 字节），并补回原句「禁止擅自删除 Phaser」。
+- **AGENTS.md**：已瘦身至 79 行 / 7862 字节（预算 ≤130 行 / ≤9000 字节），并补回原句「禁止擅自删除 Phaser」。
 - **tests/document-governance.test.ts**：删除 `locks the product objective above evaluation cases` 这一措辞断言块（校验的是具体用词而非规则存在性，属错误断言设计）；保留行数/字节预算、CURRENT_STATUS 防退化、ABI 1.2 hash 联动三块。已全绿。
 - **batch3-module-evidence-chain.ts**：前轮遗留 typecheck 错误已修复。
 - **计划文档**：`docs/ROADMAP.md`、`docs/CURRENT_STATUS.md`、`docs/COCOS_REFACTOR_PLAN.md` 已改写为新策略。
+- **旧文档收敛**：ARCHITECTURE、BASE_MODULE_LIBRARY_PLAN、BATCH_1_MODULE_DESIGN、ADR 0030/0029/0022/0002 已加 SUPERSEDED 抬头；删除被 COCOS_REFACTOR_PLAN 取代的 COCOS_MIGRATION_PLAN.md。
+- **分层验收命令**：`package.json` 已落地 `check:fast` / `check:admission` / `check:release` 三层。
+- **Batch 3 授权链收尾**：`src/modules/` 的 resolver / resolver-v14 / legacy-adapter 与相关测试/fixture 已补齐，入库即红修复完成；全量 133 文件 / 643 测试全绿，typecheck 通过。
 
 ## 待办（下一步，按序）
 
-1. **收敛其余旧文档**：`docs/HANDOFF.md`、ADR 0029/0022/0002 等仍含旧 Phaser/parity/M6 表述，收敛到新策略消除口径分歧（纯文档、无新授权）。
-2. **定义 `pnpm check:fast`**：需授权改 `package.json`，同时落地 admission/release 分层；这是后续所有轮次的验收命令，当前尚不存在。
-3. **Round A**：手动产出 Cocos 黄金样本交验收；涉及 Cocos 下载/依赖，须先单独批准 version/size/source/purpose。
+1. **Round A**：手动产出 Cocos 黄金样本交验收；涉及 Cocos 下载/依赖，须先单独批准 version/size/source/purpose。
 
 ## 已知风险 / 护栏
 
