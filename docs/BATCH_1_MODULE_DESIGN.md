@@ -1,5 +1,7 @@
 # Batch 1 Gameplay Module Design
 
+> **SUPERSEDED (2026-07-25):** This document predates the Cocos golden-sample-first strategy. The authoritative current plan is `docs/ROADMAP.md`, `docs/CURRENT_STATUS.md`, and `docs/COCOS_REFACTOR_PLAN.md`. Any "parity / oracle / M0–M6 / Phaser-as-main-engine" wording below is historical context only and is not an executable instruction.
+
 Updated: 2026-07-17
 Status: design baseline for review; no module implementation is implied
 

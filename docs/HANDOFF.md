@@ -33,7 +33,7 @@
 
 ## 待办（下一步，按序）
 
-1. **收敛其余旧文档**：`docs/COCOS_MIGRATION_PLAN.md`、`docs/HANDOFF.md`、ADR 0029/0022/0002 等仍含旧 Phaser/parity/M6 表述，收敛到新策略消除口径分歧（纯文档、无新授权）。
+1. **收敛其余旧文档**：`docs/HANDOFF.md`、ADR 0029/0022/0002 等仍含旧 Phaser/parity/M6 表述，收敛到新策略消除口径分歧（纯文档、无新授权）。
 2. **定义 `pnpm check:fast`**：需授权改 `package.json`，同时落地 admission/release 分层；这是后续所有轮次的验收命令，当前尚不存在。
 3. **Round A**：手动产出 Cocos 黄金样本交验收；涉及 Cocos 下载/依赖，须先单独批准 version/size/source/purpose。
 

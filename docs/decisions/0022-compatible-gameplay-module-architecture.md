@@ -1,5 +1,7 @@
 # ADR 0022: Compatible gameplay modules and a thin runtime kernel
 
+> **SUPERSEDED (2026-07-25):** This document predates the Cocos golden-sample-first strategy. The authoritative current plan is `docs/ROADMAP.md`, `docs/CURRENT_STATUS.md`, and `docs/COCOS_REFACTOR_PLAN.md`. Any "parity / oracle / M0–M6 / Phaser-as-main-engine" wording below is historical context only and is not an executable instruction.
+
 - Status: Accepted foundation; module-authoring and gap-failure clauses
   partially superseded by ADR 0024
 - Date: 2026-07-17
