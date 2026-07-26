@@ -23,6 +23,49 @@ function autopilotSteer(orientation: Orientation, items: readonly RenderItem[]):
   return Math.max(-1, Math.min(1, delta / 40));
 }
 
+/** Deterministic AXIS probe (no browser needed): proves portrait vs landscape
+ *  produce genuinely different gameplay axes. Fires a couple of frames with zero
+ *  steer, then measures the first player-bullet's travel direction between two
+ *  snapshots. Portrait must travel along +y (screen-up); landscape along +x
+ *  (screen-right). This is the runtime evidence that orientation is NOT hardcoded
+ *  vertical -- it is the same source producing two different builds. */
+function probeAxis(orientation: Orientation): void {
+  const core = new BulletHellCore({
+    orientation,
+    fieldWidth: orientation === "portrait" ? 720 : 1280,
+    fieldHeight: orientation === "portrait" ? 1280 : 720,
+    enemyBudget: 12,
+    playerHp: 5,
+    seed: 0x51ed5eed,
+  });
+  const dt = 1 / 60;
+  // First step fires a player bullet at the player position.
+  core.step(dt, 0);
+  const before = core.snapshot().items.find((it) => it.kind === "player-bullet");
+  core.step(dt, 0);
+  const after = core.snapshot().items.find((it) => it.kind === "player-bullet");
+  if (!before || !after) {
+    console.log(`[${orientation}] AXIS probe FAIL: no player bullet observed`);
+    process.exitCode = 1;
+    return;
+  }
+  const dx = after.pos.x - before.pos.x;
+  const dy = after.pos.y - before.pos.y;
+  const player = core.snapshot().items.find((it) => it.kind === "player")!;
+  // Expected forward: portrait -> +y (dy>0, |dx|~0); landscape -> +x (dx>0, |dy|~0).
+  const ok =
+    orientation === "portrait"
+      ? dy > 0 && Math.abs(dx) < 1e-6
+      : dx > 0 && Math.abs(dy) < 1e-6;
+  console.log(
+    `[${orientation}] AXIS player=(${player.pos.x.toFixed(0)},${player.pos.y.toFixed(0)}) ` +
+      `bulletTravel=(dx=${dx.toFixed(1)}, dy=${dy.toFixed(1)}) ` +
+      `forward=${orientation === "portrait" ? "+y(up)" : "+x(right)"} ` +
+      `=> ${ok ? "PASS" : "FAIL"}`,
+  );
+  if (!ok) process.exitCode = 1;
+}
+
 function run(orientation: Orientation): void {
   const core = new BulletHellCore({
     orientation,
@@ -68,5 +111,7 @@ function run(orientation: Orientation): void {
   if (!ok) process.exitCode = 1;
 }
 
+probeAxis("portrait");
+probeAxis("landscape");
 run("portrait");
 run("landscape");
