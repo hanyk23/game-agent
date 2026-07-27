@@ -28,7 +28,7 @@
     "assets:acquire:batch-003-gaps": "tsx scripts/acquire-asset-batch-003-gaps.ts",
     "assets:acquire:batch-003-background-gap": "tsx scripts/acquire-asset-batch-003-background-gap.ts",
     "check": "pnpm template:compose && pnpm format:check && pnpm typecheck && pnpm test && vite build game-template/vertical-shooter",
-    "check:fast": "tsc --noEmit && pnpm format:check && vitest run tests/requirements tests/gameplay tests/modules tests/runtime",
+    "check:fast": "tsc --noEmit && pnpm format:check && vitest run tests/requirements tests/gameplay tests/modules tests/runtime tests/samples",
     "check:admission": "pnpm check:fast && vitest run tests/opencode tests/assets tests/runs tests/verification tests/repair",
     "check:release": "pnpm check && pnpm browser:verify && pnpm package:verified",
     "opencode:probe": "tsx scripts/opencode-compat.ts",

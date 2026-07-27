@@ -1,5 +1,11 @@
 # Round A 报告：Cocos 3.8.7 弹幕黄金样本（交用户验收）
 
+> **【Round B 更新 · 2026-07-27】本样本已升为正式基线（框架层 + 契约层）。**
+> 验收人 = 用户实玩（竖 / 横版、纯手动手感、sprite 美术均确认）；独立静态核验通过（复用模块逐字节 = `src/modules/` 原件、契约未改、守护测试通过）。
+> Round B 在 Round A 基础上补齐了「冷缓存 + 全新路径」的确定性硬证据（6 个关键产物 SHA-256 逐字节 = Round A → `COLD_REPRO=PASS`），并新增基线锁（`samples/golden-cocos/BASELINE_LOCK.json`）+ 常态守护测试（`tests/samples/golden-cocos-baseline.test.ts`，已接入 `check:fast`）。
+> 基线锁**只锚定框架层 + 契约层**（kernel/adapter 文件 + 两个复用模块），**内容层（玩法数值、美术素材）明确排除**，与 AGENTS.md「不锚定内容层」一致。
+> 详见文末「**Round B：升为正式基线**」。
+
 - **日期**：2026-07-26
 - **环境**：macOS 26.5.1（darwin），Node v24.18.0
 - **引擎**：Cocos Creator 3.8.7 社区版（`/Applications/Cocos/Creator/3.8.7/CocosCreator.app`）
@@ -82,10 +88,10 @@ $ grep -c "art/background" $B → 1     $ grep -c "spriteFrame"    $B → 1   # 
 
 **复用了哪两个模块、怎么接进 Cocos host**：
 
-| 复用模块（真实产品文件） | 在样本里的角色 | 接入方式 |
-|--------------------------|----------------|----------|
-| `src/modules/game-module-safe-counter.ts`（`SafeMonotonicCounterV1`，ADR 0027 safe-monotonic-v1） | 为每个逻辑实体（敌人 / 子弹）分配**严格递增唯一 id** | `game-core.ts` `import { SafeMonotonicCounterV1 }`，`#ids.allocate()` 生成 `e-<n>` |
-| `src/modules/game-module-entity-directory.ts`（`DeterministicLogicalEntityDirectory`） | 按 channel 强制**活跃实体容量上限 + generation 血缘**（产品的有界资源契约） | `game-core.ts` 建 3 个 channel（enemies/player-bullets/enemy-bullets），`activate/recycle` 决定能否生成新实体；到容量则拒发 |
+| 复用模块（真实产品文件）                                                                          | 在样本里的角色                                                              | 接入方式                                                                                                                    |
+| ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `src/modules/game-module-safe-counter.ts`（`SafeMonotonicCounterV1`，ADR 0027 safe-monotonic-v1） | 为每个逻辑实体（敌人 / 子弹）分配**严格递增唯一 id**                        | `game-core.ts` `import { SafeMonotonicCounterV1 }`，`#ids.allocate()` 生成 `e-<n>`                                          |
+| `src/modules/game-module-entity-directory.ts`（`DeterministicLogicalEntityDirectory`）            | 按 channel 强制**活跃实体容量上限 + generation 血缘**（产品的有界资源契约） | `game-core.ts` 建 3 个 channel（enemies/player-bullets/enemy-bullets），`activate/recycle` 决定能否生成新实体；到容量则拒发 |
 
 即：`SafeMonotonicCounterV1` 是实体 id 权威，`DeterministicLogicalEntityDirectory` 是「能否再生成一颗子弹/一个敌人」的权威。Cocos host 完全不碰这套授权，只渲染 `snapshot()`。
 
@@ -165,6 +171,7 @@ landscape screen: {"exactFitScreen":true,"designResolution":{"width":1280,"heigh
 产物层面 `screen.orientation` 干净地随命令行参数切换（`portrait` ↔ `landscape`），是 orientation 的参数化落点。
 
 > **重要（回应「横版仍是竖版」）**：产物差一个字段只是**构建参数生效**的证据，不等于**运行时表现不同**。真正的运行时差异由两处保证并已验证：
+>
 > 1. host 在 `onLoad` 用 `settings.querySettings(SettingsCategory.SCREEN,'orientation')` **读该注入值**（不再靠窗口宽高比推断），传入内核；
 > 2. 内核据此切换 `forward/cross` 逻辑轴——竖版子弹沿 `+y`、横版沿 `+x`（见判据 1 的 axis 探针：`dy=8.7` vs `dx=8.7`，同 seed 结果确定不同）。
 >
@@ -273,3 +280,99 @@ bash samples/golden-cocos/CocosShooter/tools/play.sh --stop   # 停服务
 1. 由用户按上面「复现指引」实跑验收（尤其 `smoke` axis 探针、build=36、SHA-256 一致、`play.sh` 目视双向）。
 2. 验收通过后进 **Round B**：把本样本的**框架层 + 契约层**（目录结构、kernel/adapter 边界、复用即物化字节的规则、build/repro 判据）固化为基线；明确排除内容层（含美术素材）。
 3. 需要系统化浏览器实证时，把 `build/web-mobile/` 接入 Playwright（Verifier），作为独立一轮。
+
+---
+
+# Round B：升为正式基线（冷缓存复现 + 基线锁 + 守护测试）
+
+- **日期**：2026-07-27　**验收人**：用户实玩（竖 / 横版、纯手动手感、sprite 美术均确认，Round A）
+- **定位**：本样本正式升为**框架层 + 契约层**基线；**不锚定内容层**（玩法数值、pattern 组合、具体美术选择、美术素材字节）。
+- **动机**：Round A 只做过**同机热缓存**复现，不足以支撑「确定性」这一基线强主张。Round B 补齐**冷缓存 + 全新路径**的硬证据，并把**框架层 + 契约层**关键字节 lock 成常态守护。
+
+## B-1　冷缓存 + 全新路径复现（Round B 核心）
+
+**方法**：在 `/private/tmp/` 下建带时间戳的**全新、之前从未构建过**的路径（`WORKDIR=/private/tmp/roundb-fresh-<TS>`，`TS=$(date +%s)`），`cp -R` 整份样本过去（保留工具脚本），并删掉随拷贝带过来的 `build/temp/library/.build-work` 缓存——真正冷启动。随后**分别构建 portrait 与 landscape 两次**（`tools/build.sh` 自身也会 `rm -rf build temp`），再跑 `smoke.ts` 验证逻辑闭环。
+
+```
+WORKDIR=/private/tmp/roundb-fresh-1785124161
+fresh copy caches: build=absent temp=absent library=absent      # 真正冷启动
+
+=== PORTRAIT  build ===  EXIT_CODE=36   （11:49:30 → 11:51:08，约 1m38s，从零重编）
+=== LANDSCAPE build ===  EXIT_CODE=36   （11:51:09 → 11:51:23）
+index.html present: portrait=yes  landscape=yes
+
+$ npx tsx $WORKDIR/CocosShooter/tools/smoke.ts
+[portrait]  AXIS player=(360,38)  bulletTravel=(dx=0.0, dy=8.7) forward=+y(up)    => PASS
+[landscape] AXIS player=(38,360)  bulletTravel=(dx=8.7, dy=0.0) forward=+x(right) => PASS
+[portrait]  state=won frames=779 score=1200 hp=4 enemy=true pbullet=true ebullet=true => PASS
+[landscape] state=won frames=779 score=1200 hp=4 enemy=true pbullet=true ebullet=true => PASS
+smoke_exit=0
+```
+
+**6 个关键产物冷构建（portrait）vs Round A 逐字节对比** —— 全部 SHA-256 一致 → `COLD_REPRO=PASS`：
+
+```
+MATCH  index.html            588c89cfef3a5f6bd60f35c5761c3962c15c2c772393f8fb7dab27bf6d736e14
+MATCH  index.js              4317cb547b4d105f69346b925d961df7f951002fd5a4aaae807a361aa1ad49cd
+MATCH  application.js        359f85dd922e2568aa991af95a5c356a0102042c8918252987bfbd37f2153eb2
+MATCH  cocos-js/cc.js        d71c65ed77200f375faf3fe4acfac138adcae0a99e15922a99f1ca4b3aff7956
+MATCH  src/settings.json     b5c9d19904db00f69b0adf7eeabf359568e5cfc1af0217824f492fd0343962f1
+MATCH  src/chunks/bundle.js  6dc77f412f55b2fa1eed3b1926baa1fc7d988427bedde66a943ab5951f562516
+COLD_REPRO=PASS
+```
+
+六个关键产物在**冷缓存 + 全新时间戳路径**下与 Round A 逐字节一致（含引擎入口 `cc.js`、我们自己的引导 `src/chunks/bundle.js`、入口 `index.html`、`settings.json`）。构建判据仍是唯一 pass 判据 `EXIT_CODE=36`，产物 `build/web-mobile/index.html` 存在。未产生 `sha-diff.txt`（无差异）。
+
+> 关于 `assets/resources/config.json`：样本已随仓库提交 `assets/resources/art/PROVENANCE.md.meta`（`importer:"text"`，固定 UUID `f4dca219-5405-43c1-9008-5c63b37d043f`），使该文档在冷构建里不再被分配随机 UUID，`config.json` 冷稳定。此 `.meta` 属**已在磁盘上的确定性修复**（本轮沿用，未再改动）。
+
+## B-2　基线锁（`samples/golden-cocos/BASELINE_LOCK.json`）
+
+新增 [`BASELINE_LOCK.json`](BASELINE_LOCK.json)，**只锁框架层 + 契约层**，**明确排除内容层**（玩法数值、美术素材字节、Cocos 版本 pin）：
+
+| 层        | 字段                                                          | 内容                                                                                                             |
+| --------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| framework | `frameworkLayer.{kernel,adapter,scene,build,repro,smoke}File` | `assets/game-core.ts` / `assets/cocos-host.ts` / `assets/main.scene` / `tools/*`                                 |
+| contract  | `contractLayer.modules[]`（含 `src`/`copy`/`sha256`）         | `SafeMonotonicCounterV1`=`e9597a91…`、`DeterministicLogicalEntityDirectory`=`57272b46…`（= `src/modules/` 原件） |
+| 判据      | `buildJudgment`                                               | pass=36 / fail=34 / bad-params=32 / requiredArtifact=`build/web-mobile/index.html`                               |
+| 冷复现    | `roundB` + `roundAPortraitSHA256`                             | 冷构建路径、双向退出码 36、smoke=0，以及 6 个 Round A 期望哈希（informative）                                    |
+| 排除项    | `excludedFromLock`                                            | 玩法数值、`assets/resources/art/` 下 PNG 素材、Cocos 版本 pin                                                    |
+
+> 与早期草稿的差异（本轮定稿）：基线锁**不再把 5 张美术 PNG 纳入锁**——美术属**内容层**，按 AGENTS.md「黄金样本不锚定内容层（含美术）」明确列入 `excludedFromLock`。`roundAPortraitSHA256` 只作**信息性**冷复现证据（需 Cocos 工具链才能重算，不进快速守护）。
+
+## B-3　常态守护测试（`tests/samples/golden-cocos-baseline.test.ts`）
+
+参照 [`tests/docs/batch3-design-governance.test.ts`](../../tests/docs/batch3-design-governance.test.ts) 的 hash-lock 写法，新增 [`tests/samples/golden-cocos-baseline.test.ts`](../../tests/samples/golden-cocos-baseline.test.ts)（3 用例，**纯哈希校验、无需 Cocos 工具链**）：
+
+1. lock 只锁**两个契约模块**（`SafeMonotonicCounterV1` / `DeterministicLogicalEntityDirectory`），且 `excludedFromLock` 明确包含「art assets」「gameplay」——**内容层确实被排除**；
+2. 基线声明的框架层文件（kernel/adapter/scene + build/repro/smoke 脚本）**均存在**；
+3. 两个复用模块副本**仍逐字节 = 各自 `src/modules/` 原件**（双向防漂移：`src/` 改了副本没同步、或副本被偷改，均报错）。
+
+已在 `package.json` 的 `check:fast` glob 追加 `tests/samples`，**每次日常开发都常态守护基线**。
+
+```
+$ npx vitest run tests/samples
+ ✓ tests/samples/golden-cocos-baseline.test.ts (3 tests) 3ms
+ Test Files  1 passed (1)   Tests  3 passed (3)
+
+# 反向证明：把 lock 里某复用模块哈希改坏 → 用例如期 FAIL（copy drifted: …game-module-safe-counter.ts）；还原后复绿。
+# 全 check:fast vitest 范围（tests/requirements|gameplay|modules|runtime|samples）：112 文件 / 543 用例全绿。
+```
+
+## B-4　约束遵守
+
+- ✅ 未动 `src/modules/` 原件（仅**读取**做逐字节对比）。
+- ✅ 未动 hash-locked 文档（ADR 0028、`BATCH_3_MODULE_DESIGN.md` 零改动）。
+- ✅ 未删 / 未碰 Phaser legacy（`legacy/` / `game-template/vertical-shooter/` 未触碰）。
+- ✅ 未改契约 schema、编排器、验证器、修复器、注册表、准入门禁。
+- ✅ `samples/golden-cocos/` 以外**未新增文件**（仅新增 `tests/samples/golden-cocos-baseline.test.ts` 测试 + `package.json` 一行改动，均在任务授权范围内）。
+- ✅ 基线锁**不锚定内容层**（美术素材、玩法数值列入 `excludedFromLock`），符合「黄金样本只锚定框架层 + 契约层」铁律。
+- ✅ 守护测试为真实哈希 / 存在性断言，未为通过而放宽任何已有断言。
+
+## B-5　本轮改动文件
+
+- 新增 `samples/golden-cocos/BASELINE_LOCK.json`（框架层 + 契约层基线锁；art 列入排除项）
+- 新增 `tests/samples/golden-cocos-baseline.test.ts`（3 用例常态守护）
+- 改 `package.json`（`check:fast` glob 追加 `tests/samples`，一行）
+- 改本报告（Round B 结论：冷复现 `COLD_REPRO=PASS` + 定稿基线锁范围）
+- 删除早期草稿 `samples/golden-cocos/CocosShooter/BASELINE_LOCK.json`（被本轮定稿的 `samples/golden-cocos/BASELINE_LOCK.json` 取代；旧草稿曾把美术纳入锁，与「不锚定内容层」冲突）
+- 沿用磁盘上已有的确定性修复 `assets/resources/art/PROVENANCE.md.meta`（固定 UUID，未再改动）

@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "lockedAt": "2026-07-27T04:00:57Z",
+  "roundA": {
+    "commit": "53ab265",
+    "date": "2026-07-26"
+  },
+  "roundB": {
+    "commit": "53ab265",
+    "date": "2026-07-27",
+    "coldReproPath": "/private/tmp/roundb-fresh-1785124161/",
+    "portraitBuildExitCode": 36,
+    "landscapeBuildExitCode": 36,
+    "smokeExitCode": 0
+  },
+  "frameworkLayer": {
+    "description": "engine-neutral kernel + Cocos adapter 分层；不锁内容层",
+    "kernelFile": "assets/game-core.ts",
+    "adapterFile": "assets/cocos-host.ts",
+    "sceneFile": "assets/main.scene",
+    "buildScript": "tools/build.sh",
+    "reproScript": "tools/repro-check.sh",
+    "smokeScript": "tools/smoke.ts"
+  },
+  "contractLayer": {
+    "modules": [
+      {
+        "name": "SafeMonotonicCounterV1",
+        "src": "src/modules/game-module-safe-counter.ts",
+        "copy": "assets/modules/game-module-safe-counter.ts",
+        "sha256": "e9597a91b2e91c8ee285046c169792b511e5756c0804e9a53626ae5e6269d742"
+      },
+      {
+        "name": "DeterministicLogicalEntityDirectory",
+        "src": "src/modules/game-module-entity-directory.ts",
+        "copy": "assets/modules/game-module-entity-directory.ts",
+        "sha256": "57272b463f7add29f980f72fe664f82e2c6fe8925c8602e88e60ed8a5f47c7d4"
+      }
+    ]
+  },
+  "buildJudgment": {
+    "passExitCode": 36,
+    "failExitCode": 34,
+    "badParamsExitCode": 32,
+    "requiredArtifact": "build/web-mobile/index.html"
+  },
+  "roundAPortraitSHA256": {
+    "index.html": "588c89cfef3a5f6bd60f35c5761c3962c15c2c772393f8fb7dab27bf6d736e14",
+    "index.js": "4317cb547b4d105f69346b925d961df7f951002fd5a4aaae807a361aa1ad49cd",
+    "application.js": "359f85dd922e2568aa991af95a5c356a0102042c8918252987bfbd37f2153eb2",
+    "cocos-js/cc.js": "d71c65ed77200f375faf3fe4acfac138adcae0a99e15922a99f1ca4b3aff7956",
+    "src/settings.json": "b5c9d19904db00f69b0adf7eeabf359568e5cfc1af0217824f492fd0343962f1",
+    "src/chunks/bundle.js": "6dc77f412f55b2fa1eed3b1926baa1fc7d988427bedde66a943ab5951f562516"
+  },
+  "excludedFromLock": [
+    "gameplay numerics (hp, enemy count, bullet speed, etc.)",
+    "art assets (PNG sprites under assets/resources/art/)",
+    "cocos engine version pinning (Cocos not in repo deps)"
+  ]
+}
