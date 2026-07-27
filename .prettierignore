@@ -4,3 +4,10 @@ coverage/
 artifacts/runs/
 pnpm-lock.yaml
 game-template/vertical-shooter/src/generated/
+
+# Module Integration Sanity (方案 B) demo. Its spec/*.json + resources/config/
+# *.json are hash-recorded (PROVENANCE.md / report), assets|chain/*.ts include
+# BYTE-IDENTICAL src copies, and art/PROVENANCE.md is copied verbatim from the
+# golden sample; reformatting any of them would break byte-identity, the recorded
+# SHA-256s, or the reproducible Cocos build.
+samples/module-integration/CocosSpecDemo/
