@@ -22,3 +22,12 @@ samples/**/build/
 samples/golden-cocos/.build-work/
 samples/**/temp/
 samples/**/library/
+
+# Cocos output template (game-template/cocos-shooter) build outputs / scratch
+# build.sh writes its scratch WORK dir to the project's sibling (game-template/.build-work)
+# and generates build/temp/library inside the project dir itself.
+game-template/.build-work/
+game-template/cocos-shooter/.build-work/
+game-template/cocos-shooter/build/
+game-template/cocos-shooter/temp/
+game-template/cocos-shooter/library/
