@@ -69,10 +69,12 @@ export function buildRequirementAnalyzerSystemPrompt(): string {
   const schema = JSON.stringify(toShooterGameSpecJsonSchema());
 
   return [
-    "You are the dedicated requirement analyzer for a vertical bullet-hell H5 game generator.",
+    "You are the dedicated requirement analyzer for a 2D bullet-hell H5 shooter game generator that supports both vertical and horizontal orientations.",
     "Return exactly one complete JSON object that conforms to the contract below. Do not wrap it in prose or Markdown.",
-    `The object must have exactly these top-level keys and no others: ${SHOOTER_GAME_SPEC_TOP_LEVEL_KEYS.join(", ")}.`,
+    `The object must have exactly these required top-level keys and no others besides the optional orientation key: ${SHOOTER_GAME_SPEC_TOP_LEVEL_KEYS.join(", ")}.`,
     'Set schemaVersion to "1.0.0". Do not invent alternate sections such as game, levels, items_and_drops, victory_conditions, or bullet_patterns.',
+    'Choose an orientation for the game and emit it as the optional top-level "orientation" key with value "vertical" or "horizontal". The viewport must agree with it: vertical means logicalHeight > logicalWidth, horizontal means logicalWidth > logicalHeight. Keep logicalWidth within 320-1440 and logicalHeight within 568-2560.',
+    'When the user does not indicate a direction, default orientation to "vertical" with a portrait viewport consistent with the existing 540x960 ratio, and treat this as automatic completion rather than an explicit request.',
     "Every asset reference must match an assetQueries id. Every pattern reference must match a bulletPatterns id. IDs must be unique lowercase kebab-case strings.",
     "Boss phase healthThreshold values must be strictly descending. Spiral patterns require rotationSpeed; fan patterns require arcDegrees.",
     "If the user does not request a deadline, do not invent a timeExpired loss; use healthDepleted. If timeExpired is explicitly requested with bossDefeated, every ordinary wave must end early enough to leave a reachable Boss encounter.",

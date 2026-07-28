@@ -1,5 +1,23 @@
 import { z } from "zod";
 
+// T7a — Unified time-budget ceilings (口径统一).
+// These constants document the single source of truth for every millisecond
+// upper bound in the contract so the relationship between them is explicit
+// rather than scattered as magic numbers. Values are unchanged from the prior
+// inline literals; only their naming/口径 is unified here.
+//   ENEMY_WAVE_START_MAX_MS (600s) ≤ RUN_TIME_LIMIT_MAX_MS (900s):
+//     a wave may be scheduled to begin any time before the longest possible run.
+//   ENEMY_WAVE_DURATION_MAX_MS (180s) ≤ RUN_TIME_LIMIT_MAX_MS (900s):
+//     a single wave never outlasts the longest possible run.
+//   RUN_TIME_LIMIT_MAX_MS (900s) bounds both winCondition.surviveMs.targetMs
+//     and loseCondition.timeExpired.limitMs so survive/deadline goals share one
+//     ceiling. Whether a wave can still be reached before a deadline is a
+//     playability question handled by later Design layers, not this schema.
+const ENEMY_WAVE_START_MAX_MS = 600_000;
+const ENEMY_WAVE_DURATION_MAX_MS = 180_000;
+const RUN_TIME_LIMIT_MIN_MS = 10_000;
+const RUN_TIME_LIMIT_MAX_MS = 900_000;
+
 const SafeIdSchema = z
   .string()
   .min(1)
@@ -72,8 +90,8 @@ const WeaponSchema = z.strictObject({
 const EnemyWaveSchema = z.strictObject({
   id: SafeIdSchema,
   enemyAssetQueryId: SafeIdSchema,
-  startMs: z.number().int().min(0).max(600_000),
-  durationMs: z.number().int().min(1_000).max(180_000),
+  startMs: z.number().int().min(0).max(ENEMY_WAVE_START_MAX_MS),
+  durationMs: z.number().int().min(1_000).max(ENEMY_WAVE_DURATION_MAX_MS),
   spawnIntervalMs: z.number().int().min(100).max(10_000),
   maxAlive: z.number().int().min(1).max(80),
   health: z.number().min(1).max(10_000),
@@ -93,7 +111,11 @@ const WinConditionSchema = z.discriminatedUnion("type", [
   z.strictObject({ type: z.literal("bossDefeated") }),
   z.strictObject({
     type: z.literal("surviveMs"),
-    targetMs: z.number().int().min(10_000).max(900_000),
+    targetMs: z
+      .number()
+      .int()
+      .min(RUN_TIME_LIMIT_MIN_MS)
+      .max(RUN_TIME_LIMIT_MAX_MS),
   }),
   z.strictObject({
     type: z.literal("scoreReached"),
@@ -105,7 +127,11 @@ const LoseConditionSchema = z.discriminatedUnion("type", [
   z.strictObject({ type: z.literal("healthDepleted") }),
   z.strictObject({
     type: z.literal("timeExpired"),
-    limitMs: z.number().int().min(10_000).max(900_000),
+    limitMs: z
+      .number()
+      .int()
+      .min(RUN_TIME_LIMIT_MIN_MS)
+      .max(RUN_TIME_LIMIT_MAX_MS),
   }),
 ]);
 
@@ -135,6 +161,11 @@ export const ShooterGameSpecSchema = z
     story: z.string().min(1).max(1_000),
     visualStyle: z.array(z.string().min(1).max(60)).min(1).max(8),
     difficulty: z.enum(["easy", "medium", "hard"]),
+    // T5 — orientation is an optional design parameter. Keeping it optional
+    // preserves every existing spec/fixture that predates the field while
+    // letting direction-aware requests carry an explicit vertical/horizontal
+    // decision. Consistency with viewport is enforced in superRefine below.
+    orientation: z.enum(["vertical", "horizontal"]).optional(),
     viewport: z.strictObject({
       logicalWidth: z.number().int().min(320).max(1_440),
       logicalHeight: z.number().int().min(568).max(2_560),
@@ -329,6 +360,49 @@ export const ShooterGameSpecSchema = z
           message:
             "boss phase healthThreshold values must be strictly descending",
           path: ["boss", "phases", index, "healthThreshold"],
+        });
+      }
+    }
+
+    // T8 — Boss phase boundary narrowing (semantic only, no schema field
+    // changes). The strict-descending rule above stays intact. We only reject
+    // the degenerate final phase whose threshold is exactly 0: because
+    // selection uses `healthRatio <= threshold`, a 0-threshold phase can only be
+    // entered when the Boss is already dead, so it is an unreachable phase.
+    // The first phase intentionally keeps its existing contract (`<= 1`, and in
+    // practice fixtures/modules pin it to exactly 1 as "full health"), so this
+    // guard is a pure addition that does not weaken or reshape existing bounds.
+    const lastPhaseIndex = spec.boss.phases.length - 1;
+    const lastThreshold = thresholds[lastPhaseIndex];
+    if (lastThreshold !== undefined && lastThreshold <= 0) {
+      context.addIssue({
+        code: "custom",
+        message:
+          "final boss phase healthThreshold must be greater than 0 so the phase is reachable",
+        path: ["boss", "phases", lastPhaseIndex, "healthThreshold"],
+      });
+    }
+
+    // T5 — orientation ⇔ viewport consistency. Only enforced when orientation
+    // is present, so pre-existing specs without the field remain valid.
+    //   vertical   ⇔ logicalHeight > logicalWidth
+    //   horizontal ⇔ logicalWidth > logicalHeight
+    // A square viewport (width === height) is inconsistent with either value.
+    if (spec.orientation !== undefined) {
+      const { logicalWidth, logicalHeight } = spec.viewport;
+      const isVertical = logicalHeight > logicalWidth;
+      const isHorizontal = logicalWidth > logicalHeight;
+      const consistent =
+        (spec.orientation === "vertical" && isVertical) ||
+        (spec.orientation === "horizontal" && isHorizontal);
+      if (!consistent) {
+        context.addIssue({
+          code: "custom",
+          message:
+            spec.orientation === "vertical"
+              ? "vertical orientation requires viewport logicalHeight > logicalWidth"
+              : "horizontal orientation requires viewport logicalWidth > logicalHeight",
+          path: ["orientation"],
         });
       }
     }
