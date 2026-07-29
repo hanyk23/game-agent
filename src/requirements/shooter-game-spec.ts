@@ -186,7 +186,7 @@ export const ShooterGameSpecSchema = z
       phases: z.array(BossPhaseSchema).min(1).max(6),
       scoreValue: z.number().int().min(1).max(10_000_000),
     }),
-    bulletPatterns: z.array(BulletPatternSchema).min(3).max(24),
+    bulletPatterns: z.array(BulletPatternSchema).min(1).max(24),
     pickups: z
       .array(
         z.strictObject({

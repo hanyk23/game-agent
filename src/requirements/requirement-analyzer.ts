@@ -77,6 +77,7 @@ export function buildRequirementAnalyzerSystemPrompt(): string {
     'When the user does not indicate a direction, default orientation to "vertical" with a portrait viewport consistent with the existing 540x960 ratio, and treat this as automatic completion rather than an explicit request.',
     "Every asset reference must match an assetQueries id. Every pattern reference must match a bulletPatterns id. IDs must be unique lowercase kebab-case strings.",
     "Boss phase healthThreshold values must be strictly descending. Spiral patterns require rotationSpeed; fan patterns require arcDegrees.",
+    "The number of bulletPatterns is driven by what the gameplay needs: include at least one, and do not force any particular count.",
     "If the user does not request a deadline, do not invent a timeExpired loss; use healthDepleted. If timeExpired is explicitly requested with bossDefeated, every ordinary wave must end early enough to leave a reachable Boss encounter.",
     "Always include at least one assetQueries entry with category background; catalog composition requires an explicit background query even when the user does not describe one.",
     "For assetQueries only, use finite English catalog vocabulary. Prefer theme terms space, science fiction, arcade, energy, or battle; visualStyle terms pixel-art, retro, vector, cartoon, clean, glow, raster, particle, electric, sci-fi, or soft; and concise English role/color tags.",

@@ -39,7 +39,10 @@ export const CaseAwareBrowserAssertionsSchema = z.strictObject({
   assertionVersion: z.literal("1.0.0"),
   expectedOutcome: ExpectedOutcomeSchema,
   expectedWeaponIds: z.array(z.string().min(1)).min(1),
-  requiredWaves: z.array(RequiredWaveSchema).min(1),
+  // S7 — a spec that legitimately schedules no wave inside the win horizon
+  // must not be forced to have one. The list may be empty; every wave that IS
+  // declared here is still validated by caseAwarePlaySnapshotIssues below.
+  requiredWaves: z.array(RequiredWaveSchema).min(0),
   requiredBossPatternIds: z.array(z.string().min(1)),
   requiredPickupIds: z.array(z.string().min(1)),
   scoring: z.strictObject({
@@ -236,6 +239,10 @@ export function deriveCaseAwareBrowserAssertions(
       id: wave.id,
       patternIds: [...wave.patternIds],
     })),
+    // S7 — Boss phase evidence is only required when the Spec's win condition
+    // is bossDefeated. Without a Boss-defeat outcome we assert nothing about
+    // Boss phases (empty list), rather than assuming every game must break a
+    // Boss. Pickup evidence follows the same declared-outcome gate.
     requiredBossPatternIds: bossOutcome
       ? spec.boss.phases.flatMap((phase) => phase.patternIds)
       : [],
@@ -388,7 +395,14 @@ export function caseAwareEndSnapshotIssues(
   assertions: CaseAwareBrowserAssertions,
 ): string[] {
   const issues: string[] = [];
-  if (!snapshot.won) issues.push("configured evaluation outcome did not win");
+  // S7 — only require a win when the Spec's declared win condition actually
+  // asks for one. Today every derived expectedOutcome carries `won: true`
+  // (bossDefeated / surviveMs / scoreReached), so this preserves current
+  // behavior for those cases while no longer treating "must win" as a
+  // universal premise for outcomes that are not win-shaped.
+  if (assertions.expectedOutcome.won && !snapshot.won) {
+    issues.push("configured evaluation outcome did not win");
+  }
   if (snapshot.outcomeReason !== assertions.expectedOutcome.reason) {
     issues.push(
       `expected ${assertions.expectedOutcome.reason} but received ${snapshot.outcomeReason}`,
