@@ -33,6 +33,8 @@ describe("Design Agent prompt", () => {
   it("uses only lightweight graph-integrity constraints", () => {
     expect(prompt).toContain("所有 ID 引用");
     expect(prompt).toContain("同一 artifact 中已声明的节点");
+    expect(prompt).toContain("systemDesign.outcomes[*].priority 必须互不相同");
+    expect(prompt).toContain("同帧确定性裁决");
     expect(prompt).toContain("optional 引用没有真实消费者时应省略");
     expect(prompt).toContain("每条 locked statement");
     expect(prompt).toContain("整体引用闭合与 locked requirement coverage 自检");

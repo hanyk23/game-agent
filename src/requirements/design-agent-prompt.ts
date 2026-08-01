@@ -13,6 +13,7 @@ export function buildDesignAgentSystemPrompt(): string {
     "",
     "完整性要求：",
     "  - 所有 ID 引用必须指向同一 artifact 中已声明的节点。",
+    "  - 若声明多个 terminal outcome，systemDesign.outcomes[*].priority 必须互不相同，用于同帧确定性裁决。",
     "  - optional 引用没有真实消费者时应省略，不要制造仅用于描述的冗余 event/state/process。",
     "  - 每条 locked statement 必须由 decision 或 forbidden 覆盖。",
     "  - 提交前做一次整体引用闭合与 locked requirement coverage 自检。",

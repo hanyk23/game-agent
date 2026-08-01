@@ -23,7 +23,11 @@ function completion(content: unknown, finishReason = "stop") {
   return {
     model: "deepseek-v4-flash",
     choices: [{ finish_reason: finishReason, message: { content } }],
-    usage: { prompt_tokens: 4200, completion_tokens: 900 },
+    usage: {
+      prompt_tokens: 4200,
+      completion_tokens: 900,
+      completion_tokens_details: { reasoning_tokens: 300 },
+    },
   };
 }
 
@@ -45,7 +49,7 @@ describe("DeepSeek Spec Agent adapter (v2)", () => {
     // §三: cost is a reproducible conservative estimate, not a verified zero.
     expect(result.provenance.usage.inputTokens).toBe(4200);
     expect(result.provenance.usage.outputTokens).toBe(900);
-    expect(result.provenance.usage.reasoningTokens).toBe(0);
+    expect(result.provenance.usage.reasoningTokens).toBe(300);
     expect(result.provenance.usage.costKnown).toBe(true);
     expect(result.provenance.usage.costEvidence.kind).toBe("estimated");
     // Conservative USD upper bound: cache-miss input + output tiers.
@@ -66,15 +70,17 @@ describe("DeepSeek Spec Agent adapter (v2)", () => {
     expect(url).toBe("https://api.deepseek.com/chat/completions");
     const requestBody = JSON.parse(String(request?.body)) as {
       response_format: { type: string };
+      thinking: { type: string };
       temperature: number;
       tools: unknown[];
       max_tokens: number;
       messages: Array<{ role: string; content: string }>;
     };
     expect(requestBody.response_format).toEqual({ type: "json_object" });
+    expect(requestBody.thinking).toEqual({ type: "enabled" });
     expect(requestBody.temperature).toBe(0);
     expect(requestBody.tools).toEqual([]);
-    expect(requestBody.max_tokens).toBe(8_192);
+    expect(requestBody.max_tokens).toBe(16_384);
     expect(requestBody.messages[0]?.content).toContain(
       "<spec-agent-output-json-schema>",
     );

@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-08-01T04:40:00.754Z",
+  "status": "bounded-failure",
+  "passed": false,
+  "requestedModel": "deepseek-v4-flash",
+  "probeCaseId": "crystal-cavern-shields",
+  "pricingNote": "调用模型为 deepseek-v4-flash，成本估算沿用同档的 flash 价格快照（deepseek-cost-policy.ts）；usageRecordOnly.cost 为 flash 档保守上界估算，仅记录、不作门禁。",
+  "request": {
+    "prompt": "做一个横屏水晶洞窟主题的弹幕射击 H5：玩家能在整个二维房间自由移动，用鼠标瞄准并射击；场上周期性出现短时护盾拾取物，敌人混合使用环形弹幕和定点弹幕。不要 Boss，撑过 120 秒进入胜利结算。",
+    "sha256": "75744df8cb11eadc73947b85f73aadbb559984522d3bebbdf8ed03b50bd6fa42"
+  },
+  "semanticAssertions": [],
+  "usageRecordOnly": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "outputMode": "deepseek_json_object",
+    "usage": {
+      "cost": 0.0009420600000000001,
+      "costKnown": true,
+      "costEvidence": {
+        "kind": "estimated",
+        "currency": "USD",
+        "estimatedCostUsd": 0.0009420600000000001,
+        "estimatedCostCnyUpper": 0.007065450000000001,
+        "inputTokens": 3957,
+        "outputTokens": 1386,
+        "pricingBasis": {
+          "input": "cache-miss upper estimate",
+          "officialPriceCurrency": "USD",
+          "cacheHitInputUsdPerMillionTokens": 0.0028,
+          "cacheMissInputUsdPerMillionTokens": 0.14,
+          "outputUsdPerMillionTokens": 0.28,
+          "conservativeCnyPerUsd": 7.5,
+          "source": "https://api-docs.deepseek.com/quick_start/pricing",
+          "checkedAt": "2026-07-16",
+          "policyVersion": "2026-07-16"
+        }
+      },
+      "inputTokens": 3957,
+      "outputTokens": 1386,
+      "reasoningTokens": 0
+    }
+  },
+  "failure": {
+    "code": "invalid-agent-output",
+    "message": "IntentLedger verification failed (statement-coverage): IntentLedger v2 statement-coverage: ledger records referencing unknown statements: system-default-bullet-hell-h5, system-default-engine-cocos, system-default-platform-pc, system-default-mobile-touch",
+    "retryable": false
+  }
+}

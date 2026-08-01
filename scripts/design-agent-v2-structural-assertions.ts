@@ -8,8 +8,6 @@ import type { DesignStageV2Result } from "../src/requirements/design-agent-resul
 import type { IntentLedgerV2 } from "../src/requirements/intent-ledger-v2.js";
 
 const EXPECTED_MODEL = "deepseek-v4-flash";
-const MOUSE_AIM_SHOOT_STATEMENT_ID = "control-mouse-aim-shoot";
-const SHOOTING_STATEMENT_ID = "intent-shooting";
 
 export type DesignAgentV2StructuralAssertion = Readonly<{
   id: string;
@@ -43,11 +41,11 @@ type AimingShootingRelation = Readonly<{
   actionId: string;
   actorId: string;
   actionInCoreLoop: boolean;
-  actionHasShootingBinding: boolean;
 }>;
 
 function findAimingShootingRelation(
   design: GameDesignV2,
+  intentLedger: IntentLedgerV2,
 ): AimingShootingRelation | undefined {
   const actorIds = new Set(design.systemDesign.actors.map((actor) => actor.id));
   const aimingById = new Map(
@@ -57,21 +55,16 @@ function findAimingShootingRelation(
     design.systemDesign.actions.map((action) => [action.id, action]),
   );
   const coreLoopActionIds = new Set(design.gameplayDesign.coreLoop.actionIds);
-  const shootingActionIds = new Set(
-    design.requirementBindings.decisions
-      .filter(
-        (decision) =>
-          decision.source !== "agent-derived" &&
-          decision.statementId === SHOOTING_STATEMENT_ID,
-      )
-      .flatMap((decision) => decision.targets.map((target) => target.nodeId))
-      .filter((nodeId) => actionById.has(nodeId)),
+  const userDeclaredStatementIds = new Set(
+    intentLedger.entries
+      .filter((entry) => entry.source === "user-declared")
+      .map((entry) => entry.statementId),
   );
 
   const bindings = design.requirementBindings.decisions.filter(
     (decision) =>
       decision.source !== "agent-derived" &&
-      decision.statementId === MOUSE_AIM_SHOOT_STATEMENT_ID,
+      userDeclaredStatementIds.has(decision.statementId),
   );
   for (const binding of bindings) {
     const targetIds = new Set(binding.targets.map((target) => target.nodeId));
@@ -91,8 +84,7 @@ function findAimingShootingRelation(
           continue;
         }
         const actionInCoreLoop = coreLoopActionIds.has(action.id);
-        const actionHasShootingBinding = shootingActionIds.has(action.id);
-        if (!actionInCoreLoop && !actionHasShootingBinding) continue;
+        if (!actionInCoreLoop) continue;
 
         return {
           bindingId: binding.id,
@@ -100,7 +92,6 @@ function findAimingShootingRelation(
           actionId: action.id,
           actorId: action.actor,
           actionInCoreLoop,
-          actionHasShootingBinding,
         };
       }
     }
@@ -284,14 +275,17 @@ export function evaluateDesignAgentV2StructuralAssertions(
     `movement dimensions=[${spatial.movement.map((movement) => `${movement.subject}:${movement.dimensions}`).join(", ")}]`,
   );
 
-  const aimingShootingRelation = findAimingShootingRelation(design);
+  const aimingShootingRelation = findAimingShootingRelation(
+    design,
+    intentLedger,
+  );
   push(
     "pointer-world-aiming",
     "结构化 requirement binding 表达鼠标瞄准射击。",
     aimingShootingRelation !== undefined,
     aimingShootingRelation === undefined
-      ? `未找到 ${MOUSE_AIM_SHOOT_STATEMENT_ID} binding 连接同一已声明 actor 的 aiming/action，且 action 位于 core loop 或由 ${SHOOTING_STATEMENT_ID} 绑定。`
-      : `binding=${aimingShootingRelation.bindingId}, aiming=${aimingShootingRelation.aimingId}, action=${aimingShootingRelation.actionId}, actor=${aimingShootingRelation.actorId}, coreLoop=${aimingShootingRelation.actionInCoreLoop}, shootingBound=${aimingShootingRelation.actionHasShootingBinding}`,
+      ? "未找到 user-declared binding 连接同一已声明 actor 的 aiming/action，且 action 位于 core loop。"
+      : `binding=${aimingShootingRelation.bindingId}, aiming=${aimingShootingRelation.aimingId}, action=${aimingShootingRelation.actionId}, actor=${aimingShootingRelation.actorId}, coreLoop=${aimingShootingRelation.actionInCoreLoop}`,
   );
 
   const survivalEvent = survivalTimer?.emits;

@@ -1,0 +1,1399 @@
+{
+  "checkedAt": "2026-08-01T04:44:59.548Z",
+  "status": "design-ready",
+  "passed": true,
+  "requestConfig": {
+    "model": "deepseek-v4-flash",
+    "thinking": {
+      "type": "enabled"
+    },
+    "maxTokens": 32768,
+    "timeoutMs": 300000,
+    "stream": false,
+    "toolCount": 1
+  },
+  "probeCaseId": "crystal-cavern-shields",
+  "request": {
+    "prompt": "做一个横屏水晶洞窟主题的弹幕射击 H5：玩家能在整个二维房间自由移动，用鼠标瞄准并射击；场上周期性出现短时护盾拾取物，敌人混合使用环形弹幕和定点弹幕。不要 Boss，撑过 120 秒进入胜利结算。",
+    "sha256": "75744df8cb11eadc73947b85f73aadbb559984522d3bebbdf8ed03b50bd6fa42"
+  },
+  "inputHashes": {
+    "request": "75744df8cb11eadc73947b85f73aadbb559984522d3bebbdf8ed03b50bd6fa42",
+    "gameSpec": "7c6245369fe45dd35253e689389573816559ddd1086cfd47fd5d49bef7c3766c",
+    "intentLedger": "1f804d466588bb095a0959fca1cd4eff2b45bfa1b30bfa8548d86f887ee788d2"
+  },
+  "gameDesign": {
+    "schemaVersion": "2.0.0",
+    "kind": "GameDesignV2",
+    "sources": {
+      "request": {
+        "sha256": "75744df8cb11eadc73947b85f73aadbb559984522d3bebbdf8ed03b50bd6fa42"
+      },
+      "gameSpec": {
+        "schemaVersion": "2.0.0",
+        "sha256": "7c6245369fe45dd35253e689389573816559ddd1086cfd47fd5d49bef7c3766c"
+      },
+      "intentLedger": {
+        "schemaVersion": "2.0.0",
+        "sha256": "1f804d466588bb095a0959fca1cd4eff2b45bfa1b30bfa8548d86f887ee788d2"
+      }
+    },
+    "gameplayDesign": {
+      "coreLoop": {
+        "id": "core-loop",
+        "summary": "玩家在单一二维房间内自由移动，用鼠标瞄准并射击普通敌人；敌人周期性混合使用环形弹幕与定点弹幕交叉压制，场上定期刷新短时护盾拾取物；无 Boss，存活满 120 秒进入胜利结算。",
+        "actionIds": [
+          "player-move",
+          "player-aim",
+          "player-shoot"
+        ]
+      },
+      "progression": {
+        "id": "progression-120s-survival",
+        "model": "timed-survival",
+        "summary": "进度只由 120 秒生存倒计时驱动：期间持续刷出普通敌人与护盾拾取物，无 Boss、无关卡切换；每轮以 120 秒存活或玩家生命归零为终点。"
+      },
+      "pacing": {
+        "id": "pacing-difficulty-ramp",
+        "model": "ramping",
+        "summary": "前 60 秒以低频双型敌人生成建立节奏；60 秒后追加高频增援层持续加压，环形与定点弹幕并存；护盾拾取物全程每 9 秒刷新一次，维持生存窗口内的容错。"
+      }
+    },
+    "systemDesign": {
+      "actors": [
+        {
+          "id": "player",
+          "role": "player-ship",
+          "capabilityTags": [
+            "movable",
+            "shootable",
+            "vulnerable",
+            "collector"
+          ]
+        },
+        {
+          "id": "ring-enemy",
+          "role": "ring-pattern-enemy",
+          "capabilityTags": [
+            "enemy",
+            "ring-shooter",
+            "drifting",
+            "single-hit"
+          ]
+        },
+        {
+          "id": "aimed-enemy",
+          "role": "aimed-pattern-enemy",
+          "capabilityTags": [
+            "enemy",
+            "aimed-shooter",
+            "stationary",
+            "single-hit"
+          ]
+        },
+        {
+          "id": "enemy-bullet",
+          "role": "enemy-projectile",
+          "capabilityTags": [
+            "hazard",
+            "damages-player",
+            "offscreen-removed"
+          ]
+        },
+        {
+          "id": "player-bullet",
+          "role": "player-projectile",
+          "capabilityTags": [
+            "damages-enemy",
+            "offscreen-removed"
+          ]
+        },
+        {
+          "id": "shield-pickup",
+          "role": "temporary-pickup",
+          "capabilityTags": [
+            "shield",
+            "collectible",
+            "short-lived"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "id": "player-hp",
+          "initial": 3,
+          "min": 0,
+          "max": 3,
+          "unit": "hit-point"
+        },
+        {
+          "id": "enemy-count",
+          "initial": 0,
+          "min": 0,
+          "max": 12,
+          "unit": "instance"
+        },
+        {
+          "id": "elapsed-seconds",
+          "initial": 0,
+          "min": 0,
+          "max": 300,
+          "unit": "second"
+        }
+      ],
+      "states": [
+        {
+          "id": "player-shield",
+          "values": [
+            "active",
+            "inactive"
+          ],
+          "initial": "inactive"
+        }
+      ],
+      "actions": [
+        {
+          "id": "player-move",
+          "actor": "player",
+          "kind": "move",
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "move-2d",
+              "subject": "player"
+            }
+          ]
+        },
+        {
+          "id": "player-aim",
+          "actor": "player",
+          "kind": "aim",
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "mouse-aim",
+              "subject": "player"
+            }
+          ]
+        },
+        {
+          "id": "player-shoot",
+          "actor": "player",
+          "kind": "shoot",
+          "effects": [
+            {
+              "kind": "spawn",
+              "actor": "player-bullet",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "id": "shield-spawn-event"
+        },
+        {
+          "id": "shield-window-end"
+        },
+        {
+          "id": "shield-collect-event"
+        },
+        {
+          "id": "shield-duration-end"
+        },
+        {
+          "id": "ring-spawn-event"
+        },
+        {
+          "id": "aimed-spawn-event"
+        },
+        {
+          "id": "swarm-spawn-event"
+        },
+        {
+          "id": "second-tick"
+        },
+        {
+          "id": "survival-complete"
+        },
+        {
+          "id": "player-hit-event"
+        },
+        {
+          "id": "enemy-hit-event"
+        }
+      ],
+      "timers": [
+        {
+          "id": "survival-timer",
+          "mode": "delay",
+          "durationMs": 120000,
+          "repeat": "once",
+          "emits": "survival-complete"
+        },
+        {
+          "id": "shield-window-timer",
+          "mode": "delay",
+          "durationMs": 8000,
+          "repeat": "once",
+          "startOn": "shield-spawn-event",
+          "emits": "shield-window-end"
+        },
+        {
+          "id": "shield-duration-timer",
+          "mode": "delay",
+          "durationMs": 5000,
+          "repeat": "once",
+          "startOn": "shield-collect-event",
+          "emits": "shield-duration-end"
+        },
+        {
+          "id": "second-ticker",
+          "mode": "interval",
+          "durationMs": 1000,
+          "repeat": "infinite",
+          "emits": "second-tick"
+        }
+      ],
+      "rules": [
+        {
+          "id": "advance-clock",
+          "when": {
+            "kind": "event",
+            "event": "second-tick"
+          },
+          "effects": [
+            {
+              "kind": "resource-change",
+              "resource": "elapsed-seconds",
+              "operation": "increment",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "shield-expire-response",
+          "when": {
+            "kind": "event",
+            "event": "shield-window-end"
+          },
+          "effects": [
+            {
+              "kind": "despawn",
+              "actor": "shield-pickup"
+            }
+          ]
+        },
+        {
+          "id": "shield-activate",
+          "when": {
+            "kind": "event",
+            "event": "shield-collect-event"
+          },
+          "effects": [
+            {
+              "kind": "state-transition",
+              "state": "player-shield",
+              "to": "active"
+            },
+            {
+              "kind": "despawn",
+              "actor": "shield-pickup"
+            }
+          ]
+        },
+        {
+          "id": "shield-deactivate",
+          "when": {
+            "kind": "event",
+            "event": "shield-duration-end"
+          },
+          "effects": [
+            {
+              "kind": "state-transition",
+              "state": "player-shield",
+              "to": "inactive"
+            }
+          ]
+        },
+        {
+          "id": "player-hit-no-shield",
+          "when": {
+            "kind": "event",
+            "event": "player-hit-event"
+          },
+          "conditions": {
+            "kind": "all",
+            "of": [
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "state",
+                  "id": "player-shield",
+                  "equals": "inactive"
+                },
+                "comparator": "in-state"
+              }
+            ]
+          },
+          "effects": [
+            {
+              "kind": "resource-change",
+              "resource": "player-hp",
+              "operation": "decrement",
+              "amount": 1
+            },
+            {
+              "kind": "despawn",
+              "actor": "enemy-bullet"
+            }
+          ]
+        },
+        {
+          "id": "player-hit-shielded",
+          "when": {
+            "kind": "event",
+            "event": "player-hit-event"
+          },
+          "conditions": {
+            "kind": "all",
+            "of": [
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "state",
+                  "id": "player-shield",
+                  "equals": "active"
+                },
+                "comparator": "in-state"
+              }
+            ]
+          },
+          "effects": [
+            {
+              "kind": "despawn",
+              "actor": "enemy-bullet"
+            }
+          ]
+        },
+        {
+          "id": "enemy-hit-resolution",
+          "when": {
+            "kind": "event",
+            "event": "enemy-hit-event"
+          },
+          "effects": [
+            {
+              "kind": "despawn",
+              "actor": "player-bullet"
+            },
+            {
+              "kind": "despawn",
+              "actor": "ring-enemy"
+            },
+            {
+              "kind": "despawn",
+              "actor": "aimed-enemy"
+            },
+            {
+              "kind": "resource-change",
+              "resource": "enemy-count",
+              "operation": "decrement",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "ring-spawn-count",
+          "when": {
+            "kind": "event",
+            "event": "ring-spawn-event"
+          },
+          "effects": [
+            {
+              "kind": "resource-change",
+              "resource": "enemy-count",
+              "operation": "increment",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "aimed-spawn-count",
+          "when": {
+            "kind": "event",
+            "event": "aimed-spawn-event"
+          },
+          "effects": [
+            {
+              "kind": "resource-change",
+              "resource": "enemy-count",
+              "operation": "increment",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "swarm-spawn-count",
+          "when": {
+            "kind": "event",
+            "event": "swarm-spawn-event"
+          },
+          "effects": [
+            {
+              "kind": "resource-change",
+              "resource": "enemy-count",
+              "operation": "increment",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "processes": [
+        {
+          "id": "shield-spawn-ticker",
+          "owner": {
+            "type": "world"
+          },
+          "cadence": {
+            "kind": "interval",
+            "intervalMs": 9000
+          },
+          "effects": [
+            {
+              "kind": "emit-event",
+              "event": "shield-spawn-event"
+            }
+          ]
+        },
+        {
+          "id": "ring-spawn-ticker",
+          "owner": {
+            "type": "world"
+          },
+          "cadence": {
+            "kind": "interval",
+            "intervalMs": 5000
+          },
+          "conditions": {
+            "kind": "predicate",
+            "target": {
+              "type": "resource",
+              "id": "enemy-count"
+            },
+            "comparator": "lt",
+            "value": 6
+          },
+          "effects": [
+            {
+              "kind": "emit-event",
+              "event": "ring-spawn-event"
+            }
+          ]
+        },
+        {
+          "id": "aimed-spawn-ticker",
+          "owner": {
+            "type": "world"
+          },
+          "cadence": {
+            "kind": "interval",
+            "intervalMs": 7500
+          },
+          "conditions": {
+            "kind": "predicate",
+            "target": {
+              "type": "resource",
+              "id": "enemy-count"
+            },
+            "comparator": "lt",
+            "value": 8
+          },
+          "effects": [
+            {
+              "kind": "emit-event",
+              "event": "aimed-spawn-event"
+            }
+          ]
+        },
+        {
+          "id": "swarm-ticker",
+          "owner": {
+            "type": "encounter"
+          },
+          "cadence": {
+            "kind": "interval",
+            "intervalMs": 3000
+          },
+          "conditions": {
+            "kind": "all",
+            "of": [
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "resource",
+                  "id": "enemy-count"
+                },
+                "comparator": "lt",
+                "value": 10
+              },
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "resource",
+                  "id": "elapsed-seconds"
+                },
+                "comparator": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "effects": [
+            {
+              "kind": "emit-event",
+              "event": "swarm-spawn-event"
+            }
+          ]
+        },
+        {
+          "id": "ring-enemy-pattern",
+          "owner": {
+            "type": "actor",
+            "id": "ring-enemy"
+          },
+          "cadence": {
+            "kind": "continuous"
+          },
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "ring-pattern",
+              "subject": "ring-enemy"
+            }
+          ]
+        },
+        {
+          "id": "aimed-enemy-pattern",
+          "owner": {
+            "type": "actor",
+            "id": "aimed-enemy"
+          },
+          "cadence": {
+            "kind": "continuous"
+          },
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "aimed-pattern",
+              "subject": "aimed-enemy",
+              "target": "player"
+            }
+          ]
+        },
+        {
+          "id": "enemy-bullet-contact",
+          "owner": {
+            "type": "actor",
+            "id": "enemy-bullet"
+          },
+          "cadence": {
+            "kind": "continuous"
+          },
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "damage-on-contact",
+              "subject": "enemy-bullet",
+              "target": "player"
+            }
+          ]
+        },
+        {
+          "id": "player-bullet-contact",
+          "owner": {
+            "type": "actor",
+            "id": "player-bullet"
+          },
+          "cadence": {
+            "kind": "continuous"
+          },
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "damage-enemy-on-contact",
+              "subject": "player-bullet"
+            }
+          ]
+        },
+        {
+          "id": "shield-pickup-contact",
+          "owner": {
+            "type": "actor",
+            "id": "shield-pickup"
+          },
+          "cadence": {
+            "kind": "continuous"
+          },
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "collect-on-contact",
+              "subject": "shield-pickup",
+              "target": "player"
+            }
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "id": "outcome-win",
+          "result": "won",
+          "when": {
+            "kind": "event",
+            "event": "survival-complete"
+          },
+          "priority": 10,
+          "terminal": true
+        },
+        {
+          "id": "outcome-lost",
+          "result": "lost",
+          "when": {
+            "kind": "condition",
+            "condition": {
+              "kind": "predicate",
+              "target": {
+                "type": "resource",
+                "id": "player-hp"
+              },
+              "comparator": "lte",
+              "value": 0
+            }
+          },
+          "priority": 20,
+          "terminal": true
+        }
+      ]
+    },
+    "spatialDesign": {
+      "viewport": {
+        "id": "main-viewport",
+        "orientation": "horizontal",
+        "logicalWidth": 1280,
+        "logicalHeight": 720,
+        "scaling": "uniform",
+        "letterbox": "allow-bars"
+      },
+      "topology": {
+        "id": "room-topology",
+        "kind": "single-room"
+      },
+      "movement": [
+        {
+          "id": "player-movement",
+          "subject": "player",
+          "dimensions": "2d",
+          "axes": [
+            "x",
+            "y"
+          ],
+          "constrainedToBoundaryId": "player-room-boundary",
+          "speedPerSecond": 260
+        },
+        {
+          "id": "ring-enemy-movement",
+          "subject": "ring-enemy",
+          "dimensions": "1d",
+          "axes": [
+            "x"
+          ],
+          "constrainedToBoundaryId": "enemy-room-boundary",
+          "speedPerSecond": 40
+        },
+        {
+          "id": "aimed-enemy-movement",
+          "subject": "aimed-enemy",
+          "dimensions": "none"
+        },
+        {
+          "id": "enemy-bullet-movement",
+          "subject": "enemy-bullet",
+          "dimensions": "2d",
+          "axes": [
+            "x",
+            "y"
+          ]
+        },
+        {
+          "id": "player-bullet-movement",
+          "subject": "player-bullet",
+          "dimensions": "2d",
+          "axes": [
+            "x",
+            "y"
+          ]
+        }
+      ],
+      "aiming": [
+        {
+          "id": "player-aiming",
+          "subject": "player",
+          "mode": "mouse-aim",
+          "cooldownMs": 160,
+          "projectileSpeedPerSecond": 520
+        },
+        {
+          "id": "ring-enemy-aiming",
+          "subject": "ring-enemy",
+          "mode": "ring",
+          "cooldownMs": 2400,
+          "projectileSpeedPerSecond": 150
+        },
+        {
+          "id": "aimed-enemy-aiming",
+          "subject": "aimed-enemy",
+          "mode": "player-aimed",
+          "cooldownMs": 1800,
+          "projectileSpeedPerSecond": 210
+        }
+      ],
+      "camera": {
+        "id": "fixed-room-camera",
+        "mode": "fixed",
+        "target": "player"
+      },
+      "spawn": [
+        {
+          "id": "shield-pickup-spawn",
+          "owner": {
+            "type": "world"
+          },
+          "spawns": "shield-pickup",
+          "region": "random-room",
+          "activationEvent": "shield-spawn-event",
+          "offscreenPolicy": "in-bounds"
+        },
+        {
+          "id": "ring-enemy-spawn",
+          "owner": {
+            "type": "world"
+          },
+          "spawns": "ring-enemy",
+          "region": "room-edge",
+          "activationEvent": "ring-spawn-event",
+          "offscreenPolicy": "edge-entry"
+        },
+        {
+          "id": "aimed-enemy-spawn",
+          "owner": {
+            "type": "world"
+          },
+          "spawns": "aimed-enemy",
+          "region": "room-interior",
+          "activationEvent": "aimed-spawn-event",
+          "offscreenPolicy": "in-bounds"
+        },
+        {
+          "id": "swarm-enemy-spawn",
+          "owner": {
+            "type": "world"
+          },
+          "spawns": "ring-enemy",
+          "region": "room-edge",
+          "activationEvent": "swarm-spawn-event",
+          "offscreenPolicy": "edge-entry"
+        }
+      ],
+      "boundaries": [
+        {
+          "id": "player-room-boundary",
+          "subject": "player",
+          "appliesTo": "player",
+          "behavior": "clamp"
+        },
+        {
+          "id": "enemy-room-boundary",
+          "subject": "ring-enemy",
+          "appliesTo": "enemy",
+          "behavior": "clamp"
+        }
+      ],
+      "culling": [
+        {
+          "id": "enemy-bullet-culling",
+          "subject": "enemy-bullet",
+          "appliesTo": "projectile",
+          "rule": "offscreen-remove"
+        },
+        {
+          "id": "player-bullet-culling",
+          "subject": "player-bullet",
+          "appliesTo": "projectile",
+          "rule": "offscreen-remove"
+        }
+      ]
+    },
+    "requirementBindings": {
+      "constraints": [
+        {
+          "id": "constraint-crystal-cave-theme",
+          "kind": "theme-crystal-cave"
+        },
+        {
+          "id": "constraint-survival-120s",
+          "kind": "survival-window-120s"
+        },
+        {
+          "id": "constraint-dual-patterns",
+          "kind": "ring-and-aimed-patterns"
+        },
+        {
+          "id": "constraint-shield-pickup",
+          "kind": "periodic-shield-pickup"
+        },
+        {
+          "id": "constraint-engine-cocos-h5",
+          "kind": "engine-cocos-h5"
+        },
+        {
+          "id": "constraint-pc-primary",
+          "kind": "platform-pc-keyboard-mouse"
+        },
+        {
+          "id": "constraint-mobile-secondary",
+          "kind": "platform-mobile-touch"
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "exclude-boss",
+          "capability": "boss-encounter"
+        }
+      ],
+      "decisions": [
+        {
+          "id": "dec-theme",
+          "source": "user-declared",
+          "statementId": "concept-crystal-cave-theme",
+          "targets": [
+            {
+              "nodeId": "constraint-crystal-cave-theme"
+            }
+          ]
+        },
+        {
+          "id": "dec-landscape",
+          "source": "user-declared",
+          "statementId": "concept-landscape-orientation",
+          "targets": [
+            {
+              "nodeId": "main-viewport"
+            }
+          ]
+        },
+        {
+          "id": "dec-single-player",
+          "source": "system-default",
+          "statementId": "concept-single-player-bullet-hell-h5",
+          "targets": [
+            {
+              "nodeId": "player"
+            }
+          ]
+        },
+        {
+          "id": "dec-free-move",
+          "source": "user-declared",
+          "statementId": "gameplay-free-move-2d-room",
+          "targets": [
+            {
+              "nodeId": "player-movement"
+            },
+            {
+              "nodeId": "room-topology"
+            }
+          ]
+        },
+        {
+          "id": "dec-aim-shoot",
+          "source": "user-declared",
+          "statementId": "gameplay-aim-and-shoot",
+          "targets": [
+            {
+              "nodeId": "player-aiming"
+            },
+            {
+              "nodeId": "player-shoot"
+            },
+            {
+              "nodeId": "player-bullet"
+            }
+          ]
+        },
+        {
+          "id": "dec-shield-pickup",
+          "source": "user-declared",
+          "statementId": "gameplay-shield-pickup",
+          "targets": [
+            {
+              "nodeId": "shield-pickup"
+            },
+            {
+              "nodeId": "shield-pickup-spawn"
+            },
+            {
+              "nodeId": "shield-duration-timer"
+            }
+          ]
+        },
+        {
+          "id": "dec-patterns",
+          "source": "user-declared",
+          "statementId": "gameplay-enemy-bullet-patterns",
+          "targets": [
+            {
+              "nodeId": "ring-enemy-aiming"
+            },
+            {
+              "nodeId": "aimed-enemy-aiming"
+            }
+          ]
+        },
+        {
+          "id": "dec-survive-120",
+          "source": "user-declared",
+          "statementId": "gameplay-survive-120-seconds",
+          "targets": [
+            {
+              "nodeId": "survival-timer"
+            },
+            {
+              "nodeId": "outcome-win"
+            }
+          ]
+        },
+        {
+          "id": "dec-mouse-aim",
+          "source": "user-declared",
+          "statementId": "platform-mouse-aim-shoot",
+          "targets": [
+            {
+              "nodeId": "player-aiming"
+            }
+          ]
+        },
+        {
+          "id": "dec-engine-cocos",
+          "source": "system-default",
+          "statementId": "constraint-target-engine-cocos",
+          "targets": [
+            {
+              "nodeId": "constraint-engine-cocos-h5"
+            }
+          ]
+        },
+        {
+          "id": "dec-pc-primary",
+          "source": "system-default",
+          "statementId": "constraint-primary-platform-pc-keyboard-mouse",
+          "targets": [
+            {
+              "nodeId": "constraint-pc-primary"
+            },
+            {
+              "nodeId": "player-aiming"
+            }
+          ]
+        },
+        {
+          "id": "dec-mobile-secondary",
+          "source": "system-default",
+          "statementId": "constraint-secondary-platform-mobile-touch",
+          "targets": [
+            {
+              "nodeId": "constraint-mobile-secondary"
+            }
+          ]
+        },
+        {
+          "id": "dec-hp-and-shield",
+          "source": "agent-derived",
+          "rationale": "玩家 3 点生命提供 120 秒生存容错；护盾拾取物每 9 秒刷新一个、存在 8 秒、拾取后生效 5 秒，形成周期性短时保护而不覆盖全场。",
+          "targets": [
+            {
+              "nodeId": "player-hp"
+            },
+            {
+              "nodeId": "shield-spawn-ticker"
+            },
+            {
+              "nodeId": "shield-window-timer"
+            },
+            {
+              "nodeId": "shield-duration-timer"
+            }
+          ]
+        },
+        {
+          "id": "dec-viewport",
+          "source": "agent-derived",
+          "rationale": "横屏逻辑分辨率 1280x720，uniform 缩放并允许留边，适配桌面 H5 与宽屏浏览器。",
+          "targets": [
+            {
+              "nodeId": "main-viewport"
+            }
+          ]
+        },
+        {
+          "id": "dec-enemy-roster",
+          "source": "agent-derived",
+          "rationale": "普通敌人两型：环射漂移型与定点瞄准型，均一枪消灭且无 Boss；场上敌人总数上限 12 维持弹幕密度可控。",
+          "targets": [
+            {
+              "nodeId": "ring-enemy"
+            },
+            {
+              "nodeId": "aimed-enemy"
+            },
+            {
+              "nodeId": "enemy-count"
+            }
+          ]
+        },
+        {
+          "id": "dec-pacing-ramp",
+          "source": "agent-derived",
+          "rationale": "60 秒后启动每 3 秒一次的高频增援层，避免 120 秒后期弹幕密度空洞，同时受敌人上限约束。",
+          "targets": [
+            {
+              "nodeId": "swarm-ticker"
+            },
+            {
+              "nodeId": "elapsed-seconds"
+            },
+            {
+              "nodeId": "second-ticker"
+            }
+          ]
+        },
+        {
+          "id": "dec-fire-rates",
+          "source": "agent-derived",
+          "rationale": "节奏参数：玩家射速约 6.25 发/秒；环形弹幕 2.4 秒一轮、定点弹幕 1.8 秒一轮，保证弹幕可见且可闪避。",
+          "targets": [
+            {
+              "nodeId": "player-aiming"
+            },
+            {
+              "nodeId": "ring-enemy-aiming"
+            },
+            {
+              "nodeId": "aimed-enemy-aiming"
+            }
+          ]
+        },
+        {
+          "id": "dec-bullet-speeds",
+          "source": "agent-derived",
+          "rationale": "弹速分层：环形 150、定点 210、玩家子弹 520 像素/秒；玩家子弹快于敌弹以支持主动清理。",
+          "targets": [
+            {
+              "nodeId": "ring-enemy-aiming"
+            },
+            {
+              "nodeId": "aimed-enemy-aiming"
+            },
+            {
+              "nodeId": "player-aiming"
+            }
+          ]
+        },
+        {
+          "id": "dec-collision-resolution",
+          "source": "agent-derived",
+          "rationale": "接触类交互以行为标签表达并由事件规则裁决：中弹扣 1 血、护盾生效期免疫、玩家子弹命中敌人即摧毁敌机与子弹。",
+          "targets": [
+            {
+              "nodeId": "enemy-bullet-contact"
+            },
+            {
+              "nodeId": "player-bullet-contact"
+            },
+            {
+              "nodeId": "enemy-hit-resolution"
+            },
+            {
+              "nodeId": "player-hit-no-shield"
+            }
+          ]
+        }
+      ],
+      "forbidden": [
+        {
+          "id": "forbid-boss",
+          "statementId": "constraint-no-boss",
+          "exclusion": "exclude-boss"
+        }
+      ]
+    }
+  },
+  "gameDesignSha256": "0546586b95ff99d3905de17e000cdfce088e39b85705940203715e5aa6aeb7b1",
+  "recomputedGameDesignSha256": "0546586b95ff99d3905de17e000cdfce088e39b85705940203715e5aa6aeb7b1",
+  "requirementCoverage": {
+    "lockedStatementIds": [
+      "concept-crystal-cave-theme",
+      "concept-landscape-orientation",
+      "concept-single-player-bullet-hell-h5",
+      "gameplay-free-move-2d-room",
+      "gameplay-aim-and-shoot",
+      "gameplay-shield-pickup",
+      "gameplay-enemy-bullet-patterns",
+      "gameplay-survive-120-seconds",
+      "platform-mouse-aim-shoot",
+      "constraint-no-boss",
+      "constraint-target-engine-cocos",
+      "constraint-primary-platform-pc-keyboard-mouse",
+      "constraint-secondary-platform-mobile-touch"
+    ],
+    "decisions": [
+      {
+        "decisionId": "dec-theme",
+        "source": "user-declared",
+        "statementId": "concept-crystal-cave-theme"
+      },
+      {
+        "decisionId": "dec-landscape",
+        "source": "user-declared",
+        "statementId": "concept-landscape-orientation"
+      },
+      {
+        "decisionId": "dec-single-player",
+        "source": "system-default",
+        "statementId": "concept-single-player-bullet-hell-h5"
+      },
+      {
+        "decisionId": "dec-free-move",
+        "source": "user-declared",
+        "statementId": "gameplay-free-move-2d-room"
+      },
+      {
+        "decisionId": "dec-aim-shoot",
+        "source": "user-declared",
+        "statementId": "gameplay-aim-and-shoot"
+      },
+      {
+        "decisionId": "dec-shield-pickup",
+        "source": "user-declared",
+        "statementId": "gameplay-shield-pickup"
+      },
+      {
+        "decisionId": "dec-patterns",
+        "source": "user-declared",
+        "statementId": "gameplay-enemy-bullet-patterns"
+      },
+      {
+        "decisionId": "dec-survive-120",
+        "source": "user-declared",
+        "statementId": "gameplay-survive-120-seconds"
+      },
+      {
+        "decisionId": "dec-mouse-aim",
+        "source": "user-declared",
+        "statementId": "platform-mouse-aim-shoot"
+      },
+      {
+        "decisionId": "dec-engine-cocos",
+        "source": "system-default",
+        "statementId": "constraint-target-engine-cocos"
+      },
+      {
+        "decisionId": "dec-pc-primary",
+        "source": "system-default",
+        "statementId": "constraint-primary-platform-pc-keyboard-mouse"
+      },
+      {
+        "decisionId": "dec-mobile-secondary",
+        "source": "system-default",
+        "statementId": "constraint-secondary-platform-mobile-touch"
+      },
+      {
+        "decisionId": "dec-hp-and-shield",
+        "source": "agent-derived",
+        "rationale": "玩家 3 点生命提供 120 秒生存容错；护盾拾取物每 9 秒刷新一个、存在 8 秒、拾取后生效 5 秒，形成周期性短时保护而不覆盖全场。"
+      },
+      {
+        "decisionId": "dec-viewport",
+        "source": "agent-derived",
+        "rationale": "横屏逻辑分辨率 1280x720，uniform 缩放并允许留边，适配桌面 H5 与宽屏浏览器。"
+      },
+      {
+        "decisionId": "dec-enemy-roster",
+        "source": "agent-derived",
+        "rationale": "普通敌人两型：环射漂移型与定点瞄准型，均一枪消灭且无 Boss；场上敌人总数上限 12 维持弹幕密度可控。"
+      },
+      {
+        "decisionId": "dec-pacing-ramp",
+        "source": "agent-derived",
+        "rationale": "60 秒后启动每 3 秒一次的高频增援层，避免 120 秒后期弹幕密度空洞，同时受敌人上限约束。"
+      },
+      {
+        "decisionId": "dec-fire-rates",
+        "source": "agent-derived",
+        "rationale": "节奏参数：玩家射速约 6.25 发/秒；环形弹幕 2.4 秒一轮、定点弹幕 1.8 秒一轮，保证弹幕可见且可闪避。"
+      },
+      {
+        "decisionId": "dec-bullet-speeds",
+        "source": "agent-derived",
+        "rationale": "弹速分层：环形 150、定点 210、玩家子弹 520 像素/秒；玩家子弹快于敌弹以支持主动清理。"
+      },
+      {
+        "decisionId": "dec-collision-resolution",
+        "source": "agent-derived",
+        "rationale": "接触类交互以行为标签表达并由事件规则裁决：中弹扣 1 血、护盾生效期免疫、玩家子弹命中敌人即摧毁敌机与子弹。"
+      }
+    ],
+    "forbidden": [
+      {
+        "id": "forbid-boss",
+        "statementId": "constraint-no-boss",
+        "exclusion": "exclude-boss"
+      }
+    ]
+  },
+  "structuralAssertions": [
+    {
+      "id": "status-design-ready",
+      "description": "阶段结果为 design-ready。",
+      "passed": true,
+      "detail": "status=design-ready"
+    },
+    {
+      "id": "model-is-flash",
+      "description": "requested/provenance 模型为 deepseek-v4-flash。",
+      "passed": true,
+      "detail": "provenance.model=deepseek-v4-flash"
+    },
+    {
+      "id": "design-schema-valid",
+      "description": "GameDesignV2 通过本地 Schema。",
+      "passed": true,
+      "detail": "GameDesignV2 通过本地 schema 重解析。"
+    },
+    {
+      "id": "hash-binding-consistent",
+      "description": "request/spec/ledger/design hash 一致。",
+      "passed": true,
+      "detail": "request=true, spec=true, ledger=true, design=true"
+    },
+    {
+      "id": "locked-coverage-complete",
+      "description": "所有 locked requirement 都有 binding。",
+      "passed": true,
+      "detail": "13 条 locked 全部绑定。"
+    },
+    {
+      "id": "forbidden-excluded-and-no-boss-actor",
+      "description": "forbidden 要求（不要 Boss）有 exclusion，且已知核心 actor 结构没有 Boss。",
+      "passed": true,
+      "detail": "forbiddenLedger=[constraint-no-boss], everyForbiddenBound=true, contradiction=none, noBossActor=true"
+    },
+    {
+      "id": "survival-120000ms",
+      "description": "存活时间精确为 120000ms。",
+      "passed": true,
+      "detail": "timer survival-timer durationMs=120000, emits=survival-complete"
+    },
+    {
+      "id": "viewport-horizontal-wide",
+      "description": "viewport 为 horizontal 且宽大于高。",
+      "passed": true,
+      "detail": "orientation=horizontal, 1280x720"
+    },
+    {
+      "id": "spatial-decoupled-from-orientation",
+      "description": "spatial 的 movement/aim/camera/spawn 均被独立显式声明，未由 orientation 推导。",
+      "passed": true,
+      "detail": "movement=5, aiming=3, camera=fixed, spawn=4"
+    },
+    {
+      "id": "free-2d-movement",
+      "description": "spatial design 表达自由二维移动。",
+      "passed": true,
+      "detail": "movement dimensions=[player:2d, ring-enemy:1d, aimed-enemy:none, enemy-bullet:2d, player-bullet:2d]"
+    },
+    {
+      "id": "pointer-world-aiming",
+      "description": "结构化 requirement binding 表达鼠标瞄准射击。",
+      "passed": true,
+      "detail": "binding=dec-aim-shoot, aiming=player-aiming, action=player-shoot, actor=player, coreLoop=true"
+    },
+    {
+      "id": "survival-timer-event-outcome-chain",
+      "description": "有可验证的 survival timer/event/outcome 链。",
+      "passed": true,
+      "detail": "timer survival-timer → event survival-complete → outcome outcome-win (won)"
+    },
+    {
+      "id": "explicit-loss-outcome",
+      "description": "存在明确的 loss 机制。",
+      "passed": true,
+      "detail": "loss outcome outcome-lost, trigger=condition"
+    },
+    {
+      "id": "references-closed",
+      "description": "timer/process/rule/event/outcome 引用闭合。",
+      "passed": true,
+      "detail": "全部引用闭合。"
+    },
+    {
+      "id": "terminal-outcome-priority-distinct",
+      "description": "同帧 outcome priority 明确（terminal 优先级两两不同）。",
+      "passed": true,
+      "detail": "terminal priorities=[10, 20]"
+    },
+    {
+      "id": "agent-derived-has-rationale",
+      "description": "Agent 补全的玩法数值标记 agent-derived 并有 rationale。",
+      "passed": true,
+      "detail": "agent-derived=7, allHaveRationale=true"
+    }
+  ],
+  "usageRecordOnly": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "outputMode": "deepseek_function_call",
+    "thinkingMode": "enabled",
+    "finishReason": "tool_calls",
+    "toolCallCount": 1,
+    "argumentsLength": 14990,
+    "elapsedMs": 219143,
+    "timeoutMs": 300000,
+    "usage": {
+      "cost": 0.00737898,
+      "costKnown": true,
+      "costEvidence": {
+        "kind": "estimated",
+        "currency": "USD",
+        "estimatedCostUsd": 0.00737898,
+        "estimatedCostCnyUpper": 0.05534235,
+        "inputTokens": 7719,
+        "outputTokens": 22494,
+        "pricingBasis": {
+          "input": "cache-miss upper estimate",
+          "officialPriceCurrency": "USD",
+          "cacheHitInputUsdPerMillionTokens": 0.0028,
+          "cacheMissInputUsdPerMillionTokens": 0.14,
+          "outputUsdPerMillionTokens": 0.28,
+          "conservativeCnyPerUsd": 7.5,
+          "source": "https://api-docs.deepseek.com/quick_start/pricing",
+          "checkedAt": "2026-07-16",
+          "policyVersion": "2026-07-16"
+        }
+      },
+      "inputTokens": 7719,
+      "outputTokens": 22494,
+      "reasoningTokens": 17220
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-08-01T04:19:48.121Z",
+  "status": "bounded-failure",
+  "passed": false,
+  "requestConfig": {
+    "model": "deepseek-v4-flash",
+    "thinking": {
+      "type": "enabled"
+    },
+    "maxTokens": 32768,
+    "timeoutMs": 300000,
+    "stream": false,
+    "toolCount": 1
+  },
+  "request": {
+    "prompt": "我想要一个横屏的弹幕射击 H5 游戏：玩家可以在二维平面里自由移动，用鼠标瞄准射击，不要 Boss，存活满 120 秒后进入结算。",
+    "sha256": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58"
+  },
+  "inputHashes": {
+    "request": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58",
+    "gameSpec": "f4caee1d89e27d7a2129dc26e4e503dd8de6db7c83bcfa9c9f7aa3148c2d0707",
+    "intentLedger": "73af3e4f46d846402dd5cd7c41c95644c8ae85de6bae60491635e1c6d53c5661"
+  },
+  "structuralAssertions": [],
+  "failure": {
+    "code": "invalid-agent-output",
+    "message": "DeepSeek function arguments failed local Design Agent output validation.",
+    "retryable": false
+  },
+  "failureEvidence": {
+    "stage": "design-schema",
+    "issueCode": "design-schema-invalid",
+    "issues": [
+      {
+        "code": "custom",
+        "path": [
+          "gameDesign",
+          "systemDesign",
+          "outcomes"
+        ],
+        "message": "terminal outcome priorities must be unique"
+      }
+    ],
+    "issueCount": 1,
+    "model": "deepseek-v4-flash",
+    "thinkingMode": "enabled",
+    "finishReason": "tool_calls",
+    "toolCallCount": 1,
+    "argumentsLength": 17733,
+    "inputTokens": 7380,
+    "outputTokens": 25071,
+    "reasoningTokens": 18827,
+    "elapsedMs": 197464,
+    "timeoutMs": 300000
+  }
+}

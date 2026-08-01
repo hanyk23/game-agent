@@ -22,6 +22,7 @@ import {
   verifyIntentLedgerV2,
   type IntentLedgerV2,
 } from "../src/requirements/intent-ledger-v2.js";
+import { resolveLiveAgentV2ProbeCase } from "./live-agent-v2-probe-cases.js";
 
 /**
  * Controlled real DeepSeek probe for the single-call direct GameDesignV2 stage.
@@ -29,14 +30,15 @@ import {
  * evaluator used by both live and offline report paths.
  */
 
+const PROBE_CASE = resolveLiveAgentV2ProbeCase();
+
 const UPSTREAM_REPORT_RELATIVE_PATH = path.join(
   "evals",
   "reports",
-  "spec-agent-v2-live-probe-deepseek-v4-pro.json",
+  `spec-agent-v2-live-probe-deepseek-v4-flash-thinking-${PROBE_CASE.id}.json`,
 );
 
-const PROBE_REQUEST_PROMPT =
-  "我想要一个横屏的弹幕射击 H5 游戏：玩家可以在二维平面里自由移动，用鼠标瞄准射击，不要 Boss，存活满 120 秒后进入结算。";
+const PROBE_REQUEST_PROMPT = PROBE_CASE.prompt;
 
 const PROBE_MODEL = "deepseek-v4-flash" as const;
 const PROBE_THINKING = { type: "enabled" } as const;
@@ -112,7 +114,7 @@ async function main(): Promise<void> {
     projectDirectory,
     "evals",
     "reports",
-    `design-agent-v2-live-probe-thinking-${reportTimestamp}.json`,
+    `design-agent-v2-live-probe-thinking-${PROBE_CASE.id}-${reportTimestamp}.json`,
   );
   await mkdir(path.dirname(reportPath), { recursive: true });
 
@@ -124,6 +126,7 @@ async function main(): Promise<void> {
       passed: false,
       message: "环境缺少凭据，无法进行 live probe。",
       requestConfig: PROBE_REQUEST_CONFIG,
+      probeCaseId: PROBE_CASE.id,
     };
     await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
     process.stdout.write(`${JSON.stringify(report)}\n`);
@@ -139,6 +142,7 @@ async function main(): Promise<void> {
       status: "upstream-unavailable",
       passed: false,
       requestConfig: PROBE_REQUEST_CONFIG,
+      probeCaseId: PROBE_CASE.id,
       message:
         "已保存的 GameSpecV2/IntentLedgerV2 缺失或校验失败，无法进行 live probe。",
       error: {
@@ -196,6 +200,7 @@ async function main(): Promise<void> {
       status: result.status,
       passed,
       requestConfig: PROBE_REQUEST_CONFIG,
+      probeCaseId: PROBE_CASE.id,
       request: {
         prompt: PROBE_REQUEST_PROMPT,
         sha256: requestSha256,

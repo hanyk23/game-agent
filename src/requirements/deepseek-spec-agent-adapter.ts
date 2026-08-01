@@ -23,7 +23,8 @@ import {
  *  - The API key is read only from the caller (the Orchestrator reads it from
  *    the DEEPSEEK_API_KEY env var); this module never touches process.env, and
  *    never logs, prints, writes or returns the key.
- *  - temperature = 0, provider-native JSON object mode, all tools disabled.
+ *  - Thinking enabled, temperature = 0, provider-native JSON object mode, all
+ *    tools disabled.
  *  - Explicit timeout and max output tokens.
  *  - The provider's JSON is NEVER treated as a trusted artifact: it is parsed
  *    and validated locally, and any illegal/empty/truncated/non-JSON response
@@ -32,6 +33,8 @@ import {
 
 const DEEPSEEK_CHAT_COMPLETIONS_URL =
   "https://api.deepseek.com/chat/completions";
+const DEFAULT_MAX_OUTPUT_TOKENS = 16_384;
+const DEFAULT_TIMEOUT_MS = 180_000;
 
 export type DeepSeekSpecAgentModel = "deepseek-v4-flash" | "deepseek-v4-pro";
 
@@ -77,6 +80,7 @@ type DeepSeekChatCompletion = {
   usage?: {
     prompt_tokens?: unknown;
     completion_tokens?: unknown;
+    completion_tokens_details?: { reasoning_tokens?: unknown };
   };
 };
 
@@ -133,13 +137,14 @@ export async function analyzeSpecWithDeepSeek(
           { role: "user", content: options.prompt },
         ],
         response_format: { type: "json_object" },
-        max_tokens: options.maxOutputTokens ?? 8_192,
+        thinking: { type: "enabled" },
+        max_tokens: options.maxOutputTokens ?? DEFAULT_MAX_OUTPUT_TOKENS,
         temperature: 0,
         // Tools are disabled: the Spec Agent only reasons over text.
         tools: [],
         stream: false,
       }),
-      signal: AbortSignal.timeout(options.timeoutMs ?? 60_000),
+      signal: AbortSignal.timeout(options.timeoutMs ?? DEFAULT_TIMEOUT_MS),
     });
   } catch (error) {
     // Network failure, timeout/abort, DNS, etc.
@@ -230,6 +235,9 @@ export async function analyzeSpecWithDeepSeek(
 
   const inputTokens = readValidTokenCount(completion.usage?.prompt_tokens);
   const outputTokens = readValidTokenCount(completion.usage?.completion_tokens);
+  const reasoningTokens = readValidTokenCount(
+    completion.usage?.completion_tokens_details?.reasoning_tokens,
+  );
   // §三: cost is KNOWN only when BOTH prompt_tokens AND completion_tokens are
   // present as finite, non-negative integers. If either side is missing, NaN,
   // negative, or a non-integer/non-number, we have no honest basis and the
@@ -260,7 +268,7 @@ export async function analyzeSpecWithDeepSeek(
       // above make it explicit that this zero is NOT a verified charge.
       inputTokens: inputTokens ?? 0,
       outputTokens: outputTokens ?? 0,
-      reasoningTokens: 0,
+      reasoningTokens: reasoningTokens ?? 0,
     },
   };
 

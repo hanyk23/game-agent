@@ -1,0 +1,297 @@
+{
+  "checkedAt": "2026-08-01T04:44:40.562Z",
+  "status": "spec-ready",
+  "passed": true,
+  "requestedModel": "deepseek-v4-flash",
+  "probeCaseId": "crystal-cavern-shields",
+  "pricingNote": "调用模型为 deepseek-v4-flash，成本估算沿用同档的 flash 价格快照（deepseek-cost-policy.ts）；usageRecordOnly.cost 为 flash 档保守上界估算，仅记录、不作门禁。",
+  "request": {
+    "prompt": "做一个横屏水晶洞窟主题的弹幕射击 H5：玩家能在整个二维房间自由移动，用鼠标瞄准并射击；场上周期性出现短时护盾拾取物，敌人混合使用环形弹幕和定点弹幕。不要 Boss，撑过 120 秒进入胜利结算。",
+    "sha256": "75744df8cb11eadc73947b85f73aadbb559984522d3bebbdf8ed03b50bd6fa42"
+  },
+  "gameSpec": {
+    "schemaVersion": "2.0.0",
+    "kind": "GameSpecV2",
+    "gameConcept": [
+      {
+        "statementId": "concept-crystal-cave-theme",
+        "text": "游戏采用水晶洞窟主题。"
+      },
+      {
+        "statementId": "concept-landscape-orientation",
+        "text": "游戏画面为横屏（横向）方向。"
+      },
+      {
+        "statementId": "concept-single-player-bullet-hell-h5",
+        "text": "产品是单人 2D 弹幕类 Web/H5 游戏，运行在浏览器中。"
+      }
+    ],
+    "gameplayIntent": [
+      {
+        "statementId": "gameplay-free-move-2d-room",
+        "text": "玩家能在整个二维房间内自由移动。"
+      },
+      {
+        "statementId": "gameplay-aim-and-shoot",
+        "text": "玩家主动瞄准并射击。"
+      },
+      {
+        "statementId": "gameplay-shield-pickup",
+        "text": "场上周期性出现短时护盾拾取物。"
+      },
+      {
+        "statementId": "gameplay-enemy-bullet-patterns",
+        "text": "敌人混合使用环形弹幕和定点弹幕。"
+      },
+      {
+        "statementId": "gameplay-survive-120-seconds",
+        "text": "玩家坚持存活满 120 秒后进入胜利结算。"
+      }
+    ],
+    "platformAndControls": [
+      {
+        "statementId": "platform-mouse-aim-shoot",
+        "text": "玩家使用鼠标进行瞄准并射击。"
+      }
+    ],
+    "additionalConstraints": [
+      {
+        "statementId": "constraint-no-boss",
+        "text": "游戏不包含 Boss 敌人。"
+      },
+      {
+        "statementId": "constraint-target-engine-cocos",
+        "text": "目标引擎固定为 Cocos Creator Web/H5。"
+      },
+      {
+        "statementId": "constraint-primary-platform-pc-keyboard-mouse",
+        "text": "PC 键盘与鼠标是首要支持与验收平台。"
+      },
+      {
+        "statementId": "constraint-secondary-platform-mobile-touch",
+        "text": "手机 touch 为次优先支持，不阻塞 PC 首版交付。"
+      }
+    ]
+  },
+  "gameSpecSha256": "7c6245369fe45dd35253e689389573816559ddd1086cfd47fd5d49bef7c3766c",
+  "recomputedGameSpecSha256": "7c6245369fe45dd35253e689389573816559ddd1086cfd47fd5d49bef7c3766c",
+  "intentLedger": {
+    "schemaVersion": "2.0.0",
+    "kind": "IntentLedgerV2",
+    "scope": "open-requirement-provenance-v2",
+    "request": {
+      "language": "zh-CN",
+      "normalization": "NFKC",
+      "sha256": "75744df8cb11eadc73947b85f73aadbb559984522d3bebbdf8ed03b50bd6fa42"
+    },
+    "gameSpec": {
+      "schemaVersion": "2.0.0",
+      "sha256": "7c6245369fe45dd35253e689389573816559ddd1086cfd47fd5d49bef7c3766c"
+    },
+    "entries": [
+      {
+        "statementId": "concept-crystal-cave-theme",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "水晶洞窟主题"
+          ]
+        }
+      },
+      {
+        "statementId": "concept-landscape-orientation",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "横屏"
+          ]
+        }
+      },
+      {
+        "statementId": "concept-single-player-bullet-hell-h5",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-single-player-2d-bullet-hell-h5",
+          "note": "用户请求为弹幕射击 H5，与默认产品形态一致。"
+        }
+      },
+      {
+        "statementId": "gameplay-free-move-2d-room",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "玩家能在整个二维房间自由移动"
+          ]
+        }
+      },
+      {
+        "statementId": "gameplay-aim-and-shoot",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "用鼠标瞄准并射击"
+          ]
+        }
+      },
+      {
+        "statementId": "gameplay-shield-pickup",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "场上周期性出现短时护盾拾取物"
+          ]
+        }
+      },
+      {
+        "statementId": "gameplay-enemy-bullet-patterns",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "敌人混合使用环形弹幕和定点弹幕"
+          ]
+        }
+      },
+      {
+        "statementId": "gameplay-survive-120-seconds",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "撑过 120 秒进入胜利结算"
+          ]
+        }
+      },
+      {
+        "statementId": "platform-mouse-aim-shoot",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "用鼠标瞄准并射击"
+          ]
+        }
+      },
+      {
+        "statementId": "constraint-no-boss",
+        "source": "user-declared",
+        "strength": "forbidden",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "不要 Boss"
+          ]
+        }
+      },
+      {
+        "statementId": "constraint-target-engine-cocos",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-target-engine-cocos-web-h5",
+          "note": "默认使用 Cocos Creator Web/H5 引擎。"
+        }
+      },
+      {
+        "statementId": "constraint-primary-platform-pc-keyboard-mouse",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-primary-platform-pc-keyboard-mouse",
+          "note": "PC 键盘与鼠标为默认主要验收平台。"
+        }
+      },
+      {
+        "statementId": "constraint-secondary-platform-mobile-touch",
+        "source": "system-default",
+        "strength": "preferred",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-secondary-platform-mobile-touch",
+          "note": "手机 touch 为次优先支持的默认平台约束。"
+        }
+      }
+    ]
+  },
+  "semanticAssertions": [
+    {
+      "id": "survival-120s-preserved-and-locked",
+      "description": "存活 120 秒的要求被保留，且其 ledger 记录 locked=true。",
+      "passed": true,
+      "detail": "statementId=gameplay-survive-120-seconds (gameplayIntent) locked，text=\"玩家坚持存活满 120 秒后进入胜利结算。\""
+    },
+    {
+      "id": "forbid-boss-locked",
+      "description": "不要 Boss 的要求被记录为 forbidden 且 locked=true。",
+      "passed": true,
+      "detail": "statementId=constraint-no-boss (additionalConstraints) forbidden+locked，text=\"游戏不包含 Boss 敌人。\""
+    },
+    {
+      "id": "ledger-covers-spec-one-to-one",
+      "description": "IntentLedger 与 GameSpec 的 statementId 一一对应。",
+      "passed": true,
+      "detail": "spec 与 ledger 各 13 条，statementId 完全一致。"
+    }
+  ],
+  "usageRecordOnly": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "outputMode": "deepseek_json_object",
+    "usage": {
+      "cost": 0.0026066600000000002,
+      "costKnown": true,
+      "costEvidence": {
+        "kind": "estimated",
+        "currency": "USD",
+        "estimatedCostUsd": 0.0026066600000000002,
+        "estimatedCostCnyUpper": 0.019549950000000003,
+        "inputTokens": 3957,
+        "outputTokens": 7331,
+        "pricingBasis": {
+          "input": "cache-miss upper estimate",
+          "officialPriceCurrency": "USD",
+          "cacheHitInputUsdPerMillionTokens": 0.0028,
+          "cacheMissInputUsdPerMillionTokens": 0.14,
+          "outputUsdPerMillionTokens": 0.28,
+          "conservativeCnyPerUsd": 7.5,
+          "source": "https://api-docs.deepseek.com/quick_start/pricing",
+          "checkedAt": "2026-07-16",
+          "policyVersion": "2026-07-16"
+        }
+      },
+      "inputTokens": 3957,
+      "outputTokens": 7331,
+      "reasoningTokens": 5725
+    }
+  }
+}

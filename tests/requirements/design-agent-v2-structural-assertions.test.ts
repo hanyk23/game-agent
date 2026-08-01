@@ -14,7 +14,10 @@ import type {
   DesignStageV2Success,
 } from "../../src/requirements/design-agent-result.js";
 import { sha256GameSpecV2 } from "../../src/requirements/game-spec-v2.js";
-import { sha256IntentLedgerV2 } from "../../src/requirements/intent-ledger-v2.js";
+import {
+  sha256IntentLedgerV2,
+  type IntentLedgerV2,
+} from "../../src/requirements/intent-ledger-v2.js";
 import {
   compiledSurvivalDesign,
   upstreamGameSpecV2,
@@ -66,9 +69,12 @@ function structurallyBoundDesign(mode = "mouse-aimed"): GameDesignV2 {
   return design;
 }
 
-function evaluate(design: GameDesignV2): DesignAgentV2StructuralAssertion[] {
+function evaluate(
+  design: GameDesignV2,
+  intentLedger: IntentLedgerV2 = upstreamIntentLedgerV2(),
+): DesignAgentV2StructuralAssertion[] {
   const gameSpecSha256 = sha256GameSpecV2(upstreamGameSpecV2());
-  const intentLedgerSha256 = sha256IntentLedgerV2(upstreamIntentLedgerV2());
+  const intentLedgerSha256 = sha256IntentLedgerV2(intentLedger);
   const result: DesignStageV2Success = {
     schemaVersion: "2.0.0",
     kind: "design-stage-v2-result",
@@ -86,7 +92,7 @@ function evaluate(design: GameDesignV2): DesignAgentV2StructuralAssertion[] {
   };
   return evaluateDesignAgentV2StructuralAssertions({
     result,
-    intentLedger: upstreamIntentLedgerV2(),
+    intentLedger,
     expectedRequestSha256: upstreamRequestSha256(),
     expectedGameSpecSha256: gameSpecSha256,
     expectedIntentLedgerSha256: intentLedgerSha256,
@@ -110,6 +116,29 @@ describe("Design Agent v2 structural assertions", () => {
     expect(assertion.detail).toContain("aiming=aiming-player");
     expect(assertion.detail).toContain("action=action-fire");
     expect(assertion.detail).toContain("actor=actor-player");
+  });
+
+  it("does not couple aiming validation to a model-generated statement id", () => {
+    const design = structurallyBoundDesign();
+    const ledger = upstreamIntentLedgerV2();
+    const oldId = "control-mouse-aim-shoot";
+    const newId = "controls-mouse-aim-and-shoot";
+    const entry = ledger.entries.find((value) => value.statementId === oldId);
+    const binding = design.requirementBindings.decisions.find(
+      (decision) =>
+        decision.source !== "agent-derived" && decision.statementId === oldId,
+    );
+    if (
+      entry === undefined ||
+      binding === undefined ||
+      binding.source === "agent-derived"
+    ) {
+      throw new Error("missing mouse aiming fixture");
+    }
+    entry.statementId = newId;
+    binding.statementId = newId;
+
+    expect(aimingAssertion(evaluate(design, ledger)).passed).toBe(true);
   });
 
   it("rejects pointer-world-target without control-mouse-aim-shoot binding", () => {

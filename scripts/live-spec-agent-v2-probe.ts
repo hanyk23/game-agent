@@ -17,6 +17,7 @@ import type {
   IntentLedgerV2Entry,
 } from "../src/requirements/intent-ledger-v2.js";
 import type { SpecStageV2Result } from "../src/requirements/spec-agent-result.js";
+import { resolveLiveAgentV2ProbeCase } from "./live-agent-v2-probe-cases.js";
 
 /**
  * live-spec-agent-v2-probe — the ONE authorized real DeepSeek probe for the
@@ -28,9 +29,10 @@ import type { SpecStageV2Result } from "../src/requirements/spec-agent-result.js
  *    written, or embedded in the report.
  *  - If the key is absent, we DO NOT search for credentials; we report
  *    "环境缺少凭据，无法进行 live probe" and exit 0 (this is not a regression).
- *  - temperature = 0, JSON object mode, tools disabled, explicit timeout, and
- *    maxOutputTokens = 8192 so the full GameSpec v2 + IntentLedger v2 JSON is not
- *    truncated. The model JSON is re-validated locally by the adapter +
+ *  - thinking enabled, temperature = 0, JSON object mode, tools disabled,
+ *    explicit timeout, and maxOutputTokens = 16384 so reasoning plus the full
+ *    GameSpec v2 + IntentLedger v2 JSON are not truncated. The model JSON is
+ *    re-validated locally by the adapter +
  *    Orchestrator; nothing is trusted blindly.
  *
  * NO budget gate: cost and tokens are RECORDED for auditing only. They are never
@@ -52,8 +54,8 @@ import type { SpecStageV2Result } from "../src/requirements/spec-agent-result.js
  * is substituted here.
  */
 
-const PROBE_PROMPT =
-  "我想要一个横屏的弹幕射击 H5 游戏：玩家可以在二维平面里自由移动，用鼠标瞄准射击，不要 Boss，存活满 120 秒后进入结算。";
+const PROBE_CASE = resolveLiveAgentV2ProbeCase();
+const PROBE_PROMPT = PROBE_CASE.prompt;
 
 /**
  * The model this probe requests. §二十二.3: the Spec future live probe config is
@@ -197,7 +199,7 @@ async function main(): Promise<void> {
     projectDirectory,
     "evals",
     "reports",
-    "spec-agent-v2-live-probe-deepseek-v4-flash.json",
+    `spec-agent-v2-live-probe-deepseek-v4-flash-thinking-${PROBE_CASE.id}.json`,
   );
   await mkdir(path.dirname(reportPath), { recursive: true });
 
@@ -231,8 +233,8 @@ async function main(): Promise<void> {
             // deepseek-v4-flash produces the full GameSpec v2 + IntentLedger v2
             // JSON well within a bounded window; a 120s ceiling gives the single
             // no-retry attempt ample room without a Pro-tier reasoning budget.
-            timeoutMs: 120_000,
-            maxOutputTokens: 8_192,
+            timeoutMs: 180_000,
+            maxOutputTokens: 16_384,
           }),
         budget: { maxAttempts: 1 },
       },
@@ -256,6 +258,7 @@ async function main(): Promise<void> {
       status: result.status,
       passed,
       requestedModel: PROBE_MODEL,
+      probeCaseId: PROBE_CASE.id,
       pricingNote: PRICING_NOTE,
       request: {
         prompt: PROBE_PROMPT,

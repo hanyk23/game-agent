@@ -1,0 +1,232 @@
+{
+  "checkedAt": "2026-08-01T04:19:24.351Z",
+  "status": "spec-ready",
+  "passed": true,
+  "requestedModel": "deepseek-v4-flash",
+  "pricingNote": "调用模型为 deepseek-v4-flash，成本估算沿用同档的 flash 价格快照（deepseek-cost-policy.ts）；usageRecordOnly.cost 为 flash 档保守上界估算，仅记录、不作门禁。",
+  "request": {
+    "prompt": "我想要一个横屏的弹幕射击 H5 游戏：玩家可以在二维平面里自由移动，用鼠标瞄准射击，不要 Boss，存活满 120 秒后进入结算。",
+    "sha256": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58"
+  },
+  "gameSpec": {
+    "schemaVersion": "2.0.0",
+    "kind": "GameSpecV2",
+    "gameConcept": [
+      {
+        "statementId": "concept-landscape-bullet-hell-h5",
+        "text": "这是一款横屏的弹幕射击 H5 游戏。"
+      },
+      {
+        "statementId": "concept-single-player-2d-bullet-hell-web",
+        "text": "产品是单人 2D 弹幕类 Web/H5 游戏，运行在浏览器中。"
+      }
+    ],
+    "gameplayIntent": [
+      {
+        "statementId": "gameplay-free-2d-movement",
+        "text": "玩家可以在二维平面里自由移动。"
+      },
+      {
+        "statementId": "gameplay-survive-120-seconds-settle",
+        "text": "玩家存活满 120 秒后进入结算。"
+      }
+    ],
+    "platformAndControls": [
+      {
+        "statementId": "controls-mouse-aim-and-shoot",
+        "text": "玩家使用鼠标瞄准射击。"
+      },
+      {
+        "statementId": "platform-pc-keyboard-mouse-primary",
+        "text": "PC 键盘与鼠标是首要支持与验收平台。"
+      },
+      {
+        "statementId": "platform-mobile-touch-secondary",
+        "text": "手机 touch 为次优先支持，不阻塞 PC 首版交付。"
+      }
+    ],
+    "additionalConstraints": [
+      {
+        "statementId": "constraint-no-boss",
+        "text": "不要 Boss。"
+      },
+      {
+        "statementId": "engine-cocos-web-h5",
+        "text": "目标引擎固定为 Cocos Creator Web/H5。"
+      }
+    ]
+  },
+  "gameSpecSha256": "f4caee1d89e27d7a2129dc26e4e503dd8de6db7c83bcfa9c9f7aa3148c2d0707",
+  "recomputedGameSpecSha256": "f4caee1d89e27d7a2129dc26e4e503dd8de6db7c83bcfa9c9f7aa3148c2d0707",
+  "intentLedger": {
+    "schemaVersion": "2.0.0",
+    "kind": "IntentLedgerV2",
+    "scope": "open-requirement-provenance-v2",
+    "request": {
+      "language": "zh-CN",
+      "normalization": "NFKC",
+      "sha256": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58"
+    },
+    "gameSpec": {
+      "schemaVersion": "2.0.0",
+      "sha256": "f4caee1d89e27d7a2129dc26e4e503dd8de6db7c83bcfa9c9f7aa3148c2d0707"
+    },
+    "entries": [
+      {
+        "statementId": "concept-landscape-bullet-hell-h5",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 0.99,
+        "evidence": {
+          "quotes": [
+            "我想要一个横屏的弹幕射击 H5 游戏"
+          ]
+        }
+      },
+      {
+        "statementId": "concept-single-player-2d-bullet-hell-web",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-single-player-2d-bullet-hell-h5",
+          "note": "用户未与此默认冲突"
+        }
+      },
+      {
+        "statementId": "gameplay-free-2d-movement",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "玩家可以在二维平面里自由移动"
+          ]
+        }
+      },
+      {
+        "statementId": "gameplay-survive-120-seconds-settle",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "存活满 120 秒后进入结算"
+          ]
+        }
+      },
+      {
+        "statementId": "controls-mouse-aim-and-shoot",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "用鼠标瞄准射击"
+          ]
+        }
+      },
+      {
+        "statementId": "platform-pc-keyboard-mouse-primary",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-primary-platform-pc-keyboard-mouse",
+          "note": "与用户鼠标要求一致"
+        }
+      },
+      {
+        "statementId": "platform-mobile-touch-secondary",
+        "source": "system-default",
+        "strength": "preferred",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-secondary-platform-mobile-touch",
+          "note": "移动端为次优先"
+        }
+      },
+      {
+        "statementId": "constraint-no-boss",
+        "source": "user-declared",
+        "strength": "forbidden",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "不要 Boss"
+          ]
+        }
+      },
+      {
+        "statementId": "engine-cocos-web-h5",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-target-engine-cocos-web-h5",
+          "note": "目标引擎默认"
+        }
+      }
+    ]
+  },
+  "semanticAssertions": [
+    {
+      "id": "survival-120s-preserved-and-locked",
+      "description": "存活 120 秒的要求被保留，且其 ledger 记录 locked=true。",
+      "passed": true,
+      "detail": "statementId=gameplay-survive-120-seconds-settle (gameplayIntent) locked，text=\"玩家存活满 120 秒后进入结算。\""
+    },
+    {
+      "id": "forbid-boss-locked",
+      "description": "不要 Boss 的要求被记录为 forbidden 且 locked=true。",
+      "passed": true,
+      "detail": "statementId=constraint-no-boss (additionalConstraints) forbidden+locked，text=\"不要 Boss。\""
+    },
+    {
+      "id": "ledger-covers-spec-one-to-one",
+      "description": "IntentLedger 与 GameSpec 的 statementId 一一对应。",
+      "passed": true,
+      "detail": "spec 与 ledger 各 9 条，statementId 完全一致。"
+    }
+  ],
+  "usageRecordOnly": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "outputMode": "deepseek_json_object",
+    "usage": {
+      "cost": 0.0020088600000000003,
+      "costKnown": true,
+      "costEvidence": {
+        "kind": "estimated",
+        "currency": "USD",
+        "estimatedCostUsd": 0.0020088600000000003,
+        "estimatedCostCnyUpper": 0.015066450000000002,
+        "inputTokens": 3933,
+        "outputTokens": 5208,
+        "pricingBasis": {
+          "input": "cache-miss upper estimate",
+          "officialPriceCurrency": "USD",
+          "cacheHitInputUsdPerMillionTokens": 0.0028,
+          "cacheMissInputUsdPerMillionTokens": 0.14,
+          "outputUsdPerMillionTokens": 0.28,
+          "conservativeCnyPerUsd": 7.5,
+          "source": "https://api-docs.deepseek.com/quick_start/pricing",
+          "checkedAt": "2026-07-16",
+          "policyVersion": "2026-07-16"
+        }
+      },
+      "inputTokens": 3933,
+      "outputTokens": 5208,
+      "reasoningTokens": 0
+    }
+  }
+}
