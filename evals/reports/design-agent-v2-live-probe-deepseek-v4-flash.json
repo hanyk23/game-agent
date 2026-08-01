@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-08-01T03:21:40.220Z",
+  "status": "bounded-failure",
+  "passed": false,
+  "requestedModel": "deepseek-v4-flash",
+  "request": {
+    "prompt": "我想要一个横屏的弹幕射击 H5 游戏：玩家可以在二维平面里自由移动，用鼠标瞄准射击，不要 Boss，存活满 120 秒后进入结算。",
+    "sha256": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58"
+  },
+  "inputHashes": {
+    "request": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58",
+    "gameSpec": "461be7b4cbcebcda136c7c05c6d11aa0db8bbfa32b8e25b3a1988ed42a4ec9b2",
+    "intentLedger": "226513dd500f83feca0be79e8341c7635573c90d9493cee2f2ed1b7c884eb2a5"
+  },
+  "structuralAssertions": [],
+  "usageRecordOnly": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "outputMode": "deepseek_function_call",
+    "thinkingMode": "disabled",
+    "finishReason": "tool_calls",
+    "toolCallCount": 1,
+    "argumentsLength": 15298,
+    "elapsedMs": 32813,
+    "timeoutMs": 120000,
+    "usage": {
+      "cost": 0.0026418,
+      "costKnown": true,
+      "costEvidence": {
+        "kind": "estimated",
+        "currency": "USD",
+        "estimatedCostUsd": 0.0026418,
+        "estimatedCostCnyUpper": 0.0198135,
+        "inputTokens": 7660,
+        "outputTokens": 5605,
+        "pricingBasis": {
+          "input": "cache-miss upper estimate",
+          "officialPriceCurrency": "USD",
+          "cacheHitInputUsdPerMillionTokens": 0.0028,
+          "cacheMissInputUsdPerMillionTokens": 0.14,
+          "outputUsdPerMillionTokens": 0.28,
+          "conservativeCnyPerUsd": 7.5,
+          "source": "https://api-docs.deepseek.com/quick_start/pricing",
+          "checkedAt": "2026-07-16",
+          "policyVersion": "2026-07-16"
+        }
+      },
+      "inputTokens": 7660,
+      "outputTokens": 5605,
+      "reasoningTokens": null
+    }
+  },
+  "failure": {
+    "code": "invalid-agent-output",
+    "message": "GameDesignV2 reference: action act-player-move emits references unknown id \"ev-player-moving\"",
+    "retryable": false
+  },
+  "failureEvidence": {
+    "stage": "consistency",
+    "issueCode": "reference",
+    "issues": [
+      {
+        "code": "reference",
+        "path": [],
+        "message": "GameDesignV2 reference: action act-player-move emits references unknown id \"ev-player-moving\""
+      }
+    ],
+    "issueCount": 1,
+    "model": "deepseek-v4-flash",
+    "thinkingMode": "disabled",
+    "finishReason": "tool_calls",
+    "toolCallCount": 1,
+    "argumentsLength": 15298,
+    "inputTokens": 7660,
+    "outputTokens": 5605,
+    "reasoningTokens": null,
+    "elapsedMs": 32813,
+    "timeoutMs": 120000
+  }
+}

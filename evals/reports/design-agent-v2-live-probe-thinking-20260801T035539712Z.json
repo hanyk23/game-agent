@@ -1,0 +1,1251 @@
+{
+  "checkedAt": "2026-08-01T03:55:39.712Z",
+  "status": "design-ready",
+  "passed": false,
+  "requestConfig": {
+    "model": "deepseek-v4-flash",
+    "thinking": {
+      "type": "enabled"
+    },
+    "maxTokens": 32768,
+    "timeoutMs": 300000,
+    "stream": false,
+    "toolCount": 1
+  },
+  "request": {
+    "prompt": "我想要一个横屏的弹幕射击 H5 游戏：玩家可以在二维平面里自由移动，用鼠标瞄准射击，不要 Boss，存活满 120 秒后进入结算。",
+    "sha256": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58"
+  },
+  "inputHashes": {
+    "request": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58",
+    "gameSpec": "461be7b4cbcebcda136c7c05c6d11aa0db8bbfa32b8e25b3a1988ed42a4ec9b2",
+    "intentLedger": "226513dd500f83feca0be79e8341c7635573c90d9493cee2f2ed1b7c884eb2a5"
+  },
+  "gameDesign": {
+    "schemaVersion": "2.0.0",
+    "kind": "GameDesignV2",
+    "sources": {
+      "request": {
+        "sha256": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58"
+      },
+      "gameSpec": {
+        "schemaVersion": "2.0.0",
+        "sha256": "461be7b4cbcebcda136c7c05c6d11aa0db8bbfa32b8e25b3a1988ed42a4ec9b2"
+      },
+      "intentLedger": {
+        "schemaVersion": "2.0.0",
+        "sha256": "226513dd500f83feca0be79e8341c7635573c90d9493cee2f2ed1b7c884eb2a5"
+      }
+    },
+    "gameplayDesign": {
+      "coreLoop": {
+        "id": "core-loop-survive",
+        "summary": "玩家在横向 2D 弹幕场中自由移动并用鼠标瞄准射击：击毁敌机获得得分反馈，同时躲避敌机释放的混合弹幕，存活满 120 秒即进入胜利结算；若生命值耗尽则进入失败结算。",
+        "actionIds": [
+          "action-move-player",
+          "action-player-shoot"
+        ]
+      },
+      "progression": {
+        "id": "progression-time-ramp",
+        "model": "time-based-difficulty-ramp",
+        "summary": "唯一目标是存活 120 秒。40 秒与 80 秒两个时间点提升敌机弹幕强度（aimed+radial 混合弹幕更密集），玩家可感知压力递增，但胜负只由生存决定，无 Boss 阶段。"
+      },
+      "pacing": {
+        "id": "pacing-wave-pressure",
+        "model": "escalating-wave",
+        "summary": "敌机以固定间隔从屏幕顶部刷出并持续释放弹幕，全程压力随两个相位节点单调递增，不存在 Boss 战或大间隙休息段，保证 120 秒内的连续紧张节奏。"
+      }
+    },
+    "systemDesign": {
+      "actors": [
+        {
+          "id": "actor-player",
+          "role": "player-ship",
+          "capabilityTags": [
+            "move-2d",
+            "aimed-shoot",
+            "collide-able"
+          ]
+        },
+        {
+          "id": "actor-enemy",
+          "role": "enemy-drone",
+          "capabilityTags": [
+            "move-2d",
+            "pattern-fire",
+            "collide-able",
+            "non-boss"
+          ]
+        },
+        {
+          "id": "actor-player-bullet",
+          "role": "friendly-projectile",
+          "capabilityTags": [
+            "move-2d",
+            "collide-able"
+          ]
+        },
+        {
+          "id": "actor-enemy-bullet",
+          "role": "hostile-projectile",
+          "capabilityTags": [
+            "move-2d",
+            "collide-able"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "id": "res-player-hp",
+          "initial": 3,
+          "min": 0,
+          "max": 3,
+          "unit": "hp"
+        },
+        {
+          "id": "res-score",
+          "initial": 0,
+          "min": 0,
+          "max": 999999,
+          "unit": "points"
+        }
+      ],
+      "states": [
+        {
+          "id": "st-game-phase",
+          "values": [
+            "playing",
+            "settling"
+          ],
+          "initial": "playing"
+        },
+        {
+          "id": "st-player-alive",
+          "values": [
+            "alive",
+            "dead"
+          ],
+          "initial": "alive"
+        },
+        {
+          "id": "st-player-invulnerable",
+          "values": [
+            "invulnerable",
+            "vulnerable"
+          ],
+          "initial": "vulnerable"
+        }
+      ],
+      "actions": [
+        {
+          "id": "action-move-player",
+          "actor": "actor-player",
+          "kind": "movement-input",
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "move",
+              "subject": "actor-player"
+            }
+          ]
+        },
+        {
+          "id": "action-player-shoot",
+          "actor": "actor-player",
+          "kind": "aimed-shoot",
+          "effects": [
+            {
+              "kind": "emit-event",
+              "event": "ev-player-shot"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "id": "ev-game-start"
+        },
+        {
+          "id": "ev-survival-complete"
+        },
+        {
+          "id": "ev-enemy-spawn-tick"
+        },
+        {
+          "id": "ev-pattern-tick"
+        },
+        {
+          "id": "ev-player-shot"
+        },
+        {
+          "id": "ev-bullet-hit-player"
+        },
+        {
+          "id": "ev-bullet-hit-enemy"
+        },
+        {
+          "id": "ev-player-damaged"
+        },
+        {
+          "id": "ev-iframes-end"
+        },
+        {
+          "id": "ev-player-dead"
+        },
+        {
+          "id": "ev-phase-2-start"
+        },
+        {
+          "id": "ev-phase-3-start"
+        },
+        {
+          "id": "ev-settlement-start"
+        }
+      ],
+      "timers": [
+        {
+          "id": "timer-survival",
+          "mode": "delay",
+          "durationMs": 120000,
+          "repeat": "once",
+          "startOn": "ev-game-start",
+          "stopOn": "ev-player-dead",
+          "emits": "ev-survival-complete"
+        },
+        {
+          "id": "timer-enemy-spawn",
+          "mode": "interval",
+          "durationMs": 2500,
+          "repeat": "infinite",
+          "startOn": "ev-game-start",
+          "stopOn": "ev-settlement-start",
+          "emits": "ev-enemy-spawn-tick"
+        },
+        {
+          "id": "timer-iframes",
+          "mode": "delay",
+          "durationMs": 1500,
+          "repeat": "once",
+          "startOn": "ev-player-damaged",
+          "stopOn": "ev-player-dead",
+          "emits": "ev-iframes-end"
+        },
+        {
+          "id": "timer-phase-2",
+          "mode": "delay",
+          "durationMs": 40000,
+          "repeat": "once",
+          "startOn": "ev-game-start",
+          "emits": "ev-phase-2-start"
+        },
+        {
+          "id": "timer-phase-3",
+          "mode": "delay",
+          "durationMs": 80000,
+          "repeat": "once",
+          "startOn": "ev-game-start",
+          "emits": "ev-phase-3-start"
+        }
+      ],
+      "rules": [
+        {
+          "id": "r-survival-win",
+          "when": {
+            "kind": "event",
+            "event": "ev-survival-complete"
+          },
+          "conditions": {
+            "kind": "all",
+            "of": [
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "state",
+                  "id": "st-player-alive",
+                  "equals": "alive"
+                }
+              }
+            ]
+          },
+          "effects": [
+            {
+              "kind": "state-transition",
+              "state": "st-game-phase",
+              "to": "settling"
+            },
+            {
+              "kind": "emit-event",
+              "event": "ev-settlement-start"
+            }
+          ]
+        },
+        {
+          "id": "r-player-hit",
+          "when": {
+            "kind": "event",
+            "event": "ev-bullet-hit-player"
+          },
+          "conditions": {
+            "kind": "all",
+            "of": [
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "state",
+                  "id": "st-player-invulnerable",
+                  "equals": "vulnerable"
+                }
+              },
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "state",
+                  "id": "st-game-phase",
+                  "equals": "playing"
+                }
+              }
+            ]
+          },
+          "effects": [
+            {
+              "kind": "resource-change",
+              "resource": "res-player-hp",
+              "operation": "decrement",
+              "amount": 1
+            },
+            {
+              "kind": "state-transition",
+              "state": "st-player-invulnerable",
+              "to": "invulnerable"
+            },
+            {
+              "kind": "emit-event",
+              "event": "ev-player-damaged"
+            }
+          ]
+        },
+        {
+          "id": "r-player-death",
+          "when": {
+            "kind": "condition",
+            "condition": {
+              "kind": "all",
+              "of": [
+                {
+                  "kind": "predicate",
+                  "target": {
+                    "type": "resource",
+                    "id": "res-player-hp"
+                  },
+                  "comparator": "eq",
+                  "value": 0
+                },
+                {
+                  "kind": "predicate",
+                  "target": {
+                    "type": "state",
+                    "id": "st-player-alive",
+                    "equals": "alive"
+                  }
+                },
+                {
+                  "kind": "predicate",
+                  "target": {
+                    "type": "state",
+                    "id": "st-game-phase",
+                    "equals": "playing"
+                  }
+                }
+              ]
+            }
+          },
+          "effects": [
+            {
+              "kind": "state-transition",
+              "state": "st-player-alive",
+              "to": "dead"
+            },
+            {
+              "kind": "emit-event",
+              "event": "ev-player-dead"
+            }
+          ]
+        },
+        {
+          "id": "r-death-settle",
+          "when": {
+            "kind": "event",
+            "event": "ev-player-dead"
+          },
+          "effects": [
+            {
+              "kind": "state-transition",
+              "state": "st-game-phase",
+              "to": "settling"
+            },
+            {
+              "kind": "emit-event",
+              "event": "ev-settlement-start"
+            }
+          ]
+        },
+        {
+          "id": "r-enemy-destroyed",
+          "when": {
+            "kind": "event",
+            "event": "ev-bullet-hit-enemy"
+          },
+          "conditions": {
+            "kind": "all",
+            "of": [
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "state",
+                  "id": "st-game-phase",
+                  "equals": "playing"
+                }
+              }
+            ]
+          },
+          "effects": [
+            {
+              "kind": "resource-change",
+              "resource": "res-score",
+              "operation": "increment",
+              "amount": 100
+            },
+            {
+              "kind": "despawn",
+              "actor": "actor-enemy"
+            }
+          ]
+        },
+        {
+          "id": "r-iframes-end",
+          "when": {
+            "kind": "event",
+            "event": "ev-iframes-end"
+          },
+          "effects": [
+            {
+              "kind": "state-transition",
+              "state": "st-player-invulnerable",
+              "to": "vulnerable"
+            }
+          ]
+        },
+        {
+          "id": "r-phase-2",
+          "when": {
+            "kind": "event",
+            "event": "ev-phase-2-start"
+          },
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "escalate-pressure",
+              "subject": "actor-enemy"
+            }
+          ]
+        },
+        {
+          "id": "r-phase-3",
+          "when": {
+            "kind": "event",
+            "event": "ev-phase-3-start"
+          },
+          "effects": [
+            {
+              "kind": "behavior",
+              "behavior": "escalate-pressure",
+              "subject": "actor-enemy"
+            }
+          ]
+        }
+      ],
+      "processes": [
+        {
+          "id": "process-enemy-fire",
+          "owner": {
+            "type": "actor",
+            "id": "actor-enemy"
+          },
+          "cadence": {
+            "kind": "interval",
+            "intervalMs": 1800
+          },
+          "conditions": {
+            "kind": "all",
+            "of": [
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "state",
+                  "id": "st-game-phase",
+                  "equals": "playing"
+                }
+              },
+              {
+                "kind": "predicate",
+                "target": {
+                  "type": "state",
+                  "id": "st-player-alive",
+                  "equals": "alive"
+                }
+              }
+            ]
+          },
+          "effects": [
+            {
+              "kind": "emit-event",
+              "event": "ev-pattern-tick"
+            }
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "id": "out-win",
+          "result": "won",
+          "when": {
+            "kind": "event",
+            "event": "ev-survival-complete"
+          },
+          "priority": 100,
+          "terminal": true
+        },
+        {
+          "id": "out-lose",
+          "result": "lost",
+          "when": {
+            "kind": "event",
+            "event": "ev-player-dead"
+          },
+          "priority": 90,
+          "terminal": true
+        }
+      ]
+    },
+    "spatialDesign": {
+      "viewport": {
+        "id": "viewport-main",
+        "orientation": "horizontal",
+        "logicalWidth": 1280,
+        "logicalHeight": 720,
+        "scaling": "uniform",
+        "letterbox": "allow-bars"
+      },
+      "topology": {
+        "id": "topology-playfield",
+        "kind": "2d-plane"
+      },
+      "movement": [
+        {
+          "id": "movement-player",
+          "subject": "actor-player",
+          "dimensions": "2d",
+          "axes": [
+            "x",
+            "y"
+          ],
+          "constrainedToBoundaryId": "boundary-playfield",
+          "speedPerSecond": 300
+        },
+        {
+          "id": "movement-enemy",
+          "subject": "actor-enemy",
+          "dimensions": "2d",
+          "axes": [
+            "x",
+            "y"
+          ],
+          "speedPerSecond": 70
+        },
+        {
+          "id": "movement-player-bullet",
+          "subject": "actor-player-bullet",
+          "dimensions": "2d",
+          "axes": [
+            "x",
+            "y"
+          ],
+          "speedPerSecond": 520
+        },
+        {
+          "id": "movement-enemy-bullet",
+          "subject": "actor-enemy-bullet",
+          "dimensions": "2d",
+          "axes": [
+            "x",
+            "y"
+          ],
+          "speedPerSecond": 170
+        }
+      ],
+      "aiming": [
+        {
+          "id": "aiming-player",
+          "subject": "actor-player",
+          "mode": "mouse-aimed",
+          "cooldownMs": 120,
+          "projectileSpeedPerSecond": 520
+        },
+        {
+          "id": "aiming-enemy-aimed",
+          "subject": "actor-enemy",
+          "mode": "aimed-at-player",
+          "cooldownMs": 1800,
+          "projectileSpeedPerSecond": 170
+        },
+        {
+          "id": "aiming-enemy-radial",
+          "subject": "actor-enemy",
+          "mode": "radial-burst",
+          "cooldownMs": 3600,
+          "projectileSpeedPerSecond": 150
+        }
+      ],
+      "camera": {
+        "id": "camera-main",
+        "mode": "fixed"
+      },
+      "spawn": [
+        {
+          "id": "spawn-enemy",
+          "owner": {
+            "type": "encounter"
+          },
+          "spawns": "actor-enemy",
+          "region": "top-spawn-band",
+          "activationEvent": "ev-enemy-spawn-tick",
+          "offscreenPolicy": "enter-then-despawn"
+        },
+        {
+          "id": "spawn-enemy-bullet",
+          "owner": {
+            "type": "hazard"
+          },
+          "spawns": "actor-enemy-bullet",
+          "region": "enemy-formation",
+          "activationEvent": "ev-pattern-tick",
+          "offscreenPolicy": "despawn-offscreen"
+        },
+        {
+          "id": "spawn-player-bullet",
+          "owner": {
+            "type": "actor",
+            "id": "actor-player"
+          },
+          "spawns": "actor-player-bullet",
+          "region": "player-muzzle",
+          "activationEvent": "ev-player-shot",
+          "offscreenPolicy": "despawn-offscreen"
+        }
+      ],
+      "boundaries": [
+        {
+          "id": "boundary-playfield",
+          "subject": "actor-player",
+          "appliesTo": "player-ship",
+          "behavior": "clamp"
+        }
+      ],
+      "culling": [
+        {
+          "id": "culling-player-bullet",
+          "subject": "actor-player-bullet",
+          "appliesTo": "friendly-projectile",
+          "rule": "offscreen-despawn"
+        },
+        {
+          "id": "culling-enemy-bullet",
+          "subject": "actor-enemy-bullet",
+          "appliesTo": "hostile-projectile",
+          "rule": "offscreen-despawn"
+        },
+        {
+          "id": "culling-enemy",
+          "subject": "actor-enemy",
+          "appliesTo": "enemy-drone",
+          "rule": "offscreen-despawn"
+        }
+      ]
+    },
+    "requirementBindings": {
+      "constraints": [
+        {
+          "id": "c-horizontal-screen",
+          "kind": "horizontal-viewport"
+        },
+        {
+          "id": "c-bullet-hell",
+          "kind": "bullet-hell-shooter"
+        },
+        {
+          "id": "c-single-player",
+          "kind": "single-player"
+        },
+        {
+          "id": "c-free-movement",
+          "kind": "free-2d-movement"
+        },
+        {
+          "id": "c-shooting",
+          "kind": "player-shooting"
+        },
+        {
+          "id": "c-survive-120s",
+          "kind": "survival-120s"
+        },
+        {
+          "id": "c-mouse-aim-shoot",
+          "kind": "mouse-aim-and-shoot"
+        },
+        {
+          "id": "c-pc-primary",
+          "kind": "pc-keyboard-mouse-primary"
+        },
+        {
+          "id": "c-mobile-secondary",
+          "kind": "mobile-touch-secondary"
+        },
+        {
+          "id": "c-engine-cocos",
+          "kind": "cocos-web-h5-target"
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "excl-no-boss",
+          "capability": "boss-entity"
+        }
+      ],
+      "decisions": [
+        {
+          "id": "d-horizontal-screen",
+          "source": "user-declared",
+          "statementId": "concept-horizontal-screen",
+          "targets": [
+            {
+              "nodeId": "viewport-main"
+            }
+          ]
+        },
+        {
+          "id": "d-bullet-hell",
+          "source": "user-declared",
+          "statementId": "concept-bullet-hell",
+          "targets": [
+            {
+              "nodeId": "topology-playfield"
+            },
+            {
+              "nodeId": "actor-enemy-bullet"
+            },
+            {
+              "nodeId": "aiming-enemy-aimed"
+            },
+            {
+              "nodeId": "aiming-enemy-radial"
+            },
+            {
+              "nodeId": "movement-enemy-bullet"
+            },
+            {
+              "nodeId": "spawn-enemy-bullet"
+            }
+          ]
+        },
+        {
+          "id": "d-single-player",
+          "source": "system-default",
+          "statementId": "s-default-single-player-2d-bullet-hell-h5",
+          "targets": [
+            {
+              "nodeId": "actor-player"
+            },
+            {
+              "nodeId": "out-win"
+            },
+            {
+              "nodeId": "out-lose"
+            }
+          ]
+        },
+        {
+          "id": "d-free-movement",
+          "source": "user-declared",
+          "statementId": "intent-free-movement",
+          "targets": [
+            {
+              "nodeId": "movement-player"
+            },
+            {
+              "nodeId": "action-move-player"
+            }
+          ]
+        },
+        {
+          "id": "d-shooting",
+          "source": "user-declared",
+          "statementId": "intent-shooting",
+          "targets": [
+            {
+              "nodeId": "action-player-shoot"
+            },
+            {
+              "nodeId": "aiming-player"
+            },
+            {
+              "nodeId": "spawn-player-bullet"
+            }
+          ]
+        },
+        {
+          "id": "d-survive-120s",
+          "source": "user-declared",
+          "statementId": "intent-survive-120s",
+          "targets": [
+            {
+              "nodeId": "timer-survival"
+            },
+            {
+              "nodeId": "out-win"
+            },
+            {
+              "nodeId": "out-lose"
+            }
+          ]
+        },
+        {
+          "id": "d-mouse-aim-shoot",
+          "source": "user-declared",
+          "statementId": "control-mouse-aim-shoot",
+          "targets": [
+            {
+              "nodeId": "aiming-player"
+            },
+            {
+              "nodeId": "action-player-shoot"
+            }
+          ]
+        },
+        {
+          "id": "d-pc-primary",
+          "source": "system-default",
+          "statementId": "s-default-primary-platform-pc-keyboard-mouse",
+          "targets": [
+            {
+              "nodeId": "action-move-player"
+            },
+            {
+              "nodeId": "aiming-player"
+            }
+          ]
+        },
+        {
+          "id": "d-mobile-secondary",
+          "source": "system-default",
+          "statementId": "s-default-secondary-platform-mobile-touch",
+          "targets": [
+            {
+              "nodeId": "movement-player"
+            },
+            {
+              "nodeId": "aiming-player"
+            }
+          ]
+        },
+        {
+          "id": "d-engine-cocos",
+          "source": "system-default",
+          "statementId": "s-default-target-engine-cocos-web-h5",
+          "targets": [
+            {
+              "nodeId": "topology-playfield"
+            }
+          ]
+        },
+        {
+          "id": "d-viewport-size",
+          "source": "agent-derived",
+          "rationale": "横屏 16:9 的 1280x720 逻辑画布作为玩家可感知的空间基线，由 agent 补全；相机固定覆盖整个弹幕场。",
+          "targets": [
+            {
+              "nodeId": "viewport-main"
+            },
+            {
+              "nodeId": "camera-main"
+            }
+          ]
+        },
+        {
+          "id": "d-hp-and-iframes",
+          "source": "agent-derived",
+          "rationale": "3 点生命值 + 1.5 秒受击无敌帧，让 120 秒生存挑战有容错但依然可能失败，避免一次擦弹即死的挫败。",
+          "targets": [
+            {
+              "nodeId": "res-player-hp"
+            },
+            {
+              "nodeId": "timer-iframes"
+            },
+            {
+              "nodeId": "st-player-invulnerable"
+            },
+            {
+              "nodeId": "r-player-hit"
+            }
+          ]
+        },
+        {
+          "id": "d-score",
+          "source": "agent-derived",
+          "rationale": "击毁敌机得 100 分用于结算展示与击杀反馈，不改变生存胜负判定。",
+          "targets": [
+            {
+              "nodeId": "res-score"
+            },
+            {
+              "nodeId": "r-enemy-destroyed"
+            }
+          ]
+        },
+        {
+          "id": "d-enemy-drone",
+          "source": "agent-derived",
+          "rationale": "以无 Boss 的普通敌机群作为弹幕来源：敌机按节奏从顶部刷出、向玩家瞄准射击并叠加径向弹幕。",
+          "targets": [
+            {
+              "nodeId": "actor-enemy"
+            },
+            {
+              "nodeId": "spawn-enemy"
+            },
+            {
+              "nodeId": "process-enemy-fire"
+            }
+          ]
+        },
+        {
+          "id": "d-collision-events",
+          "source": "agent-derived",
+          "rationale": "受击与命中碰撞事件由运行时空间系统发出，设计层只声明并消费其后果（扣血/得分/销毁）。",
+          "targets": [
+            {
+              "nodeId": "ev-bullet-hit-player"
+            },
+            {
+              "nodeId": "ev-bullet-hit-enemy"
+            }
+          ]
+        },
+        {
+          "id": "d-difficulty-ramp",
+          "source": "agent-derived",
+          "rationale": "40 秒与 80 秒两个相位节点提升弹幕压力，让 120 秒内的紧张度递增。",
+          "targets": [
+            {
+              "nodeId": "timer-phase-2"
+            },
+            {
+              "nodeId": "timer-phase-3"
+            },
+            {
+              "nodeId": "r-phase-2"
+            },
+            {
+              "nodeId": "r-phase-3"
+            }
+          ]
+        },
+        {
+          "id": "d-settlement-flow",
+          "source": "agent-derived",
+          "rationale": "胜负都进入结算阶段并停止生成类计时器，避免结算期间继续刷怪。",
+          "targets": [
+            {
+              "nodeId": "st-game-phase"
+            },
+            {
+              "nodeId": "ev-settlement-start"
+            },
+            {
+              "nodeId": "r-death-settle"
+            }
+          ]
+        },
+        {
+          "id": "d-player-speed",
+          "source": "agent-derived",
+          "rationale": "玩家移速 300px/s 且弹速高于敌弹速，保证可穿行弹幕缝隙并强调躲避玩法。",
+          "targets": [
+            {
+              "nodeId": "movement-player"
+            }
+          ]
+        }
+      ],
+      "forbidden": [
+        {
+          "id": "fb-no-boss",
+          "statementId": "constraint-no-boss",
+          "exclusion": "excl-no-boss"
+        }
+      ]
+    }
+  },
+  "gameDesignSha256": "5af058b30a56710dbac50e204b797c060ef914ca72d7472e0d5169ed5f68d102",
+  "recomputedGameDesignSha256": "5af058b30a56710dbac50e204b797c060ef914ca72d7472e0d5169ed5f68d102",
+  "requirementCoverage": {
+    "lockedStatementIds": [
+      "concept-horizontal-screen",
+      "concept-bullet-hell",
+      "s-default-single-player-2d-bullet-hell-h5",
+      "intent-free-movement",
+      "intent-shooting",
+      "intent-survive-120s",
+      "control-mouse-aim-shoot",
+      "s-default-primary-platform-pc-keyboard-mouse",
+      "s-default-secondary-platform-mobile-touch",
+      "constraint-no-boss",
+      "s-default-target-engine-cocos-web-h5"
+    ],
+    "decisions": [
+      {
+        "decisionId": "d-horizontal-screen",
+        "source": "user-declared",
+        "statementId": "concept-horizontal-screen"
+      },
+      {
+        "decisionId": "d-bullet-hell",
+        "source": "user-declared",
+        "statementId": "concept-bullet-hell"
+      },
+      {
+        "decisionId": "d-single-player",
+        "source": "system-default",
+        "statementId": "s-default-single-player-2d-bullet-hell-h5"
+      },
+      {
+        "decisionId": "d-free-movement",
+        "source": "user-declared",
+        "statementId": "intent-free-movement"
+      },
+      {
+        "decisionId": "d-shooting",
+        "source": "user-declared",
+        "statementId": "intent-shooting"
+      },
+      {
+        "decisionId": "d-survive-120s",
+        "source": "user-declared",
+        "statementId": "intent-survive-120s"
+      },
+      {
+        "decisionId": "d-mouse-aim-shoot",
+        "source": "user-declared",
+        "statementId": "control-mouse-aim-shoot"
+      },
+      {
+        "decisionId": "d-pc-primary",
+        "source": "system-default",
+        "statementId": "s-default-primary-platform-pc-keyboard-mouse"
+      },
+      {
+        "decisionId": "d-mobile-secondary",
+        "source": "system-default",
+        "statementId": "s-default-secondary-platform-mobile-touch"
+      },
+      {
+        "decisionId": "d-engine-cocos",
+        "source": "system-default",
+        "statementId": "s-default-target-engine-cocos-web-h5"
+      },
+      {
+        "decisionId": "d-viewport-size",
+        "source": "agent-derived",
+        "rationale": "横屏 16:9 的 1280x720 逻辑画布作为玩家可感知的空间基线，由 agent 补全；相机固定覆盖整个弹幕场。"
+      },
+      {
+        "decisionId": "d-hp-and-iframes",
+        "source": "agent-derived",
+        "rationale": "3 点生命值 + 1.5 秒受击无敌帧，让 120 秒生存挑战有容错但依然可能失败，避免一次擦弹即死的挫败。"
+      },
+      {
+        "decisionId": "d-score",
+        "source": "agent-derived",
+        "rationale": "击毁敌机得 100 分用于结算展示与击杀反馈，不改变生存胜负判定。"
+      },
+      {
+        "decisionId": "d-enemy-drone",
+        "source": "agent-derived",
+        "rationale": "以无 Boss 的普通敌机群作为弹幕来源：敌机按节奏从顶部刷出、向玩家瞄准射击并叠加径向弹幕。"
+      },
+      {
+        "decisionId": "d-collision-events",
+        "source": "agent-derived",
+        "rationale": "受击与命中碰撞事件由运行时空间系统发出，设计层只声明并消费其后果（扣血/得分/销毁）。"
+      },
+      {
+        "decisionId": "d-difficulty-ramp",
+        "source": "agent-derived",
+        "rationale": "40 秒与 80 秒两个相位节点提升弹幕压力，让 120 秒内的紧张度递增。"
+      },
+      {
+        "decisionId": "d-settlement-flow",
+        "source": "agent-derived",
+        "rationale": "胜负都进入结算阶段并停止生成类计时器，避免结算期间继续刷怪。"
+      },
+      {
+        "decisionId": "d-player-speed",
+        "source": "agent-derived",
+        "rationale": "玩家移速 300px/s 且弹速高于敌弹速，保证可穿行弹幕缝隙并强调躲避玩法。"
+      }
+    ],
+    "forbidden": [
+      {
+        "id": "fb-no-boss",
+        "statementId": "constraint-no-boss",
+        "exclusion": "excl-no-boss"
+      }
+    ]
+  },
+  "structuralAssertions": [
+    {
+      "id": "status-design-ready",
+      "description": "阶段结果为 design-ready。",
+      "passed": true,
+      "detail": "status=design-ready"
+    },
+    {
+      "id": "model-is-flash",
+      "description": "requested/provenance 模型为 deepseek-v4-flash。",
+      "passed": true,
+      "detail": "provenance.model=deepseek-v4-flash"
+    },
+    {
+      "id": "design-schema-valid",
+      "description": "GameDesignV2 通过本地 Schema。",
+      "passed": true,
+      "detail": "GameDesignV2 通过本地 schema 重解析。"
+    },
+    {
+      "id": "hash-binding-consistent",
+      "description": "request/spec/ledger/design hash 一致。",
+      "passed": true,
+      "detail": "request=true, spec=true, ledger=true, design=true"
+    },
+    {
+      "id": "locked-coverage-complete",
+      "description": "所有 locked requirement 都有 binding。",
+      "passed": true,
+      "detail": "11 条 locked 全部绑定。"
+    },
+    {
+      "id": "forbidden-excluded-and-no-boss-actor",
+      "description": "forbidden 要求（不要 Boss）有 exclusion，且已知核心 actor 结构没有 Boss。",
+      "passed": true,
+      "detail": "forbiddenLedger=[constraint-no-boss], everyForbiddenBound=true, contradiction=none, noBossActor=true"
+    },
+    {
+      "id": "survival-120000ms",
+      "description": "存活时间精确为 120000ms。",
+      "passed": true,
+      "detail": "timer timer-survival durationMs=120000, emits=ev-survival-complete"
+    },
+    {
+      "id": "viewport-horizontal-wide",
+      "description": "viewport 为 horizontal 且宽大于高。",
+      "passed": true,
+      "detail": "orientation=horizontal, 1280x720"
+    },
+    {
+      "id": "spatial-decoupled-from-orientation",
+      "description": "spatial 的 movement/aim/camera/spawn 均被独立显式声明，未由 orientation 推导。",
+      "passed": true,
+      "detail": "movement=4, aiming=3, camera=fixed, spawn=3"
+    },
+    {
+      "id": "free-2d-movement",
+      "description": "spatial design 表达自由二维移动。",
+      "passed": true,
+      "detail": "movement dimensions=[actor-player:2d, actor-enemy:2d, actor-player-bullet:2d, actor-enemy-bullet:2d]"
+    },
+    {
+      "id": "pointer-world-aiming",
+      "description": "spatial design 表达鼠标/world-pointer aiming。",
+      "passed": false,
+      "detail": "aiming modes=[mouse-aimed, aimed-at-player, radial-burst]"
+    },
+    {
+      "id": "survival-timer-event-outcome-chain",
+      "description": "有可验证的 survival timer/event/outcome 链。",
+      "passed": true,
+      "detail": "timer timer-survival → event ev-survival-complete → outcome out-win (won)"
+    },
+    {
+      "id": "explicit-loss-outcome",
+      "description": "存在明确的 loss 机制。",
+      "passed": true,
+      "detail": "loss outcome out-lose, trigger=event"
+    },
+    {
+      "id": "references-closed",
+      "description": "timer/process/rule/event/outcome 引用闭合。",
+      "passed": true,
+      "detail": "全部引用闭合。"
+    },
+    {
+      "id": "terminal-outcome-priority-distinct",
+      "description": "同帧 outcome priority 明确（terminal 优先级两两不同）。",
+      "passed": true,
+      "detail": "terminal priorities=[100, 90]"
+    },
+    {
+      "id": "agent-derived-has-rationale",
+      "description": "Agent 补全的玩法数值标记 agent-derived 并有 rationale。",
+      "passed": true,
+      "detail": "agent-derived=8, allHaveRationale=true"
+    }
+  ],
+  "usageRecordOnly": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "outputMode": "deepseek_function_call",
+    "thinkingMode": "enabled",
+    "finishReason": "tool_calls",
+    "toolCallCount": 1,
+    "argumentsLength": 13149,
+    "elapsedMs": 183678,
+    "timeoutMs": 300000,
+    "usage": {
+      "cost": 0.007235480000000002,
+      "costKnown": true,
+      "costEvidence": {
+        "kind": "estimated",
+        "currency": "USD",
+        "estimatedCostUsd": 0.007235480000000002,
+        "estimatedCostCnyUpper": 0.05426610000000001,
+        "inputTokens": 7504,
+        "outputTokens": 22089,
+        "pricingBasis": {
+          "input": "cache-miss upper estimate",
+          "officialPriceCurrency": "USD",
+          "cacheHitInputUsdPerMillionTokens": 0.0028,
+          "cacheMissInputUsdPerMillionTokens": 0.14,
+          "outputUsdPerMillionTokens": 0.28,
+          "conservativeCnyPerUsd": 7.5,
+          "source": "https://api-docs.deepseek.com/quick_start/pricing",
+          "checkedAt": "2026-07-16",
+          "policyVersion": "2026-07-16"
+        }
+      },
+      "inputTokens": 7504,
+      "outputTokens": 22089,
+      "reasoningTokens": 17404
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "checkedAt": "2026-08-01T02:29:53.882Z",
+  "status": "bounded-failure",
+  "passed": false,
+  "requestedModel": "deepseek-v4-flash",
+  "request": {
+    "prompt": "我想要一个横屏的弹幕射击 H5 游戏：玩家可以在二维平面里自由移动，用鼠标瞄准射击，不要 Boss，存活满 120 秒后进入结算。",
+    "sha256": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58"
+  },
+  "inputHashes": {
+    "request": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58",
+    "gameSpec": "461be7b4cbcebcda136c7c05c6d11aa0db8bbfa32b8e25b3a1988ed42a4ec9b2",
+    "intentLedger": "226513dd500f83feca0be79e8341c7635573c90d9493cee2f2ed1b7c884eb2a5"
+  },
+  "structuralAssertions": [],
+  "usageRecordOnly": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "outputMode": "composite_design_agent",
+    "thinkingMode": "enabled",
+    "finishReason": "composite",
+    "toolCallCount": 3,
+    "argumentsLength": 17640,
+    "elapsedMs": 233611,
+    "timeoutMs": null,
+    "usage": {
+      "cost": 0.014395500000000002,
+      "costKnown": true,
+      "costEvidence": {
+        "kind": "estimated",
+        "currency": "USD",
+        "estimatedCostUsd": 0.014395500000000002,
+        "estimatedCostCnyUpper": 0.10796625000000001,
+        "inputTokens": 18225,
+        "outputTokens": 42300,
+        "pricingBasis": {
+          "input": "cache-miss upper estimate",
+          "officialPriceCurrency": "USD",
+          "cacheHitInputUsdPerMillionTokens": 0.0028,
+          "cacheMissInputUsdPerMillionTokens": 0.14,
+          "outputUsdPerMillionTokens": 0.28,
+          "conservativeCnyPerUsd": 7.5,
+          "source": "https://api-docs.deepseek.com/quick_start/pricing",
+          "checkedAt": "2026-07-16",
+          "policyVersion": "2026-07-16"
+        }
+      },
+      "inputTokens": 18225,
+      "outputTokens": 42300,
+      "reasoningTokens": 36131
+    },
+    "childCalls": [
+      {
+        "worker": "supervisor-kernel",
+        "provider": "deepseek",
+        "model": "deepseek-v4-flash",
+        "outputMode": "deepseek_function_call",
+        "thinkingMode": "enabled",
+        "finishReason": "tool_calls",
+        "toolCallCount": 1,
+        "argumentsLength": 4333,
+        "elapsedMs": 96528,
+        "timeoutMs": null,
+        "usage": {
+          "cost": 0.0037329600000000004,
+          "costKnown": true,
+          "costEvidence": {
+            "kind": "estimated",
+            "currency": "USD",
+            "estimatedCostUsd": 0.0037329600000000004,
+            "estimatedCostCnyUpper": 0.027997200000000003,
+            "inputTokens": 4684,
+            "outputTokens": 10990,
+            "pricingBasis": {
+              "input": "cache-miss upper estimate",
+              "officialPriceCurrency": "USD",
+              "cacheHitInputUsdPerMillionTokens": 0.0028,
+              "cacheMissInputUsdPerMillionTokens": 0.14,
+              "outputUsdPerMillionTokens": 0.28,
+              "conservativeCnyPerUsd": 7.5,
+              "source": "https://api-docs.deepseek.com/quick_start/pricing",
+              "checkedAt": "2026-07-16",
+              "policyVersion": "2026-07-16"
+            }
+          },
+          "inputTokens": 4684,
+          "outputTokens": 10990,
+          "reasoningTokens": 9401
+        }
+      },
+      {
+        "worker": "system",
+        "provider": "deepseek",
+        "model": "deepseek-v4-flash",
+        "outputMode": "deepseek_function_call",
+        "thinkingMode": "enabled",
+        "finishReason": "tool_calls",
+        "toolCallCount": 1,
+        "argumentsLength": 7605,
+        "elapsedMs": 137073,
+        "timeoutMs": null,
+        "usage": {
+          "cost": 0.0056800800000000005,
+          "costKnown": true,
+          "costEvidence": {
+            "kind": "estimated",
+            "currency": "USD",
+            "estimatedCostUsd": 0.0056800800000000005,
+            "estimatedCostCnyUpper": 0.0426006,
+            "inputTokens": 7548,
+            "outputTokens": 16512,
+            "pricingBasis": {
+              "input": "cache-miss upper estimate",
+              "officialPriceCurrency": "USD",
+              "cacheHitInputUsdPerMillionTokens": 0.0028,
+              "cacheMissInputUsdPerMillionTokens": 0.14,
+              "outputUsdPerMillionTokens": 0.28,
+              "conservativeCnyPerUsd": 7.5,
+              "source": "https://api-docs.deepseek.com/quick_start/pricing",
+              "checkedAt": "2026-07-16",
+              "policyVersion": "2026-07-16"
+            }
+          },
+          "inputTokens": 7548,
+          "outputTokens": 16512,
+          "reasoningTokens": 13993
+        }
+      },
+      {
+        "worker": "spatial",
+        "provider": "deepseek",
+        "model": "deepseek-v4-flash",
+        "outputMode": "deepseek_function_call",
+        "thinkingMode": "enabled",
+        "finishReason": "tool_calls",
+        "toolCallCount": 1,
+        "argumentsLength": 5702,
+        "elapsedMs": 126364,
+        "timeoutMs": null,
+        "usage": {
+          "cost": 0.004982460000000001,
+          "costKnown": true,
+          "costEvidence": {
+            "kind": "estimated",
+            "currency": "USD",
+            "estimatedCostUsd": 0.004982460000000001,
+            "estimatedCostCnyUpper": 0.03736845000000001,
+            "inputTokens": 5993,
+            "outputTokens": 14798,
+            "pricingBasis": {
+              "input": "cache-miss upper estimate",
+              "officialPriceCurrency": "USD",
+              "cacheHitInputUsdPerMillionTokens": 0.0028,
+              "cacheMissInputUsdPerMillionTokens": 0.14,
+              "outputUsdPerMillionTokens": 0.28,
+              "conservativeCnyPerUsd": 7.5,
+              "source": "https://api-docs.deepseek.com/quick_start/pricing",
+              "checkedAt": "2026-07-16",
+              "policyVersion": "2026-07-16"
+            }
+          },
+          "inputTokens": 5993,
+          "outputTokens": 14798,
+          "reasoningTokens": 12737
+        }
+      }
+    ]
+  },
+  "failure": {
+    "code": "invalid-agent-output",
+    "message": "Design Compiler requirement-bindings/locked-coverage: locked statements without bindings: concept-horizontal-screen, concept-bullet-hell, intent-free-movement, intent-shooting, control-mouse-aim-shoot, s-default-primary-platform-pc-keyboard-mouse, s-default-secondary-platform-mobile-touch, s-default-target-engine-cocos-web-h5",
+    "retryable": false
+  },
+  "failureEvidence": {
+    "worker": "composite-preflight",
+    "stage": "compiler",
+    "issueCode": "locked-coverage",
+    "issues": [
+      {
+        "code": "locked-coverage",
+        "path": [
+          "requirementBindings"
+        ],
+        "message": "locked statements without bindings: concept-horizontal-screen, concept-bullet-hell, intent-free-movement, intent-shooting, control-mouse-aim-shoot, s-default-primary-platform-pc-keyboard-mouse, s-default-secondary-platform-mobile-touch, s-default-target-engine-cocos-web-h5"
+      }
+    ],
+    "issueCount": 1,
+    "model": "deepseek-v4-flash",
+    "thinkingMode": "enabled",
+    "finishReason": null,
+    "toolCallCount": 0,
+    "argumentsLength": 0,
+    "inputTokens": null,
+    "outputTokens": null,
+    "reasoningTokens": null,
+    "elapsedMs": 233611,
+    "timeoutMs": null
+  }
+}

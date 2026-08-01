@@ -1,0 +1,112 @@
+{
+  "kind": "design-agent-v2-offline-reaudit",
+  "checkedAt": "2026-08-01T04:09:33.264Z",
+  "sourceReportPath": "evals/reports/design-agent-v2-live-probe-thinking-20260801T035539712Z.json",
+  "sourceReportSha256": "141602d0e3aee9858f49d934c6c82615f36540ce6707c0cd5548baa8b04e5d1c",
+  "sourceReportSha256Before": "141602d0e3aee9858f49d934c6c82615f36540ce6707c0cd5548baa8b04e5d1c",
+  "sourceReportSha256After": "141602d0e3aee9858f49d934c6c82615f36540ce6707c0cd5548baa8b04e5d1c",
+  "sourceGameDesignSha256": "5af058b30a56710dbac50e204b797c060ef914ca72d7472e0d5169ed5f68d102",
+  "recomputedGameDesignSha256": "5af058b30a56710dbac50e204b797c060ef914ca72d7472e0d5169ed5f68d102",
+  "status": "design-ready",
+  "passed": true,
+  "structuralAssertions": [
+    {
+      "id": "status-design-ready",
+      "description": "阶段结果为 design-ready。",
+      "passed": true,
+      "detail": "status=design-ready"
+    },
+    {
+      "id": "model-is-flash",
+      "description": "requested/provenance 模型为 deepseek-v4-flash。",
+      "passed": true,
+      "detail": "provenance.model=deepseek-v4-flash"
+    },
+    {
+      "id": "design-schema-valid",
+      "description": "GameDesignV2 通过本地 Schema。",
+      "passed": true,
+      "detail": "GameDesignV2 通过本地 schema 重解析。"
+    },
+    {
+      "id": "hash-binding-consistent",
+      "description": "request/spec/ledger/design hash 一致。",
+      "passed": true,
+      "detail": "request=true, spec=true, ledger=true, design=true"
+    },
+    {
+      "id": "locked-coverage-complete",
+      "description": "所有 locked requirement 都有 binding。",
+      "passed": true,
+      "detail": "11 条 locked 全部绑定。"
+    },
+    {
+      "id": "forbidden-excluded-and-no-boss-actor",
+      "description": "forbidden 要求（不要 Boss）有 exclusion，且已知核心 actor 结构没有 Boss。",
+      "passed": true,
+      "detail": "forbiddenLedger=[constraint-no-boss], everyForbiddenBound=true, contradiction=none, noBossActor=true"
+    },
+    {
+      "id": "survival-120000ms",
+      "description": "存活时间精确为 120000ms。",
+      "passed": true,
+      "detail": "timer timer-survival durationMs=120000, emits=ev-survival-complete"
+    },
+    {
+      "id": "viewport-horizontal-wide",
+      "description": "viewport 为 horizontal 且宽大于高。",
+      "passed": true,
+      "detail": "orientation=horizontal, 1280x720"
+    },
+    {
+      "id": "spatial-decoupled-from-orientation",
+      "description": "spatial 的 movement/aim/camera/spawn 均被独立显式声明，未由 orientation 推导。",
+      "passed": true,
+      "detail": "movement=4, aiming=3, camera=fixed, spawn=3"
+    },
+    {
+      "id": "free-2d-movement",
+      "description": "spatial design 表达自由二维移动。",
+      "passed": true,
+      "detail": "movement dimensions=[actor-player:2d, actor-enemy:2d, actor-player-bullet:2d, actor-enemy-bullet:2d]"
+    },
+    {
+      "id": "pointer-world-aiming",
+      "description": "结构化 requirement binding 表达鼠标瞄准射击。",
+      "passed": true,
+      "detail": "binding=d-mouse-aim-shoot, aiming=aiming-player, action=action-player-shoot, actor=actor-player, coreLoop=true, shootingBound=true"
+    },
+    {
+      "id": "survival-timer-event-outcome-chain",
+      "description": "有可验证的 survival timer/event/outcome 链。",
+      "passed": true,
+      "detail": "timer timer-survival → event ev-survival-complete → outcome out-win (won)"
+    },
+    {
+      "id": "explicit-loss-outcome",
+      "description": "存在明确的 loss 机制。",
+      "passed": true,
+      "detail": "loss outcome out-lose, trigger=event"
+    },
+    {
+      "id": "references-closed",
+      "description": "timer/process/rule/event/outcome 引用闭合。",
+      "passed": true,
+      "detail": "全部引用闭合。"
+    },
+    {
+      "id": "terminal-outcome-priority-distinct",
+      "description": "同帧 outcome priority 明确（terminal 优先级两两不同）。",
+      "passed": true,
+      "detail": "terminal priorities=[100, 90]"
+    },
+    {
+      "id": "agent-derived-has-rationale",
+      "description": "Agent 补全的玩法数值标记 agent-derived 并有 rationale。",
+      "passed": true,
+      "detail": "agent-derived=8, allHaveRationale=true"
+    }
+  ],
+  "modelCalls": 0,
+  "reusedSavedArtifact": true
+}

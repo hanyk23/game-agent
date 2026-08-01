@@ -1,0 +1,264 @@
+{
+  "checkedAt": "2026-07-31T07:04:51.065Z",
+  "status": "spec-ready",
+  "passed": true,
+  "requestedModel": "deepseek-v4-pro",
+  "pricingNote": "调用模型为 deepseek-v4-pro，但成本估算仍沿用 flash 档价格快照（deepseek-cost-policy.ts 未改）；usageRecordOnly.cost 仅为 flash 档估算、非 pro 真实单价，且仅记录、不作门禁。",
+  "request": {
+    "prompt": "我想要一个横屏的弹幕射击 H5 游戏：玩家可以在二维平面里自由移动，用鼠标瞄准射击，不要 Boss，存活满 120 秒后进入结算。",
+    "sha256": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58"
+  },
+  "gameSpec": {
+    "schemaVersion": "2.0.0",
+    "kind": "GameSpecV2",
+    "gameConcept": [
+      {
+        "statementId": "concept-horizontal-screen",
+        "text": "游戏画面采用横屏显示。"
+      },
+      {
+        "statementId": "concept-bullet-hell",
+        "text": "游戏是2D弹幕射击游戏。"
+      },
+      {
+        "statementId": "s-default-single-player-2d-bullet-hell-h5",
+        "text": "产品是单人 2D 弹幕类 Web/H5 游戏，运行在浏览器中。"
+      }
+    ],
+    "gameplayIntent": [
+      {
+        "statementId": "intent-free-movement",
+        "text": "玩家可以在二维平面内自由移动。"
+      },
+      {
+        "statementId": "intent-shooting",
+        "text": "玩家可以进行射击。"
+      },
+      {
+        "statementId": "intent-survive-120s",
+        "text": "游戏目标为存活满120秒，存活满120秒后进入结算。"
+      }
+    ],
+    "platformAndControls": [
+      {
+        "statementId": "control-mouse-aim-shoot",
+        "text": "玩家使用鼠标进行瞄准和射击。"
+      },
+      {
+        "statementId": "s-default-primary-platform-pc-keyboard-mouse",
+        "text": "PC 键盘与鼠标是首要支持与验收平台。"
+      },
+      {
+        "statementId": "s-default-secondary-platform-mobile-touch",
+        "text": "手机 touch 为次优先支持，不阻塞 PC 首版交付。"
+      }
+    ],
+    "additionalConstraints": [
+      {
+        "statementId": "constraint-no-boss",
+        "text": "游戏中不应出现 Boss。"
+      },
+      {
+        "statementId": "s-default-target-engine-cocos-web-h5",
+        "text": "目标引擎固定为 Cocos Creator Web/H5。"
+      }
+    ]
+  },
+  "gameSpecSha256": "461be7b4cbcebcda136c7c05c6d11aa0db8bbfa32b8e25b3a1988ed42a4ec9b2",
+  "recomputedGameSpecSha256": "461be7b4cbcebcda136c7c05c6d11aa0db8bbfa32b8e25b3a1988ed42a4ec9b2",
+  "intentLedger": {
+    "schemaVersion": "2.0.0",
+    "kind": "IntentLedgerV2",
+    "scope": "open-requirement-provenance-v2",
+    "request": {
+      "language": "zh-CN",
+      "normalization": "NFKC",
+      "sha256": "bd34bd89e2f3900fe3f65382b45a070259c2efcfc44cf63b87824e11a593db58"
+    },
+    "gameSpec": {
+      "schemaVersion": "2.0.0",
+      "sha256": "461be7b4cbcebcda136c7c05c6d11aa0db8bbfa32b8e25b3a1988ed42a4ec9b2"
+    },
+    "entries": [
+      {
+        "statementId": "concept-horizontal-screen",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "我想要一个横屏的弹幕射击 H5 游戏"
+          ]
+        }
+      },
+      {
+        "statementId": "concept-bullet-hell",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "弹幕射击 H5 游戏"
+          ]
+        }
+      },
+      {
+        "statementId": "s-default-single-player-2d-bullet-hell-h5",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-single-player-2d-bullet-hell-h5",
+          "note": "系统默认规则：产品类型定义"
+        }
+      },
+      {
+        "statementId": "intent-free-movement",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "玩家可以在二维平面里自由移动"
+          ]
+        }
+      },
+      {
+        "statementId": "intent-shooting",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "用鼠标瞄准射击"
+          ]
+        }
+      },
+      {
+        "statementId": "intent-survive-120s",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "存活满 120 秒后进入结算"
+          ]
+        }
+      },
+      {
+        "statementId": "control-mouse-aim-shoot",
+        "source": "user-declared",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "用鼠标瞄准射击"
+          ]
+        }
+      },
+      {
+        "statementId": "s-default-primary-platform-pc-keyboard-mouse",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-primary-platform-pc-keyboard-mouse",
+          "note": "系统默认规则：首要平台"
+        }
+      },
+      {
+        "statementId": "s-default-secondary-platform-mobile-touch",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-secondary-platform-mobile-touch",
+          "note": "系统默认规则：次要平台"
+        }
+      },
+      {
+        "statementId": "constraint-no-boss",
+        "source": "user-declared",
+        "strength": "forbidden",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "quotes": [
+            "不要 Boss"
+          ]
+        }
+      },
+      {
+        "statementId": "s-default-target-engine-cocos-web-h5",
+        "source": "system-default",
+        "strength": "required",
+        "locked": true,
+        "confidence": 1,
+        "evidence": {
+          "ruleId": "default-target-engine-cocos-web-h5",
+          "note": "系统默认规则：目标引擎"
+        }
+      }
+    ]
+  },
+  "semanticAssertions": [
+    {
+      "id": "survival-120s-preserved-and-locked",
+      "description": "存活 120 秒的要求被保留，且其 ledger 记录 locked=true。",
+      "passed": true,
+      "detail": "statementId=intent-survive-120s (gameplayIntent) locked，text=\"游戏目标为存活满120秒，存活满120秒后进入结算。\""
+    },
+    {
+      "id": "forbid-boss-locked",
+      "description": "不要 Boss 的要求被记录为 forbidden 且 locked=true。",
+      "passed": true,
+      "detail": "statementId=constraint-no-boss (additionalConstraints) forbidden+locked，text=\"游戏中不应出现 Boss。\""
+    },
+    {
+      "id": "ledger-covers-spec-one-to-one",
+      "description": "IntentLedger 与 GameSpec 的 statementId 一一对应。",
+      "passed": true,
+      "detail": "spec 与 ledger 各 11 条，statementId 完全一致。"
+    }
+  ],
+  "usageRecordOnly": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-pro",
+    "outputMode": "deepseek_json_object",
+    "usage": {
+      "cost": 0.00194152,
+      "costKnown": true,
+      "costEvidence": {
+        "kind": "estimated",
+        "currency": "USD",
+        "estimatedCostUsd": 0.00194152,
+        "estimatedCostCnyUpper": 0.0145614,
+        "inputTokens": 3854,
+        "outputTokens": 5007,
+        "pricingBasis": {
+          "input": "cache-miss upper estimate",
+          "officialPriceCurrency": "USD",
+          "cacheHitInputUsdPerMillionTokens": 0.0028,
+          "cacheMissInputUsdPerMillionTokens": 0.14,
+          "outputUsdPerMillionTokens": 0.28,
+          "conservativeCnyPerUsd": 7.5,
+          "source": "https://api-docs.deepseek.com/quick_start/pricing",
+          "checkedAt": "2026-07-16",
+          "policyVersion": "2026-07-16"
+        }
+      },
+      "inputTokens": 3854,
+      "outputTokens": 5007,
+      "reasoningTokens": 0
+    }
+  }
+}
